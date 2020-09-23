@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python | Reid Alderson</title>
+    <link>reidalderson.github.io/categories/python/</link>
+      <atom:link href="reidalderson.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>python</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 29 Apr 2020 22:37:33 -0400</lastBuildDate>
+    <image>
+      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>python</title>
+      <link>reidalderson.github.io/categories/python/</link>
+    </image>
+    
+    <item>
+      <title>Bioinformatics with Python, part 2</title>
+      <link>reidalderson.github.io/post/2/</link>
+      <pubDate>Wed, 29 Apr 2020 22:37:33 -0400</pubDate>
+      <guid>reidalderson.github.io/post/2/</guid>
+      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
+In part 1, we looked at how to download a proteome from UniProt and perform some initial calculations with Python. We wrote a few functions to read the proteome file, store amino-acid sequences, and analyze protein length distributions with histograms. 
+&lt;br&gt;  
+&lt;br&gt;
+Here, we will focus on calculating biophysical properties from the protein sequences. We will begin to explore the relationship between protein length and various parameters, such as net charge, hydropathy, and disordered regions. We can make these comparisons between different organisms in order to explore the evolutionary landscape of these properties.
+    &lt;br&gt;
+    &lt;br&gt;
+    I&#39;ve written a short Python tutorial that outlines the following steps, with example screenshots and code showing how to perform the following calculations:&lt;br&gt;&lt;br&gt;
+    &lt;ol&gt;
+    &lt;b&gt;&lt;li&gt;per-residue and net charge&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;per-residue and net hydropathy&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;per-residue and net disordered content&lt;/li&gt;&lt;/b&gt;
+    &lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;First, we will calculate the net charge of a protein at a given pH. As an example, let&amp;rsquo;s take the protein called p53, which is encoded by the &lt;em&gt;TP53&lt;/em&gt; gene. The FASTA file for p53 can be found via 
+&lt;a href=&#34;https://www.uniprot.org/uniprot/P04637.fasta&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this link to UniProt&lt;/a&gt;. You can download this file using the terminal with the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;curl -o https://www.uniprot.org/uniprot/P04637.fasta p53.fasta
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The command-line program wget will also enable quick download (note the capital &amp;ldquo;O&amp;rdquo; here vs. the lowercase &amp;ldquo;o&amp;rdquo; in curl)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;wget -O https://www.uniprot.org/uniprot/P04637.fasta p53.fasta
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;Now that we have our FASTA file, we can create a function to calculate the net charge. Before we begin, however, it&amp;rsquo;s important to revisit the &lt;b&gt;Henderson-Hasselbalch equation&lt;/b&gt; and the &lt;b&gt;chemistry of amino acids&lt;/b&gt;.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;All naturally occurring amino acids in biology adopt the &lt;em&gt;L&lt;/em&gt; configuration, except for glycine which is achiral. The basic structure of an amino acid is shown below:&lt;/p&gt;
+ &lt;figure&gt;&lt;img src=&#34;charged_AA.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; width=600px &gt; &lt;figcaption&gt;&lt;b&gt;Figure 1&lt;/b&gt;: &amp;nbsp The structure of an amino acid. &lt;i&gt;Left&lt;/i&gt;: uncharged form. &lt;i&gt;Right&lt;/i&gt;: zwitterionic form.&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
+&lt;br&gt;
+&lt;br&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics with Python, part 1</title>
+      <link>reidalderson.github.io/post/1/</link>
+      <pubDate>Sun, 19 Apr 2020 15:48:03 -0400</pubDate>
+      <guid>reidalderson.github.io/post/1/</guid>
+      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
+While collaborating on a research project with colleagues from the University of Antwerp, we became interested in understanding how frequently specific amino-acid motifs appear in the human proteome. This question arose because we were studying a neuropathy-causing mutation in the protein HSP27, which is a small heat-shock protein that functions as a molecular chaperone. The particular mutation in HSP27 changes the native proline residue at position 182 to leucine (P182L), which disrupts a conserved motif known as the &#34;[I/V]x[I/V]&#34; motif wherein the first and third residues are either isoleucine (I) or valine (V) while the central residue can be anything (x). In mammalian small heat-shock proteins, the central residue is typically proline. 
+    &lt;br&gt;
+    &lt;br&gt;
+    The [I/V]x[I/V] motif is an example of a short linear motif (SLiM), which are motifs of typically 3-8 residues that can play important biological roles, such as mediating protein-protein interactions or promoting degradation. Notably, SLiMs generally appear in intrinsically disordered regions (IDRs) of proteins, thus ensuring accessibility and promoting promiscuous interactions with many other proteins. If you are interested in searching for SLiMs in your protein of interest, here is a &lt;a href=&#34;http://slim.icr.ac.uk/slimsearch/&#34;&gt;useful website called SlimSearch&lt;/a&gt;, which is based on &lt;a href=&#34;https://academic.oup.com/nar/article/45/W1/W464/3111110&#34;&gt;this paper from the Davey Lab&lt;/a&gt;.
+    &lt;br&gt;
+    &lt;br&gt;
+    Anyway, during our hunt for [I/V]x[I/V] SLiMs in the human proteome, I wrote some Python scripts that I used to perform proteome-wide calculations on UniProt proteomes or FASTA files. I&#39;ve written a short Python tutorial that outlines the following steps, with example screenshots and code showing how to:&lt;br&gt;&lt;br&gt;
+    &lt;ol&gt;
+    &lt;b&gt;&lt;li&gt;Download and format UniProt proteome files&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;Compute the mean and median protein length&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;Plot histograms of protein length distributions&lt;/li&gt;&lt;/b&gt;
+    &lt;/ol&gt;
+&lt;p&gt;I wrote this in Python3.7.4 and the code requires a few packages  (Numpy, Pandas, and BioPython) that you might have to install ahead of time.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;First, open up a new text file and import these packages&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os, sys
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from Bio import SeqIO
+import itertools
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let&amp;rsquo;s create a class called &lt;b&gt;&lt;i&gt;Proteome&lt;/i&gt;&lt;/b&gt; where we will perform our large-scale counting exercises. By default, we must begin the class with the init function. In case you are unfamiliar with classes, take a look at this 
+&lt;a href=&#34;https://docs.python.org/3/tutorial/classes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;helpful explanation&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Proteome(object):
+    &amp;quot;&amp;quot;&amp;quot; Some useful calculations on proteomes &amp;quot;&amp;quot;&amp;quot;
+
+    def __init__(self):
+        self.type = None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save this file as &amp;ldquo;run.py&amp;rdquo; in the directory of your choice.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;In order to start counting motifs within a proteome, we first need a proteome! The UniProt website maintains a large repository of proteomes, so download the &lt;b&gt;Reviewed&lt;/b&gt; human proteome from 
+&lt;a href=&#34;https://www.uniprot.org/uniprot/?query=proteome:UP000005640%20reviewed:yes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this link&lt;/a&gt;. Make sure to download the files in &lt;b&gt;FASTA&lt;/b&gt; format! UniProt maintains a very large database of alternatively spliced isoforms of each gene; for the purposes of this example, we are only interested in the &amp;ldquo;canonical&amp;rdquo; isoform of each gene, i.e. one gene, one amino acid sequence. So, make sure to click the &amp;ldquo;Reviewed&amp;rdquo; version of the proteome.&lt;/p&gt;
+&lt;hr&gt;
+ &lt;figure&gt;&lt;img src=&#34;download_step1.jpg&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; style=&#34;border:1.5px solid black&#34;&gt; &lt;figcaption&gt;&lt;b&gt;Figure 1&lt;/b&gt;: &amp;nbsp&lt;a href=&#34;https://www.uniprot.org/proteomes/UP000005640&#34;&gt;Navigate to the human proteome on UniProt and click &lt;b&gt;&lt;i&gt;Reviewed&lt;/i&gt;&lt;/b&gt;.&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;After clicking on &lt;b&gt;Reviewed&lt;/b&gt;, the website will take you to the page shown below. However, before we download the proteome, we first must specify a few things about the file format. Click on the &lt;b&gt;Columns&lt;/b&gt; button to specify the data that we&amp;rsquo;ll include in the file.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+ &lt;figure&gt;&lt;img src=&#34;download_page.jpg&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; style=&#34;border:1.5px solid black&#34;&gt; &lt;figcaption&gt;&lt;b&gt;Figure 2&lt;/b&gt;: &amp;nbsp &lt;a href=&#34;https://www.uniprot.org/uniprot/?query=proteome:UP000005640%20reviewed:yes&#34;&gt;Specify which parameters to include in the download file by clicking on &lt;b&gt;&lt;i&gt;Columns&lt;/i&gt;&lt;/b&gt;. &lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;On the &lt;b&gt;Column&lt;/b&gt; page, you must click the box next to &lt;b&gt;Sequence&lt;/b&gt; in order to indicate that you want each protein&amp;rsquo;s sequence included in the downloaded file.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+ &lt;figure&gt;&lt;img src=&#34;column_page.jpg&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; style=&#34;border:1.5px solid black&#34;&gt; &lt;figcaption&gt;&lt;b&gt;Figure 3&lt;/b&gt;: &amp;nbsp&lt;a href=&#34;https://www.uniprot.org/uniprot/?query=proteome:UP000005640%20reviewed:yes#customize-columns&#34;&gt;Click the box next to &lt;b&gt;&lt;i&gt;Sequence&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;p&gt;Then scroll up and click &lt;b&gt;Save&lt;/b&gt; in the upper-right corner.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+ &lt;figure&gt;&lt;img src=&#34;save_page.jpg&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; style=&#34;border:1.5px solid black&#34;&gt; &lt;figcaption&gt;&lt;b&gt;Figure 4&lt;/b&gt;: &amp;nbsp&lt;a href=&#34;https://www.uniprot.org/uniprot/?query=proteome:UP000005640%20reviewed:yes#customize-columns&#34;&gt;Click &lt;b&gt;&lt;i&gt;Save&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;p&gt;This will take you back to the UniProtKB Results screen from above. Click on &lt;b&gt;Download&lt;/b&gt; and then, under &lt;b&gt;Format&lt;/b&gt;, choose &lt;b&gt;Tab-separated&lt;/b&gt; from the drop-down menu. Also, make sure to click the button &lt;b&gt;Uncompressed&lt;/b&gt;. Now, you can click &lt;b&gt;Go&lt;/b&gt; to download the file containing 20,350 FASTA files. I saved this file as &amp;ldquo;uniprot_human.tab&amp;rdquo; and it&amp;rsquo;s roughly 14.5 MB in size.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+ &lt;figure&gt;&lt;img src=&#34;download_step2.jpg&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; style=&#34;border:1.5px solid black&#34;&gt; &lt;figcaption&gt;&lt;b&gt;Figure 5&lt;/b&gt;: &amp;nbsp&lt;a href=&#34;https://www.uniprot.org/uniprot/?query=proteome:UP000005640%20reviewed:yes&#34;&gt;Download the tab-separated file&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;Before we move ahead, let&amp;rsquo;s open up the file and see what it contains. It should come as a [long-name-here].tab file, so rename it something convenient and store it in the same directory as your new .py file. Then, open up the .tab file in your favorite text editor. Below is a screenshot from Notepad++, and you can see that I&amp;rsquo;ve highlighted the first row that contains the column headings:  &lt;b&gt;&lt;i&gt;Entry, Entry name, Status, Protein names, Gene names, Organism, Length, Sequence&lt;/i&gt;&lt;/b&gt;. At the bottom of Notepad++, it shows us that we have 20,352 lines in this file. The first line contains the column headers and the very last line is empty, so there are &lt;b&gt;20,350 proteins&lt;/b&gt; here. This is a good sanity check: the number of proteins in the file matches the value listed on the UniProt website.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+ &lt;figure&gt;&lt;img src=&#34;uniprot_file.jpg&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; style=&#34;border:1.5px solid black&#34;&gt; &lt;figcaption&gt;&lt;b&gt;Figure 6&lt;/b&gt;: &amp;nbsp Open up the file and peruse it&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;p&gt;Now that we know what our proteome file looks like, we can write a Python function to open it up and store it in a Pandas dataframe.&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def load_uniprot(self, uniprot):
+        &amp;quot;&amp;quot;&amp;quot; Reads a UniProt file; returns a pandas dataframe
+            
+        Parameters
+        ----------		
+        uniprot : file downloaded from UniProt containing a proteome of interest
+        
+        Returns
+        -------
+        proteome_dataframe, a Pandas dataframe that contains the FASTA IDs, sequences, and length of sequences &amp;quot;&amp;quot;&amp;quot;        
+        
+        self.uniprot_proteome = pd.read_csv(uniprot, sep=&#39;\t&#39;, names=[&#39;Entry&#39;, &#39;Entry name&#39;, &#39;Status&#39;, &#39;Protein names&#39;, &#39;Gene names&#39;, &#39;Organism&#39;, &#39;Length&#39;, &#39;Sequence&#39;])
+        self.uniprot_proteome[&#39;Length&#39;][1:] =  self.uniprot_proteome[&#39;Length&#39;][1:].astype(int)  # convert the length values to integers
+        
+        return self.uniprot_proteome
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;We&amp;rsquo;ve now loaded the proteome into a Pandas dataframe that contains 3 columns:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;b&gt;ID&lt;/b&gt; = the UniProt ID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;b&gt;Sequence&lt;/b&gt; = the protein&amp;rsquo;s sequence&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;b&gt;Length&lt;/b&gt; = the protein&amp;rsquo;s length.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To read the fasta file, we&amp;rsquo;ve made use of the 
+&lt;a href=&#34;https://biopython.org/DIST/docs/api/Bio.SeqIO-module.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SeqIO.index function in BioPython&lt;/a&gt;, which converts a FASTA file into a dictionary with keys and values respectively corresponding to IDs and sequences. With &lt;b&gt;SeqIO.index()&lt;/b&gt;, one has a fast way to load very large FASTA files into Python without having to do a loop or loading of all lines into memory at once (e.g. with the Seq.list() or Seq.to_dict() functions).&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;With our proteome in an accessible data structure, we can begin to calculate some basic properties. For instance, we might want to know the total proteome length, in case we&amp;rsquo;d like to compute percentages.&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def proteome_length(self, query_proteome):
+        &amp;quot;&amp;quot;&amp;quot; Reads a Pandas dataframe containing a proteome of interest; returns the total number of residues
+            
+        Parameters
+        ----------		
+        query_proteome : Pandas dataframe, contains the proteome of interest
+        
+        Returns
+        -------
+        total_length :  int, total number of residues in proteome_dataframe &amp;quot;&amp;quot;&amp;quot;   
+    
+        total_length = query_proteome[&#39;Length&#39;][1:].sum(axis=0, skipna=True)
+        
+        return total_length
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;This function takes a proteome in a Pandas dataframe as input and &lt;b&gt;returns the total number of residues in that proteome&lt;/b&gt;. To quickly count up the number of residues in the proteome, we can sum the &lt;b&gt;Length&lt;/b&gt; column that we&amp;rsquo;ve already appended to our dataframe in the &lt;b&gt;load_fasta&lt;/b&gt; function above. The argument &amp;ldquo;axis=0&amp;rdquo; is required to tell Pandas to sum down the column and not across the row.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;So, now that we have the total number of residues in the proteome, let&amp;rsquo;s write a function to search the proteome for a specific motif. We want this function to output two values:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;the total number of times that we counted the queried motif. Let&amp;rsquo;s call this value &lt;i&gt;&lt;b&gt;sum&lt;/b&gt;&lt;/i&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the observed number of motifs divided by the total number of peptides of size &lt;i&gt;n&lt;/i&gt; in the proteome, or the &lt;i&gt;&lt;b&gt;fraction&lt;/b&gt;&lt;/i&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Because we are counting up motifs in a &amp;ldquo;sliding&amp;rdquo; manner, &lt;i&gt;i.e.&lt;/i&gt; by starting at residue 1 and working our way toward the C-terminus, then we should also calculate how many peptides of size $n$ exist in a similar manner. For example, if our queried motif is &amp;ldquo;QVERY&amp;rdquo; then our denominator, $x$, becomes:&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;$x = (N-n)+1$ &lt;/p&gt;
+&lt;p&gt;where $N$ is the length of the proteome and $n$ is the length of the queried motif. (I encourage you to calculate this on your own using, e.g. $N$ = 10 and $n$ = 2. You&amp;rsquo;ll see that there exist 9 di-peptides when sliding from residue 1 to residue 10, i.e. 1-2, 2-3, 3-4, &amp;hellip; , 9-10).&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def find_motifs(self, data_frame, query):
+        &amp;quot;&amp;quot;&amp;quot; Searches a Pandas dataframe containing a proteome for a specific amino acid/motif; returns the number of instances and fraction
+            
+        Parameters
+        ----------		
+        data_frame : Pandas dataframe, contains the proteome of interest
+        query :  str, the amino acid or motif to be searched
+        
+        Returns
+        -------
+        sum :  int, total number of hits for the queried residue/motif
+        fraction:  float, sum divided by the total number of residues or motifs of the same size  &amp;quot;&amp;quot;&amp;quot;  
+        
+        # Extract sequences from the pandas dataframe
+        seqs = data_frame[&#39;Sequence&#39;]
+                
+        # Calculate the total number of residues in the queried proteome
+        total_residues = self.proteome_length(data_frame)
+        
+        # Initialize an array
+        hits_array = []
+        
+        # Loop over each sequence and count the number of times the queried motif shows up
+        for protein in seqs:
+            hits_array.append(protein.count(query))
+
+        # total number of hits for the queried residue/motif, check if any hits are found
+        sum = np.sum(np.asarray(hits_array))  
+        if sum &amp;lt; 1:
+            fraction = 0
+        else:
+            fraction = sum/(total_residues - len(query)+1)  # total number of hits divided by the total number of residues or motifs of the same size
+                        
+        return sum, fraction
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;b&gt;Let&amp;rsquo;s test out the code&lt;/b&gt;. We can quickly instantiate the class, load the FASTA file, and calculate the total length of the proteome.&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate the class       
+human = Proteome()
+
+# Load the FASTA file containing the human proteome       
+uniprot = human.load_uniprot(&#39;uniprot_human.tab&#39;) # replace with the name of your .tab file
+
+# What is the length of the proteome?
+print(&#39;Proteome length = %.0f AA&#39; % human.proteome_length(uniprot))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proteome length = 11354232 AA&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For the human proteome, we see that there are $N$ = 11,354,232 residues. So, for our example above with the motif &amp;ldquo;QVERY&amp;rdquo;, there are $x$ = (11,354,232 $-$ 5)+1 = 11,354,228 penta-peptides in the proteome.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;With our new function &lt;b&gt;find_motifs&lt;/b&gt;, we can also count how many particular motifs exist in the proteome.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Find how many Q, QV, QVE, QVER, QVERI, QVERIE, QVERIES
+motif = &#39;QVERIES&#39;
+for i in range(0, len(motif)+1):
+    print(&#39;%s = %.0f&#39; % (motif[0:i], human.find_motifs(uniprot, motif[0:i])[0]))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;!-- language: lang-none --&gt; &gt; Q = 541533 &lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; QV =  31622 &lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; QVE  =  2108&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; QVER = 116&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; QVERI = 6&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; QVERIE = 2&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; QVERIES = 0&lt;br&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By iterating over the queried motif &amp;ldquo;QVERIES&amp;rdquo;, we see that the number of found motifs dramatically decreases with increasing length of the peptide. In fact, in the entire proteome comprising 11,354,226 hepta-peptides, &lt;b&gt;there is not a single QVERIES motif to be found&lt;/b&gt;. We&amp;rsquo;ll return to this point a little later.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;We now know that there are about &lt;b&gt;11.4 million amino acids&lt;/b&gt; in the proteome. Indeed, it would take some time to count motifs by hand&amp;hellip;! We can do some basic calculations with these numbers, and we find that &lt;b&gt;the average length of a human protein is 558 residues&lt;/b&gt;, or &lt;i&gt;ca&lt;/i&gt; 61 kDa (using an estimate of &lt;i&gt;ca&lt;/i&gt; 110 Da per amino acid).&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;We can also compute this with numpy, where we obtain the same average length of 558 residues. The median length, however, is only 415 residues, and this reflects a skewed distribution.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# What are the mean &amp;amp; median protein lengths in the proteome?
+mean = np.mean(uniprot[&#39;Length&#39;][1:])
+median = np.median(uniprot[&#39;Length&#39;][1:])
+print(&#39;Mean protein length = %.0f AA&#39; % mean)
+print(&#39;Median protein length = %.0f AA&#39; % median)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;!-- language: lang-none --&gt; &gt; Mean protein length = 558 AA&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; Median protein length =  415 AA&lt;br&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;p&gt;We can plot a histogram of protein lengths to visualize the distribution over the proteome. I limited the x axis because the vast majority of proteins are fewer than 3000 residues. Indeed, we can see that our distribution of protein sizes (below) are skewed to the right with a tail.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Plot a histogram of sequence length 
+plt.hist(uniprot[&#39;Length&#39;][1:], bins=1000, color=&#39;k&#39;, edgecolor=&#39;w&#39;, linewidth=0.1)
+plt.title(&#39;Protein size distribution in the human proteome&#39;)
+plt.ylabel(&#39;Count&#39;)
+plt.xlabel(&#39;Number of amino acids&#39;)
+plt.xlim(0,3000)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;&lt;img src=&#34;human_distribution_3000.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Histogram of protein lengths in the human proteome&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;p&gt;We can smooth out our distribution by applying a filter known as the 
+&lt;a href=&#34;https://docs.scipy.org/doc/scipy-0.16.1/reference/generated/scipy.signal.savgol_filter.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Savitzky-Golay filter&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from scipy.signal import savgol_filter
+
+def filter(data_to_filter, window=19, poly=3):
+        &amp;quot;&amp;quot;&amp;quot; Applys the Savitzky-Golay filter to a 1D array
+            
+        Parameters
+        ----------		
+        data_to_filter : dataframe or array, contains the data to be smoothed
+        window :  int, the length of the filter window
+        poly : int, the order of the polynomial (must be &amp;lt; window)
+        
+        Returns
+        -------
+        filtered :  array, the smoothed data &amp;quot;&amp;quot;&amp;quot; 
+    data = np.asarray(data_to_filter).astype(np.float64)
+    filtered = savgol_filter(data, window, poly)
+    
+    return filtered
+
+# Bin the data
+data, bins = np.histogram(np.asarray(uniprot[&#39;Length&#39;][1:]), bins=1000, density=False)
+
+# Smooth the binned data
+filtered_data = filter(data, window=19, poly=3)
+
+# Plot the histogram &amp;amp; the smoothed data
+plt.hist(uniprot[&#39;Length&#39;][1:], bins=1000, color=&#39;k&#39;, edgecolor=&#39;w&#39;, linewidth=0.1, label=&#39;Original data&#39;)
+plt.plot(bins[:-1], filtered_data, &#39;r&#39;, label=&#39;Smoothed data&#39;)
+plt.title(&#39;Smoothed protein size distribution in the human proteome&#39;)
+plt.ylabel(&#39;Count&#39;)
+plt.xlabel(&#39;Number of amino acids&#39;)
+plt.xlim(0,3000)
+plt.ylim([0,None])
+plt.legend(loc=&#39;upper right&#39;)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;&lt;img src=&#34;human_distribution_3000_smooth.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Smoothing the histogram with a Savitzky-Golay filter&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;We can also recover the histogram-style plot of our smoothed data by making use of the &lt;b&gt;weights&lt;/b&gt; variable in the plt.hist function:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Plot our histogram as above
+plt.hist(uniprot[&#39;Length&#39;][1:], bins=1000, density=False, color=&#39;k&#39;, alpha=0.5, edgecolor=&#39;w&#39;, linewidth=0.1, label=&#39;Original data&#39;)
+
+# Plot the smoothed data as a histogram by setting weights = filtered_data
+plt.hist(bins[:-1], bins=1000, weights = filtered_data, density=False, color=&#39;r&#39;, alpha=0.5, edgecolor=&#39;w&#39;, linewidth=0.1, label=&#39;Smoothed data&#39;)
+
+# These are the exact same plotting parameters as above
+plt.title(&#39;Smoothed protein size distribution in the human proteome&#39;)
+plt.ylabel(&#39;Count&#39;)
+plt.xlabel(&#39;Number of amino acids&#39;)
+plt.xlim(0,3000)
+plt.ylim([0,None])
+plt.legend(loc=&#39;upper right&#39;)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;&lt;img src=&#34;human_distribution_3000_smooth_histo.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Smoothing the histogram with a Savitzky-Golay filter and recovering the binned values&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;p&gt;Now that we&amp;rsquo;ve plotted our smoothed distribution, we can compare this to other organisms. Do humans, on average, have shorter or longer proteins that some model organisms like &lt;i&gt;E. coli&lt;/i&gt; or &lt;i&gt;S. cerevisiae&lt;/i&gt;? To test this, we can simply download the respective proteomes from UniProt using the steps outlined above. You can click these links to reach 
+&lt;a href=&#34;https://www.uniprot.org/proteomes/UP000000625&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the &lt;i&gt;E. coli&lt;/i&gt; proteome&lt;/a&gt; or 
+&lt;a href=&#34;https://www.uniprot.org/proteomes/UP000002311&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the &lt;i&gt;S. cerevisiae&lt;/i&gt; proteome&lt;/a&gt; that I used for the calculations below.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;First, we see from the UniProt download pages that these two proteomes are much smaller than the human proteome: &lt;i&gt;E. coli&lt;/i&gt; and &lt;i&gt;S. cerevisiae&lt;/i&gt; respectively contain ~4,400 and ~6,000 proteins, which pale in number compared to the ~20,400 found in humans. Thus, to plot these distributions on the same y-axis, we must set the &lt;b&gt;density&lt;/b&gt; option to &lt;b&gt;True&lt;/b&gt; in our histograms, which ensures that the area under the histogram sums to 1. This enables us to compare histograms on the same y axis.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;We can set up our script to compare these distributions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate the class       
+human = Proteome()
+
+# Load the FASTA file containing the human proteome       
+uniprot = human.load_uniprot(&#39;uniprot_human.tab&#39;) # replace with the name of your .tab file
+ecoli = human.load_uniprot(&#39;uniprot_ecoli_k12.tab&#39;)
+yeast = human.load_uniprot(&#39;uniprot_yeast.tab&#39;)
+
+# How many amino acids are in each proteome?
+print(&#39;\n&#39;)
+print(&#39;Human has %.0f AA&#39; % human.proteome_length(uniprot))  
+print(&#39;Yeast has %.0f AA&#39; % human.proteome_length(yeast))
+print(&#39;E coli has %.0f AA&#39; % human.proteome_length(ecoli))
+print(&#39;\n&#39;)
+
+# What are the mean &amp;amp; median lengths of a protein in each proteome? 
+print(&#39;Mean (median) human protein = %.0f AA (%.0f AA)&#39; % (human.proteome_length(uniprot)/(len(uniprot[&#39;Length&#39;][1:])), np.median(uniprot[&#39;Length&#39;][1:])))
+print(&#39;Mean (median) yeast protein = %.0f AA (%.0f AA)&#39; % (human.proteome_length(yeast)/(len(yeast[&#39;Length&#39;][1:])), np.median(yeast[&#39;Length&#39;][1:])))
+print(&#39;Mean (median) E coli protein = %.0f AA (%.0f AA)&#39; % (human.proteome_length(ecoli)/(len(ecoli[&#39;Length&#39;][1:])), np.median(ecoli[&#39;Length&#39;][1:])))
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;!-- language: lang-none --&gt; &gt; Human has 11354232 AA&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; Yeast has 2936363 AA&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; E coli has 1354187 AA&lt;br&gt;&lt;!-- language: lang-none --&gt; &gt; Mean (median) human protein = 558 AA (415 AA)&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; Mean (median) yeast protein = 485 AA (396 AA)&lt;br&gt;
+&lt;!-- language: lang-none --&gt; &gt; Mean (median) E coli protein = 309 AA (271 AA)&lt;br&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+&lt;p&gt;From this analysis, we can see a couple of interesting features. First, the average human protein (558 AA) is longer than the average yeast protein (485 AA) and nearly twice as long the &lt;i&gt;E. coli&lt;/i&gt; average (309 AA). Interestingly, however, the median protein sizes from human and yeast are roughly equivalent, which suggests that the human proteome has a long(er) tail that includes some very large proteins.&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure&gt;&lt;img src=&#34;compare_proteomes.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Comparing the mean and median protein lengths across three different organisms&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Plot the mean &amp;amp; median protein lengths in a bar graph 
+fig = plt.figure(figsize=(6,4.5))
+ax = fig.add_subplot(111)
+ax.bar(1, human.proteome_length(uniprot)/(len(uniprot[&#39;Length&#39;][1:])), color=&#39;k&#39;, label=&#39;Mean&#39;)
+ax.bar(1.5, np.median(uniprot[&#39;Length&#39;][1:]), color=&#39;w&#39;, edgecolor=&#39;grey&#39;, alpha=0.85, label=&#39;Median&#39;)
+ax.bar(2.5, human.proteome_length(yeast)/(len(yeast[&#39;Length&#39;][1:])), color=&#39;purple&#39;)
+ax.bar(3, np.median(yeast[&#39;Length&#39;][1:]), color=&#39;w&#39;, edgecolor=&#39;pink&#39;, alpha=0.85)
+ax.bar(4, human.proteome_length(ecoli)/(len(ecoli[&#39;Length&#39;][1:])), color=&#39;darkorange&#39;)
+ax.bar(4.5, np.median(ecoli[&#39;Length&#39;][1:]), color=&#39;w&#39;, edgecolor=&#39;yellow&#39;, alpha=0.85)
+
+# Axis labels, legend, and title
+ax.set_ylabel(&#39;Number of amino acids&#39;)
+ax.set_xlabel(&#39;Organism&#39;)
+ax.legend(loc=&#39;upper right&#39;)
+ax.set_title(&#39;Comparing mean &amp;amp; median protein lengths&#39;)
+
+# Tick positions &amp;amp; labels
+ax.set_xticks([1.25, 2.75, 4.25])
+ax.set_xticklabels([&#39;Human&#39;, r&#39;$S$. $cerevisiae$&#39;, r&#39;$E$. $coli$&#39;])
+
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;We can also plot these data in histogram format as follows:&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure&gt;&lt;img src=&#34;compare_distributions.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Comparing the distributions of protein lengths for three different organisms&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Get the bins from the human distribution
+human_dat, human_bins = np.histogram(np.asarray(uniprot[&#39;Length&#39;][1:]), bins=1000, density=True)
+
+# Plot the histograms using the same bins
+plt.hist(uniprot[&#39;Length&#39;][1:], bins=human_bins, color=&#39;k&#39;, alpha=0.3, edgecolor=&#39;w&#39;, linewidth=0.1, label=r&#39;$H$. $sapiens$&#39;, density=True)
+plt.hist(yeast[&#39;Length&#39;][1:], bins=human_bins, color=&#39;purple&#39;, alpha=0.3, edgecolor=&#39;w&#39;, linewidth=0.1, label=r&#39;$S$. $cerevisiae$&#39;, density=True)
+plt.hist(ecoli[&#39;Length&#39;][1:], bins=human_bins, color=&#39;darkorange&#39;, alpha=0.3, edgecolor=&#39;w&#39;, linewidth=0.1, label=r&#39;$E$. $coli$&#39;, density=True)
+
+# Set up the axis limits, title, and legend
+plt.xlim(0,3000)
+plt.ylabel(&#39;Density&#39;)
+plt.xlabel(&#39;Number of amino acids&#39;)
+plt.title(&#39;Comparing protein length distributions&#39;)
+plt.legend(loc=&#39;upper right&#39;)
+
+# Plot
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;or with our smoothing function:&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure&gt;&lt;img src=&#34;compare_smoothed_distributions.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Comparing the smoothed distributions of protein lengths for three different organisms&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Histogram the data using the same bins
+human_dat, human_bins = np.histogram(np.asarray(uniprot[&#39;Length&#39;][1:]), bins=1000, density=True)
+ecoli_dat, ecoli_bins = np.histogram(np.asarray(ecoli[&#39;Length&#39;][1:]), bins=human_bins, density=True)
+yeast_dat, yeast_bins = np.histogram(np.asarray(yeast[&#39;Length&#39;][1:]), bins=human_bins, density=True)
+
+# Plot the smoothed data as lines 
+plt.plot(human_bins[:-1], filter(human_dat), &#39;k-&#39;, label=r&#39;$H$. $sapiens$&#39;)
+plt.plot(yeast_bins[:-1], filter(yeast_dat), &#39;-&#39;, color=&#39;purple&#39;, label=r&#39;$S$. $cerevisiae$&#39;)
+plt.plot(ecoli_bins[:-1], filter(ecoli_dat), &#39;-&#39;, color=&#39;darkorange&#39;, label=r&#39;$E$. $coli$&#39;)
+
+# Set up the axis limits, title, and legend
+plt.xlim(0,3000)
+plt.ylabel(&#39;Density&#39;)
+plt.xlabel(&#39;Number of amino acids&#39;)
+plt.title(&#39;Comparing smoothed protein length distributions&#39;)
+plt.legend(loc=&#39;upper right&#39;)
+
+# Plot
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;b&gt;For me, it was surprising to see how much the yeast proteome resembles the human proteome!&lt;/b&gt; Maybe to an evolutionary biologist this would not be surprising; however, to a structural biologist like myself, I never would have guessed that the proteome of the tiny, single-celled &lt;i&gt;S. cerevisiae&lt;/i&gt; could look so similar to humans. Alongside protein length, perhaps the hubristic tendencies of humans have also been evolutionarily conserved&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;The histograms above tell us &lt;b&gt;three things&lt;/b&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;there are many more small proteins in &lt;i&gt;E. coli&lt;/i&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;proteins became significantly longer between the appearance of &lt;i&gt;E. coli&lt;/i&gt; and that of &lt;i&gt;S. cerevisiae&lt;/i&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the distribution of protein lengths has not changed much between &lt;i&gt;S. cerevisiae&lt;/i&gt; and humans.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;Above we compared the protein length distribution of a prokaryote, &lt;i&gt;E. coli&lt;/i&gt;, to two eukaryotes, the single-celled organism &lt;i&gt;S. cerevisiae&lt;/i&gt; and far more complex &lt;i&gt;H. sapiens&lt;/i&gt;. &lt;b&gt;What do protein length distributions from other prokaryotes or archaea look like&lt;/b&gt;? &lt;b&gt;How do proteins in human mitochondria compare&lt;/b&gt;?&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;I downloaded the proteomes (using the above outline) from the following organisms:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;i&gt; Methanocaldococcus jannaschii&lt;/i&gt; (an archaeon)&lt;/li&gt;
+&lt;li&gt;&lt;i&gt; Thermus thermophilus&lt;/i&gt; (a bacterium)&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Bacillus subtilis&lt;/i&gt; (a bacterium)&lt;/li&gt;
+&lt;li&gt;and the mitochondrial proteome from &lt;i&gt;Homo sapiens&lt;/i&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The mitochondrial proteome was made available by 
+&lt;a href=&#34;https://www.broadinstitute.org/scientific-community/science/programs/metabolic-disease-program/publications/mitocarta/mitocarta-in-0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Broad Institute&lt;/a&gt; in their MitoCarta2.0 release, which can be found in the following 
+&lt;a href=&#34;https://academic.oup.com/nar/article/44/D1/D1251/2502576&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;publication&lt;/a&gt;.&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Load the new proteomes
+mj = human.load_uniprot(&#39;m_jannaschii.tab&#39;)
+bs = human.load_uniprot(&#39;b_subtilis.tab&#39;)
+tt = human.load_uniprot(&#39;t_thermophilus.tab&#39;)
+
+# in order to load the mitochondrial proteome, we need a new function
+# that can read generic FASTA files and return a pandas dataframe
+
+def load_fasta(self, fasta):
+    &amp;quot;&amp;quot;&amp;quot; Reads a fasta file with identifiers (IDs) and sequences; returns a pandas dataframe
+
+        Parameters
+        ----------		
+        fasta : file in FASTA format with identifiers (e.g. &amp;gt;) and sequences 
+
+        Returns
+        -------
+        fasta_proteome, a Pandas dataframe that contains the FASTA IDs, sequences, and length of sequences &amp;quot;&amp;quot;&amp;quot;
+
+    # Load the fasta file
+    self.seq_list = SeqIO.index(fasta, &amp;quot;fasta&amp;quot;)  # makes dictionary, but contains Seq objects
+
+    # Create arrays to store the relevant information
+    ids = []  ; seqs = []
+    for key, value in self.seq_list.items():
+        ids.append(key)
+        seqs.append(str(value.seq)) # string the Seq object go get only the sequence
+
+        # Create a dictionary for subsequent conversion into a dataframe
+        self.dictionary = {&#39;ID&#39;:ids, &#39;Sequence&#39;:seqs} 
+
+        # Load the dictionary into a dataframe
+        self.fasta_proteome = pd.DataFrame(self.dictionary)  
+        self.fasta_proteome[&#39;Length&#39;] = self.fasta_proteome[&#39;Sequence&#39;].str.len()  # create column in the dataframe with sequence lengths
+        self.fasta_proteome[&#39;Length&#39;][1:] =  self.fasta_proteome[&#39;Length&#39;][1:].astype(int) # convert the length values to integers
+
+        return self.fasta_proteome
+
+# now load the mitochondrial proteome using &amp;quot;load_fasta&amp;quot;
+mito = human.load_fasta(&#39;Human.MitoCarta2.0.fasta&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;Now that the data have been loaded into pandas dataframes, we can plot the smoothed protein length distributions. To speed things up, we can write a function:&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def plot_list_hist(list_organisms, names):
+
+    # get reference data
+    ref_dat, ref_bins = np.histogram(np.asarray(list_organisms[0][&#39;Length&#39;][1:]), bins=1000, density=True)  # get reference bins for 1st item in list
+    
+    # make array 
+    data = np.zeros(shape=(len(list_organisms), len(ref_bins)-1))
+    colors = plt.cm.viridis(np.linspace(0.0, 1, len(list_organisms)))
+    
+    # loop and plot
+    fig = plt.figure(figsize=(6,4.5))
+    for i, item in enumerate(list_organisms):
+        dat, bins = np.histogram(np.asarray(item[&#39;Length&#39;][1:]), bins=ref_bins, density=True)
+        data[i, :] = dat 
+        plt.plot(ref_bins[:-1], filter(dat), &#39;-&#39;, label=names[i], color=colors[i])
+        
+    plt.xlim(0,2000)
+    plt.ylabel(&#39;Density&#39;)
+    plt.xlabel(&#39;Number of amino acids&#39;)
+    plt.title(&#39;Comparing smoothed protein length distributions&#39;)
+    plt.legend(loc=&#39;upper right&#39;)
+    plt.tight_layout()
+        
+    #plt.show()
+    return fig
+    
+# create a list of data and data names
+data = [uniprot, mito, ecoli, bs, tt,  mj]
+data_names = [r&#39;$H$. $sapiens$&#39;, r&#39;$H$. $sapiens$, $mito$&#39;, r&#39;$E$. $coli$&#39;, r&#39;$B$. $subtilis$&#39;, r&#39;$T$. $thermophilus$&#39;, r&#39;$M$. $jannaschii$&#39;]
+
+# use the &amp;quot;plot_list&amp;quot; function 
+plot_list_hist(data, data_names)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;figure&gt;&lt;img src=&#34;compare_kingdoms.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Comparing the smoothed distributions of protein lengths across organisms&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;From this comparison, we can see that the &lt;b&gt;mitochondrial&lt;/b&gt; proteome lies somewhere between the &lt;b&gt;&lt;i&gt;E. coli&lt;/i&gt;&lt;/b&gt; and &lt;b&gt;&lt;i&gt;human&lt;/i&gt;&lt;/b&gt; proteomes. Of course, our human proteome dataset also contains all of the mitochondrial proteins; so, had we selectively removed the ~1000 mitochondrial proteins from the human proteome, we would see a slightly more pronounced difference. Nevertheless, for proteins with fewer than 500 amino acids, the mitochondrial proteome looks more similar in terms of its length distribution to &lt;i&gt;E. coli&lt;/i&gt;.  For proteins longer than 500 residues, however, the long tail of the mitochondrial proteome bears more resemblance to human. Overall, these apparent differences may reflect the more ancient evolutionary origin of mitochondria: more smaller proteins than expected for the human proteome, but more larger proteins than expected for prokaryotes or archaea.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Finally, we can also plot the mean and median protein lengths, as we did earlier. To make this a little faster, however, we can create a small loop:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# create the figure
+fig = plt.figure(figsize=(6,4.5))
+ax = fig.add_subplot(111)
+
+# create a list of colors using the colormaps package
+abbrv_names = [&#39;HS&#39;, &#39;HS\nmito&#39;, &#39;EC&#39;, &#39;BS&#39;, &#39;TT&#39;, &#39;MJ&#39;]
+colors = plt.cm.viridis(np.linspace(0.0, 1, len(abbrv_names)))
+
+# initiate a counter and empty array (for xtick positions)
+counter = 1
+xtick_list = []
+
+# now loop over the organisns
+for i in range(len(abbrv_names)):
+    if i == 0:
+        ax.bar(counter, human.proteome_length(orgs[i])/(len(orgs[i][&#39;Length&#39;][1:])), color=colors[i], label=&#39;Mean&#39;)
+        ax.bar(counter+0.5, np.median(orgs[i][&#39;Length&#39;][1:]), color=&#39;w&#39;, edgecolor=colors[i], alpha=0.85, label=&#39;Median&#39;)
+    else:
+        ax.bar(counter, human.proteome_length(orgs[i])/(len(orgs[i][&#39;Length&#39;][1:])), color=colors[i])
+        ax.bar(counter+0.5, np.median(orgs[i][&#39;Length&#39;][1:]), color=&#39;w&#39;, edgecolor=colors[i], alpha=0.85)    
+    xtick_list.append(counter+0.25)
+    counter += 1
+    
+    
+# Axis labels &amp;amp; the legend
+ax.set_ylabel(&#39;Number of amino acids&#39;)
+ax.set_xlabel(&#39;Organism&#39;)
+ax.legend(loc=&#39;upper right&#39;)
+
+# Tick positions &amp;amp; labels
+ax.set_xticks(xtick_list)
+ax.set_xticklabels(abbrv_names)
+ax.set_title(&#39;Comparing mean &amp;amp; median protein lengths&#39;)
+
+#plt.xticks(rotation=0, fontsize=8)
+plt.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;&lt;img src=&#34;compare_proteomes_2.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34;&gt; &lt;figcaption&gt;Comparing the mean and median protein lengths across organisms. The abbrevations are as follows: Homo sapiens (HS), mitochondrial (mito), E. coli (EC), Bacillus subtilis (BS), Thermus thermophilus (TT), Methanocaldococcus jannaschii (MJ). &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;br&gt;
+&lt;p&gt;We can clearly see that the median protein length in the mitochondria is ~100 residues smaller than the typical human protein. The difference in the means is even more pronounced, which reflects the very long tail in the human proteome (as discussed above).&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Next time, I&amp;rsquo;ll discuss how we can use Python to calculate biophysical properties from protein sequences, and how we can perform such calculations on the proteome scale.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

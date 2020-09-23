@@ -1,0 +1,26 @@
+[[experience]]
+  title = "PhD Student"
+  company = "National Institutes of Health (NIH)"
+  company_url = "<https://spin.niddk.nih.gov/bax/>"
+  location = "Bethesda, MD, USA"
+  date_start = "2016-10-01"
+  date_end = "2018-10-01"
+  description = """Developed NMR methodology with Dr. Ad Bax and colleagues to study protein folding with millisecond resolution using rapid pressure-jump technology."""
+
+[[experience]]
+  title = "PhD Student"
+  company = "University of Oxford"
+  company_url = "<http://benesch.chem.ox.ac.uk/>"
+  location = "Oxford, UK"
+  date_start = "2014-10-01"
+  date_end = "2016-10-01"
+  description = """Research with Profs. Justin Benesch and Andy Baldwin on the chaperone HSP27, its dynamical structure, and its dysregulation in Charcot-Marie-Tooth disease."""
+
+[[experience]]
+  title = "Undergraduate Researcher"
+  company = "University of Wisconsin-Madison"
+  company_url = "<https://biochem.wisc.edu/faculty/markley>"
+  location = "Madison, WI, USA"
+  date_start = "2012-06-01"
+  date_end = "2014-06-01"
+  description = """Undergraduate thesis project in Prof. John Markley's lab focused on the structure of the bacterial Hsp70 chaperone involved in iron-sulfur cluster biogenesis."""

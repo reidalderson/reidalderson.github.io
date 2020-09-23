@@ -1,0 +1,50 @@
+academic import --bibtex my_refs.bib
+
+icons 
+links:
+
+# Assays
+  - icon_pack: fas
+    icon: vial
+    name: Enzyme Assays
+
+# Chaperones
+  - icon_pack: fas
+    icon: ambulance  # medkit or ambulance or first-aid or shield-alt or hand-holding-medical or user-md or first-aid
+    name: Chaperones
+
+# DOI
+  - icon_pack: ai
+    icon: doi
+    name: DOI
+    url: '10.1016/j.sbi.2019.10.008'
+    
+# Folding
+  - icon_pack: fas
+    icon: icicles
+    name: Folding
+  - icon_pack: fas
+    icon: exchange-alt
+    name: Exchange
+    
+# NMR
+  - icon_pack: fas
+    icon: magnet
+    name: NMR
+    
+# PDF
+  - icon_pack: fas
+    icon: file-pdf
+    name: PDF
+    url: '/publication/16_Invisible_states_COSB/2020_Invisible_states_CurrOpin.pdf'
+    
+# Protein-protein interaction
+  - icon_pack: fas
+    icon: hands-helping # or user-friends
+    name: Protein-protein interaction   
+    
+# PubMed
+  - icon_pack: ai
+    icon: pubmed
+    name: PubMed
+    url: 'https://www.ncbi.nlm.nih.gov/pubmed/31835059'

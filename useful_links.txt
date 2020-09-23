@@ -1,0 +1,40 @@
+(1) BMRB
+(2) BMRB AA - http://www.bmrb.wisc.edu/referenc/commonaa.php?his
+(3) protein NMR site 
+(4) UniProt
+(5) Expasy ProtParam 
+(6) Expasy
+
+http://sosnick.uchicago.edu/gdmcl.html
+
+https://spin.niddk.nih.gov/NMRPipe/doc1/
+
+https://nmr.chem.ucsb.edu/education/part0.html#overview
+
+https://github.com/harmslab/pdbtools
+
+http://prody.csb.pitt.edu/
+---> http://prody.csb.pitt.edu/_static/ipynb/workshop2018/prody_basic.html
+
+https://gist.github.com/lennax/0f5f65ddbfa278713f58
+
+Rosalind -- bioinformitcs
+
+Dunbrack PDB databases? (Tae Hun's email)
+PDB bind?
+Panther, DAVID
+
+Python
+-- http://education.molssi.org/resources.html
+-- curve fitting with SciPy: https://education.molssi.org/python-data-analysis/03-data-fitting/index.html
+-- data analysis: https://education.molssi.org/python-data-analysis/
+
+-- PDB 
+-- BLAST
+-- ClustalOmega
+-- Ensembl
+-- OMIM
+-- COSMIC
+-- Pipe
+-- Sparky
+-- Glue

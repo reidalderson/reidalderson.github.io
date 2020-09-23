@@ -1,0 +1,15 @@
+.img-sm {
+  max-height: 100px;
+}
+
+.img-sm img{
+  max-height:100px
+}
+
+.img-lg {
+  max-height: 500px;
+}
+
+.img-lg img{
+  max-height:500px
+}
