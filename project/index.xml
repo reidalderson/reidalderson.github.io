@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Reid Alderson</title>
-    <link>reidalderson.github.io/project/</link>
-      <atom:link href="reidalderson.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 19 Apr 2020 10:00:37 -0400</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
-      <link>reidalderson.github.io/project/</link>
+      <link>/project/</link>
     </image>
     
     <item>
       <title>Chaperones</title>
-      <link>reidalderson.github.io/project/chaperones/</link>
+      <link>/project/chaperones/</link>
       <pubDate>Sun, 19 Apr 2020 10:00:37 -0400</pubDate>
-      <guid>reidalderson.github.io/project/chaperones/</guid>
+      <guid>/project/chaperones/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NMR</title>
-      <link>reidalderson.github.io/project/nmr/</link>
+      <link>/project/nmr/</link>
       <pubDate>Sun, 19 Apr 2020 10:00:37 -0400</pubDate>
-      <guid>reidalderson.github.io/project/nmr/</guid>
+      <guid>/project/nmr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Protein folding</title>
-      <link>reidalderson.github.io/project/protein_folding/</link>
+      <link>/project/protein_folding/</link>
       <pubDate>Sun, 19 Apr 2020 10:00:37 -0400</pubDate>
-      <guid>reidalderson.github.io/project/protein_folding/</guid>
+      <guid>/project/protein_folding/</guid>
       <description></description>
     </item>
     

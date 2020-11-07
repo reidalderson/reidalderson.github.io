@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Julien Roche | Reid Alderson</title>
-    <link>reidalderson.github.io/authors/julien-roche/</link>
-      <atom:link href="reidalderson.github.io/authors/julien-roche/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/julien-roche/</link>
+      <atom:link href="/authors/julien-roche/index.xml" rel="self" type="application/rss+xml" />
     <description>Julien Roche</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 06 Mar 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Julien Roche</title>
-      <link>reidalderson.github.io/authors/julien-roche/</link>
+      <link>/authors/julien-roche/</link>
     </image>
     
     <item>
       <title>Local unfolding of the HSP27 monomer regulates chaperone activity</title>
-      <link>reidalderson.github.io/publication/13_hsp27_natcomm/</link>
+      <link>/publication/13_hsp27_natcomm/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/13_hsp27_natcomm/</guid>
+      <guid>/publication/13_hsp27_natcomm/</guid>
       <description>
 
 
@@ -41,7 +41,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/13_hsp27_natcomm/HSP27_NatComm_Fig_hu0ae07cfeaa2c2924abc388a342ad561c_537774_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1972&#34; height=&#34;1478&#34;&gt;
+  &lt;img data-src=&#34;/publication/13_hsp27_natcomm/HSP27_NatComm_Fig_hu0ae07cfeaa2c2924abc388a342ad561c_537774_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1972&#34; height=&#34;1478&#34;&gt;
 &lt;/a&gt;
 
 

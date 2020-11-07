@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python | Reid Alderson</title>
-    <link>reidalderson.github.io/tags/python/</link>
-      <atom:link href="reidalderson.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/python/</link>
+      <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <description>python</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 29 Apr 2020 22:37:33 -0400</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>python</title>
-      <link>reidalderson.github.io/tags/python/</link>
+      <link>/tags/python/</link>
     </image>
     
     <item>
       <title>Bioinformatics with Python, part 2</title>
-      <link>reidalderson.github.io/post/2/</link>
+      <link>/post/2/</link>
       <pubDate>Wed, 29 Apr 2020 22:37:33 -0400</pubDate>
-      <guid>reidalderson.github.io/post/2/</guid>
+      <guid>/post/2/</guid>
       <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
 In part 1, we looked at how to download a proteome from UniProt and perform some initial calculations with Python. We wrote a few functions to read the proteome file, store amino-acid sequences, and analyze protein length distributions with histograms. 
 &lt;br&gt;  
@@ -50,9 +50,9 @@ Here, we will focus on calculating biophysical properties from the protein seque
     
     <item>
       <title>Bioinformatics with Python, part 1</title>
-      <link>reidalderson.github.io/post/1/</link>
+      <link>/post/1/</link>
       <pubDate>Sun, 19 Apr 2020 15:48:03 -0400</pubDate>
-      <guid>reidalderson.github.io/post/1/</guid>
+      <guid>/post/1/</guid>
       <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
 While collaborating on a research project with colleagues from the University of Antwerp, we became interested in understanding how frequently specific amino-acid motifs appear in the human proteome. This question arose because we were studying a neuropathy-causing mutation in the protein HSP27, which is a small heat-shock protein that functions as a molecular chaperone. The particular mutation in HSP27 changes the native proline residue at position 182 to leucine (P182L), which disrupts a conserved motif known as the &#34;[I/V]x[I/V]&#34; motif wherein the first and third residues are either isoleucine (I) or valine (V) while the central residue can be anything (x). In mammalian small heat-shock proteins, the central residue is typically proline. 
     &lt;br&gt;

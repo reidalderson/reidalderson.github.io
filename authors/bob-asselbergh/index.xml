@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bob Asselbergh | Reid Alderson</title>
-    <link>reidalderson.github.io/authors/bob-asselbergh/</link>
-      <atom:link href="reidalderson.github.io/authors/bob-asselbergh/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/bob-asselbergh/</link>
+      <atom:link href="/authors/bob-asselbergh/index.xml" rel="self" type="application/rss+xml" />
     <description>Bob Asselbergh</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Bob Asselbergh</title>
-      <link>reidalderson.github.io/authors/bob-asselbergh/</link>
+      <link>/authors/bob-asselbergh/</link>
     </image>
     
     <item>
       <title>The neuropathy-causing P182L mutation dysregulates interactions of HSP27</title>
-      <link>reidalderson.github.io/publication/20_hsp27_biorxiv/</link>
+      <link>/publication/20_hsp27_biorxiv/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/20_hsp27_biorxiv/</guid>
+      <guid>/publication/20_hsp27_biorxiv/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Joseph M. Courtney | Reid Alderson</title>
-    <link>reidalderson.github.io/authors/joseph-m.-courtney/</link>
-      <atom:link href="reidalderson.github.io/authors/joseph-m.-courtney/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/joseph-m.-courtney/</link>
+      <atom:link href="/authors/joseph-m.-courtney/index.xml" rel="self" type="application/rss+xml" />
     <description>Joseph M. Courtney</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Joseph M. Courtney</title>
-      <link>reidalderson.github.io/authors/joseph-m.-courtney/</link>
+      <link>/authors/joseph-m.-courtney/</link>
     </image>
     
     <item>
       <title>Monitoring 15N Chemical Shifts during Protein Folding by Pressure-Jump NMR</title>
-      <link>reidalderson.github.io/publication/12_pressure-jump_jacs/</link>
+      <link>/publication/12_pressure-jump_jacs/</link>
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/12_pressure-jump_jacs/</guid>
+      <guid>/publication/12_pressure-jump_jacs/</guid>
       <description>
 
 
@@ -41,7 +41,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/12_pressure-jump_jacs/Pressure-jump_JACS_ToC_hua7b8f0fc8076bb206dcad95f9916b32c_84135_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;978&#34; height=&#34;562&#34;&gt;
+  &lt;img data-src=&#34;/publication/12_pressure-jump_jacs/Pressure-jump_JACS_ToC_hua7b8f0fc8076bb206dcad95f9916b32c_84135_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;978&#34; height=&#34;562&#34;&gt;
 &lt;/a&gt;
 
 
@@ -53,9 +53,9 @@
     
     <item>
       <title>Study of protein folding under native conditions by rapidly switching the hydrostatic pressure inside an NMR sample cell</title>
-      <link>reidalderson.github.io/publication/11_pressure-jump_pnas/</link>
+      <link>/publication/11_pressure-jump_pnas/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/11_pressure-jump_pnas/</guid>
+      <guid>/publication/11_pressure-jump_pnas/</guid>
       <description>
 
 
@@ -80,7 +80,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/11_pressure-jump_pnas/Pressure-jump_Fig_hu44ede1d5c6bffb90586dcdf50665225b_156942_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1724&#34; height=&#34;1800&#34;&gt;
+  &lt;img data-src=&#34;/publication/11_pressure-jump_pnas/Pressure-jump_Fig_hu44ede1d5c6bffb90586dcdf50665225b_156942_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1724&#34; height=&#34;1800&#34;&gt;
 &lt;/a&gt;
 
 

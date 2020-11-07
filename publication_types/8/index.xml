@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>8 | Reid Alderson</title>
-    <link>reidalderson.github.io/publication_types/8/</link>
-      <atom:link href="reidalderson.github.io/publication_types/8/index.xml" rel="self" type="application/rss+xml" />
+    <link>/publication_types/8/</link>
+      <atom:link href="/publication_types/8/index.xml" rel="self" type="application/rss+xml" />
     <description>8</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 04 Feb 2016 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>8</title>
-      <link>reidalderson.github.io/publication_types/8/</link>
+      <link>/publication_types/8/</link>
     </image>
     
     <item>
       <title>Parkinson&#39;s disease: Disorder in the court</title>
-      <link>reidalderson.github.io/publication/5_synuclein_nature/</link>
+      <link>/publication/5_synuclein_nature/</link>
       <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/5_synuclein_nature/</guid>
+      <guid>/publication/5_synuclein_nature/</guid>
       <description>
 
 
@@ -41,7 +41,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/5_synuclein_nature/aSyn_Fig_hu5bccc8c3d6e4e4cee145cad0983d6944_64562_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;737&#34; height=&#34;836&#34;&gt;
+  &lt;img data-src=&#34;/publication/5_synuclein_nature/aSyn_Fig_hu5bccc8c3d6e4e4cee145cad0983d6944_64562_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;737&#34; height=&#34;836&#34;&gt;
 &lt;/a&gt;
 
 

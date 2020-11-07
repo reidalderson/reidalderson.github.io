@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dennis A. Torchia | Reid Alderson</title>
-    <link>reidalderson.github.io/authors/dennis-a.-torchia/</link>
-      <atom:link href="reidalderson.github.io/authors/dennis-a.-torchia/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/dennis-a.-torchia/</link>
+      <atom:link href="/authors/dennis-a.-torchia/index.xml" rel="self" type="application/rss+xml" />
     <description>Dennis A. Torchia</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 16 Aug 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Dennis A. Torchia</title>
-      <link>reidalderson.github.io/authors/dennis-a.-torchia/</link>
+      <link>/authors/dennis-a.-torchia/</link>
     </image>
     
     <item>
       <title>Monitoring Hydrogen Exchange during Protein Folding by Fast Pressure Jump NMR Spectroscopy</title>
-      <link>reidalderson.github.io/publication/9_pressure-jump_hx_jacs/</link>
+      <link>/publication/9_pressure-jump_hx_jacs/</link>
       <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/9_pressure-jump_hx_jacs/</guid>
+      <guid>/publication/9_pressure-jump_hx_jacs/</guid>
       <description>
 
 
@@ -41,7 +41,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/9_pressure-jump_hx_jacs/HX_ToC_hucf967c33f389130ab619766a81118218_82336_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;766&#34; height=&#34;429&#34;&gt;
+  &lt;img data-src=&#34;/publication/9_pressure-jump_hx_jacs/HX_ToC_hucf967c33f389130ab619766a81118218_82336_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;766&#34; height=&#34;429&#34;&gt;
 &lt;/a&gt;
 
 

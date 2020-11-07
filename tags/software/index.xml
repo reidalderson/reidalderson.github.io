@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>software | Reid Alderson</title>
-    <link>reidalderson.github.io/tags/software/</link>
-      <atom:link href="reidalderson.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/software/</link>
+      <atom:link href="/tags/software/index.xml" rel="self" type="application/rss+xml" />
     <description>software</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>software</title>
-      <link>reidalderson.github.io/tags/software/</link>
+      <link>/tags/software/</link>
     </image>
     
     <item>
       <title>Automated assignment of methyl NMR spectra from large proteins</title>
-      <link>reidalderson.github.io/publication/19_review_pnmrs/</link>
+      <link>/publication/19_review_pnmrs/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/19_review_pnmrs/</guid>
+      <guid>/publication/19_review_pnmrs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Automatic structure-based NMR methyl resonance assignment in large proteins</title>
-      <link>reidalderson.github.io/publication/15_methylflya_natcomm/</link>
+      <link>/publication/15_methylflya_natcomm/</link>
       <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/15_methylflya_natcomm/</guid>
+      <guid>/publication/15_methylflya_natcomm/</guid>
       <description>
 
 
@@ -49,7 +49,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/15_methylflya_natcomm/MethylFLYA_TOC_2_hu1ced1247b01cf101d6583c77a62593f2_671014_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2142&#34; height=&#34;1209&#34;&gt;
+  &lt;img data-src=&#34;/publication/15_methylflya_natcomm/MethylFLYA_TOC_2_hu1ced1247b01cf101d6583c77a62593f2_671014_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2142&#34; height=&#34;1209&#34;&gt;
 &lt;/a&gt;
 
 
@@ -63,9 +63,9 @@
     
     <item>
       <title>Automatic Assignment of Methyl-NMR Spectra of Supramolecular Machines Using Graph Theory</title>
-      <link>reidalderson.github.io/publication/8_magma_jacs/</link>
+      <link>/publication/8_magma_jacs/</link>
       <pubDate>Sun, 30 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/8_magma_jacs/</guid>
+      <guid>/publication/8_magma_jacs/</guid>
       <description>
 
 
@@ -90,7 +90,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/8_magma_jacs/MAGMA_logo_v4_hu7c8ff8e2ed404825b2cda2723412bfc6_7464520_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2363&#34; height=&#34;2922&#34;&gt;
+  &lt;img data-src=&#34;/publication/8_magma_jacs/MAGMA_logo_v4_hu7c8ff8e2ed404825b2cda2723412bfc6_7464520_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2363&#34; height=&#34;2922&#34;&gt;
 &lt;/a&gt;
 
 

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jameson R. Bothe | Reid Alderson</title>
-    <link>reidalderson.github.io/authors/jameson-r.-bothe/</link>
-      <atom:link href="reidalderson.github.io/authors/jameson-r.-bothe/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/jameson-r.-bothe/</link>
+      <atom:link href="/authors/jameson-r.-bothe/index.xml" rel="self" type="application/rss+xml" />
     <description>Jameson R. Bothe</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/reidalderson.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Jameson R. Bothe</title>
-      <link>reidalderson.github.io/authors/jameson-r.-bothe/</link>
+      <link>/authors/jameson-r.-bothe/</link>
     </image>
     
     <item>
       <title>Tangled web of interactions among proteins involved in iron-sulfur cluster assembly as unraveled by NMR, SAXS, chemical crosslinking, and functional studies</title>
-      <link>reidalderson.github.io/publication/4_fe-s_review_bba/</link>
+      <link>/publication/4_fe-s_review_bba/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>reidalderson.github.io/publication/4_fe-s_review_bba/</guid>
+      <guid>/publication/4_fe-s_review_bba/</guid>
       <description>
 
 
@@ -41,7 +41,7 @@
   &lt;a href=&#34;#ZgotmplZ&#34;&gt;
 
 
-  &lt;img data-src=&#34;reidalderson.github.io/reidalderson.github.io/publication/4_fe-s_review_bba/FeS_ToC_hu56a0d9c27368ebbc4f8bb5584d29d525_105250_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1316&#34; height=&#34;531&#34;&gt;
+  &lt;img data-src=&#34;/publication/4_fe-s_review_bba/FeS_ToC_hu56a0d9c27368ebbc4f8bb5584d29d525_105250_2000x2000_fit_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1316&#34; height=&#34;531&#34;&gt;
 &lt;/a&gt;
 
 
