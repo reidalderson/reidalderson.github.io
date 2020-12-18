@@ -53,6 +53,48 @@ Here, we will focus on calculating biophysical properties from the protein seque
  &lt;figure&gt;&lt;img src=&#34;charged_AA.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; width=600px &gt; &lt;figcaption&gt;&lt;b&gt;Figure 1&lt;/b&gt;: &amp;nbsp The structure of an amino acid. &lt;i&gt;Left&lt;/i&gt;: uncharged form. &lt;i&gt;Right&lt;/i&gt;: zwitterionic form.&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
 &lt;br&gt;
 &lt;br&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;form action=&#34;&#34;&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input type=&#34;radio&#34; name=&#34;rdo&#34; id=&#34;yes&#34; checked /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input type=&#34;radio&#34; name=&#34;rdo&#34; id=&#34;no&#34;/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;div class=&#34;switch&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;label for=&#34;yes&#34;&gt;Yes&lt;/label&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;label for=&#34;no&#34;&gt;No&lt;/label&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span&gt;&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/form&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
     </item>
     
