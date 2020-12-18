@@ -691,16 +691,6 @@ Here, we will focus on calculating biophysical properties from the protein seque
  <figure><img src="charged_AA.png" alt="Open up the proteome in a text editor (here, Notepad++)" width=600px > <figcaption><b>Figure 1</b>: &nbsp The structure of an amino acid. <i>Left</i>: uncharged form. <i>Right</i>: zwitterionic form.</a></figcaption></figure> 
 <br>
 <br>
-<pre><code>&lt;form action=&quot;&quot;&gt;
-  &lt;input type=&quot;radio&quot; name=&quot;rdo&quot; id=&quot;yes&quot; checked /&gt;
-  &lt;input type=&quot;radio&quot; name=&quot;rdo&quot; id=&quot;no&quot;/&gt;
-  &lt;div class=&quot;switch&quot;&gt;
-    &lt;label for=&quot;yes&quot;&gt;Yes&lt;/label&gt;
-    &lt;label for=&quot;no&quot;&gt;No&lt;/label&gt;
-    &lt;span&gt;&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
-</code></pre>
 <br>
 <p><button class="favorite styled"
 type="button">
@@ -711,6 +701,13 @@ Add to favorites
   <input type="text" id="fname" name="fname"><br>
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname">
+</form>
+<form action="/test.py">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
 </form>
 
     </div>

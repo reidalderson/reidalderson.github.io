@@ -45,16 +45,6 @@ Here, we will focus on calculating biophysical properties from the protein seque
  &lt;figure&gt;&lt;img src=&#34;charged_AA.png&#34; alt=&#34;Open up the proteome in a text editor (here, Notepad++)&#34; width=600px &gt; &lt;figcaption&gt;&lt;b&gt;Figure 1&lt;/b&gt;: &amp;nbsp The structure of an amino acid. &lt;i&gt;Left&lt;/i&gt;: uncharged form. &lt;i&gt;Right&lt;/i&gt;: zwitterionic form.&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt; 
 &lt;br&gt;
 &lt;br&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&amp;quot;&amp;quot;&amp;gt;
-  &amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;rdo&amp;quot; id=&amp;quot;yes&amp;quot; checked /&amp;gt;
-  &amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;rdo&amp;quot; id=&amp;quot;no&amp;quot;/&amp;gt;
-  &amp;lt;div class=&amp;quot;switch&amp;quot;&amp;gt;
-    &amp;lt;label for=&amp;quot;yes&amp;quot;&amp;gt;Yes&amp;lt;/label&amp;gt;
-    &amp;lt;label for=&amp;quot;no&amp;quot;&amp;gt;No&amp;lt;/label&amp;gt;
-    &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;button class=&#34;favorite styled&#34;
 type=&#34;button&#34;&gt;
@@ -65,6 +55,13 @@ Add to favorites
   &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34;&gt;&lt;br&gt;
   &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34;&gt;
+&lt;/form&gt;
+&lt;form action=&#34;/test.py&#34;&gt;
+  &lt;label for=&#34;fname&#34;&gt;First name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34; value=&#34;John&#34;&gt;&lt;br&gt;
+  &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34; value=&#34;Doe&#34;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
 &lt;/form&gt;
 </description>
     </item>
