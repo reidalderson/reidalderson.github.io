@@ -58,7 +58,7 @@ Add to favorites
 &lt;/form&gt;
 &lt;form action=&#34;C:\Users\Reid\Downloads\httpd-2.4.46-win64-VS16\Apache24\cgi-bin/test.py&#34; method=&#34;get&#34;&gt;
   &lt;label for=&#34;fname&#34;&gt;First name:&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34; value=&#34;James&#34;&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34; value=&#34;Reid&#34;&gt;&lt;br&gt;
   &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34; value=&#34;Deer&#34;&gt;&lt;br&gt;&lt;br&gt;
   &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
