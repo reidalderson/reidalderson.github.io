@@ -55,7 +55,18 @@ Here, we will focus on calculating biophysical properties from the protein seque
   &amp;lt;/div&amp;gt;
 &amp;lt;/form&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;br&gt;</description>
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;label&amp;gt;Name (required):&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot; id=&amp;quot;name&amp;quot;/&amp;gt;
+&amp;lt;label&amp;gt;Sex:&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;sex&amp;quot; value=&amp;quot;Male&amp;quot; checked=&amp;quot;checked&amp;quot;/&amp;gt; &amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;sex&amp;quot; value=&amp;quot;Female&amp;quot;/&amp;gt;
+&amp;lt;label&amp;gt;Phones:&amp;lt;/label&amp;gt;&amp;lt;input type=&amp;quot;check&amp;quot; name=&amp;quot;phones&amp;quot; value=&amp;quot;Android&amp;quot;/&amp;gt; &amp;lt;input type=&amp;quot;check&amp;quot; name=&amp;quot;phones&amp;quot; value=&amp;quot;iPhone&amp;quot; checked=&amp;quot;checked&amp;quot;/&amp;gt; &amp;lt;input type=&amp;quot;check&amp;quot; name=&amp;quot;phones&amp;quot; value=&amp;quot;Blackberry&amp;quot;/&amp;gt;
+&amp;lt;label&amp;gt;City:&amp;lt;/label&amp;gt; 
+&amp;lt;select name=&amp;quot;city&amp;quot;&amp;gt;
+  &amp;lt;option value=&amp;quot;BOS&amp;quot;&amp;gt;BOS&amp;lt;/option&amp;gt;
+  &amp;lt;option value=&amp;quot;SFO&amp;quot; selected=&amp;quot;selected&amp;quot;&amp;gt;SFO&amp;lt;/option&amp;gt;
+  &amp;lt;option value=&amp;quot;NYC&amp;quot;&amp;gt;NYC&amp;lt;/option&amp;gt;
+&amp;lt;/select&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
