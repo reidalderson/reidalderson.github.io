@@ -64,7 +64,7 @@ Add to favorites
   &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34;&gt;
 &lt;/form&gt;
-&lt;form action=&#34;/test.py&#34;&gt;
+&lt;form action=&#34;/post/2/test.py&#34; method=&#34;get&#34;&gt;
   &lt;label for=&#34;fname&#34;&gt;First name:&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34; value=&#34;John&#34;&gt;&lt;br&gt;
   &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
