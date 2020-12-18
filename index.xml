@@ -68,6 +68,12 @@ Here, we will focus on calculating biophysical properties from the protein seque
 type=&#34;button&#34;&gt;
 Add to favorites
 &lt;/button&gt;&lt;/p&gt;
+&lt;form&gt;
+  &lt;label for=&#34;fname&#34;&gt;First name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34;&gt;&lt;br&gt;
+  &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34;&gt;
+&lt;/form&gt;
 </description>
     </item>
     
