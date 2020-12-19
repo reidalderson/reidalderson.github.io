@@ -60,9 +60,14 @@ Add to favorites
   &lt;label for=&#34;fname&#34;&gt;First name:&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34; value=&#34;Reid&#34;&gt;&lt;br&gt;
   &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34; value=&#34;ASDF&#34;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34; value=&#34;asdf&#34;&gt;&lt;br&gt;&lt;br&gt;
   &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
-&lt;/form&gt;</description>
+&lt;/form&gt;
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;&amp;lt;&amp;lt;engine=&#39;python&#39;, engine.path=&#39;python3&#39;&amp;gt;&amp;gt;=
+print(&#39;hello world&#39;)
+@
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
