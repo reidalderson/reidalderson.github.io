@@ -67,10 +67,10 @@ Add to favorites
 print(&#39;hello world&#39;)
 @
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form action=&amp;quot;https://formspree.io/f/{form_id}&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;
-  &amp;lt;label for=&amp;quot;email&amp;quot;&amp;gt;Your Email&amp;lt;/label&amp;gt;
-  &amp;lt;input name=&amp;quot;Email&amp;quot; id=&amp;quot;email&amp;quot; type=&amp;quot;email&amp;quot;&amp;gt;
-  &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Submit&amp;lt;/button&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form action=&amp;quot;https://formspree.io/f/xnqooazd&amp;quot; method=&amp;quot;POST&amp;quot;&amp;gt;
+  &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;&amp;gt;
+  &amp;lt;input type=&amp;quot;email&amp;quot; name=&amp;quot;_replyto&amp;quot;&amp;gt;
+  &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Send&amp;quot;&amp;gt;
 &amp;lt;/form&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
