@@ -73,8 +73,9 @@ print(&#39;hello world&#39;)
   &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Send&amp;quot;&amp;gt;
 &amp;lt;/form&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;uCalc_325402&#34;&gt;&lt;/div&gt;&lt;script&gt; var widgetOptions325402 = { bg_color: &#34;transparent&#34; }; (function() { var a = document.createElement(&#34;script&#34;), h = &#34;head&#34;; a.async = true; a.src = (document.location.protocol == &#34;https:&#34; ? &#34;https:&#34; : &#34;http:&#34;) + &#34;//ucalc.pro/api/widget.js?id=325402&amp;t=&#34;+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();&lt;/script&gt; 
-&lt;p&gt;asdf&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;uCalc_325402&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt; var widgetOptions325402 = { bg_color: &amp;quot;transparent&amp;quot; }; (function() { var a = document.createElement(&amp;quot;script&amp;quot;), h = &amp;quot;head&amp;quot;; a.async = true; a.src = (document.location.protocol == &amp;quot;https:&amp;quot; ? &amp;quot;https:&amp;quot; : &amp;quot;http:&amp;quot;) + &amp;quot;//ucalc.pro/api/widget.js?id=325402&amp;amp;t=&amp;quot;+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;asdf ASDFasdfASDF&lt;/p&gt;
 </description>
     </item>
     
