@@ -722,7 +722,7 @@ print('hello world')
 <pre><code class="language-html">&lt;div class=&quot;uCalc_325402&quot;&gt;&lt;/div&gt;&lt;script&gt; var widgetOptions325402 = { bg_color: &quot;transparent&quot; }; (function() { var a = document.createElement(&quot;script&quot;), h = &quot;head&quot;; a.async = true; a.src = (document.location.protocol == &quot;https:&quot; ? &quot;https:&quot; : &quot;http:&quot;) + &quot;//ucalc.pro/api/widget.js?id=325402&amp;t=&quot;+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();&lt;/script&gt;
 </code></pre>
 <p>asdf ASDFasdfASDF</p>
-<pre><code class="language-javascript">&lt;script&gt;
+<pre><code class="language-java">&lt;script&gt;
 //function for displaying values
 function dis(val)
 {
@@ -743,46 +743,63 @@ document.getElementById(&quot;edu&quot;).value = &quot;&quot;
 &lt;/script&gt;
 </code></pre>
 <p>reid</p>
-<pre><code class="language-html">&lt;!-- create table --&gt;
-&lt;body&gt;
-&lt;div class = title &gt;Edureka JavaScript Calculator&lt;/div&gt;
-&lt;table border=&quot;1&quot;&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;c&quot; onclick=&quot;clr()&quot;/&gt; &lt;/td&gt;
-&lt;td colspan=&quot;3&quot;&gt;&lt;input type=&quot;text&quot; id=&quot;edu&quot;/&gt;&lt;/td&gt;
-&lt;!-- clr() function will call clr to clear all value --&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;!-- creating buttons and assigning values--&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;+&quot; onclick=&quot;dis('+')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;1&quot; onclick=&quot;dis('1')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;2&quot; onclick=&quot;dis('2')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;3&quot; onclick=&quot;dis('3')&quot;/&gt; &lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;-&quot; onclick=&quot;dis('-')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;4&quot; onclick=&quot;dis('4')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;5&quot; onclick=&quot;dis('5')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;6&quot; onclick=&quot;dis('6')&quot;/&gt; &lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;*&quot; onclick=&quot;dis('*')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;7&quot; onclick=&quot;dis('7')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;8&quot; onclick=&quot;dis('8')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;9&quot; onclick=&quot;dis('9')&quot;/&gt; &lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;/&quot; onclick=&quot;dis('/')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;.&quot; onclick=&quot;dis('.')&quot;/&gt; &lt;/td&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;0&quot; onclick=&quot;dis('0')&quot;/&gt; &lt;/td&gt;
-&lt;!-- Evaluating function call eval()--&gt;
-&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;=&quot; onclick=&quot;solve()&quot;/&gt; &lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/body&gt;
-</code></pre>
 <p>test</p>
-
+<script>
+//function for displaying values
+function dis(val)
+{
+document.getElementById("edu").value+=val
+ }
+//function for evaluation
+function solve()
+{
+let x = document.getElementById("edu").value
+let y = eval(x)
+document.getElementById("edu").value = y
+}
+//function for clearing the display
+function clr()
+{
+document.getElementById("edu").value = ""
+}
+</script>
+<!-- create table -->
+<body>
+<div class = title >Edureka JavaScript Calculator</div>
+<table border="1">
+<tr>
+<td><input type="button" value="c" onclick="clr()"/> </td>
+<td colspan="3"><input type="text" id="edu"/></td>
+<!-- clr() function will call clr to clear all value -->
+</tr>
+<tr>
+<!-- creating buttons and assigning values-->
+<td><input type="button" value="+" onclick="dis('+')"/> </td>
+<td><input type="button" value="1" onclick="dis('1')"/> </td>
+<td><input type="button" value="2" onclick="dis('2')"/> </td>
+<td><input type="button" value="3" onclick="dis('3')"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="-" onclick="dis('-')"/> </td>
+<td><input type="button" value="4" onclick="dis('4')"/> </td>
+<td><input type="button" value="5" onclick="dis('5')"/> </td>
+<td><input type="button" value="6" onclick="dis('6')"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="*" onclick="dis('*')"/> </td>
+<td><input type="button" value="7" onclick="dis('7')"/> </td>
+<td><input type="button" value="8" onclick="dis('8')"/> </td>
+<td><input type="button" value="9" onclick="dis('9')"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="/" onclick="dis('/')"/> </td>
+<td><input type="button" value="." onclick="dis('.')"/> </td>
+<td><input type="button" value="0" onclick="dis('0')"/> </td>
+<!-- Evaluating function call eval()-->
+<td><input type="button" value="=" onclick="solve()"/> </td>
+</tr>
+</table>
+</body>
     </div>
 
     
