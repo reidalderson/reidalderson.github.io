@@ -153,7 +153,16 @@ document.getElementById(&#34;edu&#34;).value = &#34;&#34;
 &lt;td&gt;&lt;input type=&#34;button&#34; value=&#34;=&#34; onclick=&#34;solve()&#34;/&gt; &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-&lt;/body&gt;</description>
+&lt;/body&gt;
+&lt;p&gt;adsflk;ajsdfkasdf;kasdf;alksdjf;askjf&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import tkinter as tk
+
+window = tk.Tk()
+greeting = tk.Label(text=&amp;quot;Hello, Tkinter&amp;quot;)
+greeting.pack()
+window.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
