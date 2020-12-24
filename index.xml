@@ -84,26 +84,6 @@ print(&#39;hello world&#39;)
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;uCalc_325402&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt; var widgetOptions325402 = { bg_color: &amp;quot;transparent&amp;quot; }; (function() { var a = document.createElement(&amp;quot;script&amp;quot;), h = &amp;quot;head&amp;quot;; a.async = true; a.src = (document.location.protocol == &amp;quot;https:&amp;quot; ? &amp;quot;https:&amp;quot; : &amp;quot;http:&amp;quot;) + &amp;quot;//ucalc.pro/api/widget.js?id=325402&amp;amp;t=&amp;quot;+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;asdf ASDFasdfASDF&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;&amp;lt;script&amp;gt;
-//function for displaying values
-function dis(val)
-{
-document.getElementById(&amp;quot;edu&amp;quot;).value+=val
- }
-//function for evaluation
-function solve()
-{
-let x = document.getElementById(&amp;quot;edu&amp;quot;).value
-let y = eval(x)
-document.getElementById(&amp;quot;edu&amp;quot;).value = y
-}
-//function for clearing the display
-function clr()
-{
-document.getElementById(&amp;quot;edu&amp;quot;).value = &amp;quot;&amp;quot;
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;reid&lt;/p&gt;
 &lt;p&gt;test&lt;/p&gt;
 &lt;script&gt;
