@@ -1,0 +1,99 @@
+#### Bioinformatics ####
+(1) Proteome calculations with Python, part 1
+-- downloading proteomes from UniProt
+-- plotting 1D histograms of size distributions
+-- fitting Gaussian, skewed Gaussian, log normal distributions
+-- compare human vs. e coli, human vs. yeast, human vs. plant
+
+(2) Proteome calcuations with Python, part 2
+-- counting motifs 
+-- expected motif counts
+-- chisq analysis for statistical significance
+-- ordered vs. disordered?
+
+(3) Proteome calculations with Python, part 3
+-- calcualting pI, hydropathy, pscore, etc
+-- 2D histograms of e.g. pI vs size, hydropathy vs. pscore
+
+(4) some calculators
+-- e.g. protein MW vs Rh for folded, unfolded
+-- tau_c 
+-- kd vs conc
+-- things found on expasy & calctool
+-- etc
+
+##############################################################################################################
+
+#### NMR #####
+(1) Simulating NMR spectra with Python, part 1
+-- Bloch equations
+-- evolution of magnetization
+-- Bloch sphere?
+-- simulate 1D spectrum analytically
+
+(2) Simulating NMR spectra with Python, part 2
+-- analytical, a la June 2019 presentation
+-- Fourier transform, quadrature detection
+-- measuring chemical shift in indirect dimension
+-- SPEED approach, AMS method
+
+(2) Simulating NMR spectra with Python, part 3
+-- two-spin system (basis = 7)
+-- Kuprov's 1D simulation with strong coupling
+-- Convert into Python
+-- Compare to Hore's case of strong coupling with pos vs. negative J
+-- Compare to weak coupling example
+
+(3) Simulating NMR spectra with Python, part 3
+-- one-spin system (basis = 4), weak coupling
+-- chemical exchange A<-->B (basis = 4-->7)
+-- Bloch-McConnell equations
+-- effects on 1D spectra as a function of pB, kex, Dw, etc
+-- slow vs. int. vs. fast exchange
+
+(4) Simulating NMR spectra with Python, part 4
+-- two-spin system, weak coupling
+-- chemical exchange A<-->B (basis = 4-->7)
+-- simulate a 15N CPMG RD experiment
+-- fit with lmfit and Tugarinov approach
+
+(5) part 6
+-- simulating 15N relaxation experiments analytically
+-- R1, R2, hetNOE
+-- rotational diffusion tensors
+-- simulate Lipari-Szabo
+-- extended model free
+
+(6) part 7 
+-- simulating 15N relaxation experiments numerically?
+-- large basis set, require calculating relaxation rates as input
+-- simulate 1D spectra as a function of delay time
+
+--> exchange regime, CSPs
+--> relaxation, secondary chemical shifts
+
+
+
+##############################################################################################################
+
+#### Misc ####
+
+(1) Protein folding
+-- simulate kinetics
+-- simulate thermodynamics 
+-- simulate modified Levinthal's paradox with keystrokes
+-- SPHERE calculator for HX rates as a function of T, pH
+
+(2) Random walk
+-- script from April 2020
+
+(3) Molecular dynamics
+-- script from EMBO j
+
+(4) Quantum
+-- script from April 2020
+
+(5) DNA
+-- make primers
+
+
