@@ -157,12 +157,15 @@ window.mainloop()
 function myFunction() {
   document.getElementById(&#34;demo&#34;).innerHTML = &#34;Paragraph changed.&#34;;
 }
-&lt;/script&gt;
+function test(a, b) {
+  return a*b;
+}
+&lt;p&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;h2&gt;JavaScript in Head&lt;/h2&gt;
 &lt;p id=&#34;demo&#34;&gt;A Paragraph.&lt;/p&gt;
-&lt;p&gt;&lt;button type=&#34;button&#34; onclick=&#34;myFunction()&#34;&gt;Try it&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button type=&#34;button&#34; onclick=&#34;test.toString()&#34;&gt;Try it&lt;/button&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt; </description>
     </item>
