@@ -37,7 +37,13 @@ Some useful tools
 &lt;a href=&#34;https://www.ebi.ac.uk/pdbe/pisa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBe Proteins, Interfaces, Structures, and Assemblies (PISA)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;a href=&#34;https://www.ebi.ac.uk/pdbe/emdb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Electron Microscopy Data Bank (EMDB)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.expasy.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ExPASY&lt;/a&gt; bioinformatics resource portal of the Swiss Institute of Bioinformatics, including many structural biology tools
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://swissmodel.expasy.org/interactive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SWISS-MODEL&lt;/a&gt; for homology modeling of protein structures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;http://sosnick.uchicago.edu/gdmcl.html&#34;&gt;http://sosnick.uchicago.edu/gdmcl.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/harmslab/pdbtools&#34;&gt;https://github.com/harmslab/pdbtools&lt;/a&gt;&lt;/p&gt;

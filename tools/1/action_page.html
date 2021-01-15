@@ -1,0 +1,332 @@
+<body class="department layout14 level5">
+    <div class="ie-warning">
+        <style type="text/css">
+            @media (max-width: 640px) {
+                .ie-warning a {
+                    font-size: 0.8em;
+                }
+
+                .ie-warning h3 {
+                    line-height: 1;
+                }
+            }
+    
+            .ie-warning h3 {
+                text-align: center;
+            }
+    
+            .ie-warning a:hover {
+                text-decoration: underline;
+            }
+    
+        </style>
+    </div>
+
+
+    <div class="row">
+        <nav class="small-12 large-3 medium-4 columns medium-only-portrait-4 pagenav left-menu align-top">
+    
+        </nav>
+        <div class="small-12 large-9 medium-8 columns medium-only-portrait-8 content main" id="au_content">
+            <div class="row">
+                <div class="large-8 medium-8 medium-only-portrait-12 small-12 columns">
+                    <h1 class="pagetitle">Power level calculator</h1>
+                    <div id="c25423" class="csc-default">
+                        <script type="text/javascript">
+                            var submitbutton = -1;
+                            var calculating = false;
+    
+                            function calculate_db() {
+                                calculating = true;
+                                document.getElementById('power0').style.backgroundColor = 'white';
+                                document.getElementById('db').style.backgroundColor = 'white';
+                                document.getElementById('watts').style.backgroundColor = 'white';
+                                var w0 = document.getElementById('power0').value;
+                                if (!w0.match(/\S/)) {
+                                    document.getElementById('power0').style.backgroundColor = 'red';
+                                    alert("You must specify the power at 0 dB");
+                                    calculating = false;
+                                    return;
+                                }
+                                if (submitbutton == 0) {
+                                    var db = document.getElementById('db').value;
+                                    if (!db.match(/\S/)) {
+                                        document.getElementById('db').style.backgroundColor = 'red';
+                                        alert("You must specify the dB value");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var watts = w0 * Math.exp(-Math.log(2) / 3 * db);
+                                    document.getElementById('watts').value = watts.toFixed(2);
+                                    document.getElementById('watts').style.backgroundColor = 'yellow';
+                                    document.getElementById('db').style.backgroundColor = 'white';
+                                }
+                                if (submitbutton == 1) {
+                                    var watts = document.getElementById('watts').value;
+                                    if (!watts.match(/\S/)) {
+                                        document.getElementById('watts').style.backgroundColor = 'red';
+                                        alert("You must specify the Watts value");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var db = -Math.log(watts / w0) / Math.log(2) * 3;
+                                    document.getElementById('db').value = db.toFixed(2);
+                                    document.getElementById('watts').style.backgroundColor = 'white';
+                                    document.getElementById('db').style.backgroundColor = 'yellow';
+                                }
+                                calculating = false;
+                                return false;
+                            }
+
+
+                            function changeBack(obj) {
+                                if (!calculating) obj.style.backgroundColor = 'white';
+                            }
+
+
+
+
+                            function calculate_pulse() {
+                                calculating = false;
+                                document.getElementById('knownP').style.backgroundColor = 'white';
+                                document.getElementById('knownW').style.backgroundColor = 'white';
+                                document.getElementById('knowndB').style.backgroundColor = 'white';
+                                document.getElementById('unknownP').style.backgroundColor = 'white';
+                                document.getElementById('unknownW').style.backgroundColor = 'white';
+                                document.getElementById('unknowndB').style.backgroundColor = 'white';
+                                var tp = document.getElementById('knownP').value;
+                                if (!tp.match(/\S/)) {
+                                    document.getElementById('knownP').style.backgroundColor = 'red';
+                                    alert("You must specify the known pulse length");
+                                    calculating = false;
+                                    return;
+                                }
+                                if (submitbutton == 0) {
+                                    var newtp = document.getElementById('unknownP').value;
+                                    if (!newtp.match(/\S/)) {
+                                        document.getElementById("unknownP").style.backgroundColor = 'red';
+                                        alert("You must specity target pulse length");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var w = document.getElementById('knownW').value;
+                                    if (w.match(/\S/)) {
+                                        var neww = Math.pow(tp / newtp, 2) * w;
+                                        document.getElementById('unknownW').value = neww.toFixed(2);
+                                        document.getElementById('unknownW').style.backgroundColor = 'yellow';
+                                    }
+                                    var db = document.getElementById('knowndB').value;
+                                    if (db.match(/\S/)) {
+                                        var a = Math.exp(Math.log(2) / 6 * db) / tp;
+                                        var newdb = -Math.log(1 / (newtp * a)) / Math.log(2) * 6;
+                                        document.getElementById('unknowndB').value = newdb.toFixed(2);
+                                        document.getElementById('unknowndB').style.backgroundColor = 'yellow';
+                                    }
+                                }
+                                if (submitbutton == 1) {
+                                    var neww = document.getElementById('unknownW').value;
+                                    if (!neww.match(/\S/)) {
+                                        document.getElementById("unknownW").style.backgroundColor = 'red';
+                                        alert("You must specity target power in Watts");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var w = document.getElementById('knownW').value;
+                                    if (!w.match(/\S/)) {
+                                        document.getElementById("knownW").style.backgroundColor = 'red';
+                                        alert("You must known power in Watts");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var newtp = tp * Math.sqrt(w / neww);
+                                    document.getElementById('unknownP').value = newtp.toFixed(2);
+                                    document.getElementById('unknownP').style.backgroundColor = 'yellow';
+                                }
+                                if (submitbutton == 2) {
+                                    var newdb = document.getElementById('unknowndB').value;
+                                    if (!newdb.match(/\S/)) {
+                                        document.getElementById("unknowndB").style.backgroundColor = 'red';
+                                        alert("You must specity target power in dB");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var db = document.getElementById('knowndB').value;
+                                    if (!db.match(/\S/)) {
+                                        document.getElementById("knowndB").style.backgroundColor = 'red';
+                                        alert("You must known power in dB");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var a = Math.exp(Math.log(2) / 6 * db) / tp;
+                                    var newtp = Math.exp(Math.log(2) / 6 * newdb) / a;
+                                    document.getElementById('unknownP').value = newtp.toFixed(2);
+                                    document.getElementById('unknownP').style.backgroundColor = 'yellow';
+                                }
+                                calculating = false;
+                                return false;
+                            }
+
+
+
+
+
+                            function calculate_rf() {
+                                calculating = true;
+                                document.getElementById('t90').style.backgroundColor = 'white';
+                                document.getElementById('rfp').style.backgroundColor = 'white';
+                                if (submitbutton == 0) {
+                                    var tp = document.getElementById('t90').value;
+                                    if (!tp.match(/\S/)) {
+                                        document.getElementById('t90').style.backgroundColor = 'red';
+                                        alert("You must specify the pulse length");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var rf = 250 / tp;
+                                    document.getElementById('rfp').value = rf.toFixed(2);
+                                    document.getElementById('rfp').style.backgroundColor = 'yellow';
+                                }
+                                if (submitbutton == 1) {
+                                    var rf = document.getElementById('rfp').value;
+                                    if (!rf.match(/\S/)) {
+                                        document.getElementById('rfp').style.backgroundColor = 'red';
+                                        alert("You must specify the RF field strength");
+                                        calculating = false;
+                                        return;
+                                    }
+                                    var tp = 250 / rf;
+                                    document.getElementById('t90').value = tp.toFixed(2);
+                                    document.getElementById('t90').style.backgroundColor = 'yellow';
+                                }
+                                calculating = false;
+                                return false;
+                            }
+    
+                        </script>
+                        
+                        <p style="font-size:10px">Version 1.0, Thomas Vosegaard</p>
+                        <form onsubmit="calculate_db(); return false;">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h2>Watt ↔ dB</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amplifier power at 0 dB</td>
+                                        <td><input type="text" id="power0" size="8" value="250" onchange="changeBack(this); return true;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>dB</td>
+                                        <td><input type="text" id="db" size="8" onchange="changeBack(this); return true;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Watts</td>
+                                        <td><input type="text" id="watts" size="8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-justify: center;">
+                                            <input type="submit" onclick="submitbutton=0;" value="dB → Watts" id="db2watts">&nbsp;
+                                            <input type="submit" onclick="submitbutton=1;" value="Watts → dB" id="watts2db">&nbsp;
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+
+
+
+
+
+
+                        <form onsubmit="calculate_pulse(); return false;">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h2>Pulse length ↔ Power</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Pulse length</td>
+                                        <td>Watts</td>
+                                        <td>dB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Known values</td>
+                                        <td><input type="text" id="knownP" size="8" onchange="changeBack(this); return true;"></td>
+                                        <td><input type="text" id="knownW" size="8" onchange="changeBack(this); return true;"></td>
+                                        <td><input type="text" id="knowndB" size="8" onchange="changeBack(this); return true;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Target values</td>
+                                        <td><input type="text" id="unknownP" size="8" onchange="changeBack(this); return true;"></td>
+                                        <td><input type="text" id="unknownW" size="8" onchange="changeBack(this); return true;"></td>
+                                        <td><input type="text" id="unknowndB" size="8" onchange="changeBack(this); return true;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td style="text-justify: center;">
+                                            <input type="submit" onclick="submitbutton=0;" value="Pulse → Power">&nbsp;
+                                        </td>
+                                        <td style="text-justify: center;">
+                                            <input type="submit" onclick="submitbutton=1;" value="Watts → Pulse">&nbsp;
+                                        </td>
+                                        <td style="text-justify: center;">
+                                            <input type="submit" onclick="submitbutton=2;" value="dB → Pulse">&nbsp;
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+
+
+
+
+                        <form onsubmit="calculate_rf(); return false;">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h2>Pulse length ↔ RF</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>90 deg pulse length (us)</td>
+                                        <td>RF (kHz)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" id="t90" size="8" onchange="changeBack(this); return true;"></td>
+                                        <td><input type="text" id="rfp" size="8" onchange="changeBack(this); return true;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-justify: center;">
+                                            <input type="submit" onclick="submitbutton=0;" value="Pulse → RF">&nbsp;
+                                        </td>
+                                        <td style="text-justify: center;">
+                                            <input type="submit" onclick="submitbutton=1;" value="RF → Pulse">&nbsp;
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <div class="large-4 medium-4 medium-only-portrait-12 small-12 columns related">
+    
+                </div>
+                <div class="column medium-12 small-12">
+                    <div class="au_contentauthor">
+                        <div class="au_contentauthor-revised">Revised&nbsp;10.12.2020&nbsp;-&nbsp;</div>
+                        <div class="tx-lfcontactauthor-pi1">
+                            <a href="mailto:tv@chem.au.dk?subject=t3Pageid:9671_t3PageUrl:http://inano.au.dk/about/research-centers/nmr/links-and-tools/power-level-calculator/">Thomas Vosegaard</a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
