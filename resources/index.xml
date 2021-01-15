@@ -27,17 +27,33 @@ Some useful tools
     &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
     &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
     &lt;/ol&gt;
+&lt;h2 id=&#34;protein-structures&#34;&gt;Protein Structures&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.rcsb.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Protein Data Bank (PDB)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDB in Europe (PDBe)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/pisa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBe Proteins, Interfaces, Structures, and Assemblies (PISA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/emdb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Electron Microscopy Data Bank (EMDB)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;http://sosnick.uchicago.edu/gdmcl.html&#34;&gt;http://sosnick.uchicago.edu/gdmcl.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/harmslab/pdbtools&#34;&gt;https://github.com/harmslab/pdbtools&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; PDB 
-&amp;ndash; BLAST
-&amp;ndash; ClustalOmega
-&amp;ndash; Ensembl
-&amp;ndash; OMIM
-&amp;ndash; COSMIC
-UniProt
-Expasy ProtParam 
-Expasy&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.uniprot.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UniProt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;BLAST&lt;/li&gt;
+&lt;li&gt;ClustalOmega&lt;/li&gt;
+&lt;li&gt;Ensembl&lt;/li&gt;
+&lt;li&gt;OMIM&lt;/li&gt;
+&lt;li&gt;COSMIC&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;Expasy ProtParam&lt;/li&gt;
+&lt;li&gt;Expasy&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

@@ -746,339 +746,21 @@ Some useful tools
     &lt;b&gt;&lt;li&gt;Plot histograms of protein length distributions&lt;/li&gt;&lt;/b&gt;
     &lt;/ol&gt;
 hello!!!!!!!!!!!!!
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;body class=&amp;quot;department layout14 level5&amp;quot;&amp;gt;
-    &amp;lt;div class=&amp;quot;ie-warning&amp;quot;&amp;gt;
-        &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;
-            @media (max-width: 640px) {
-                .ie-warning a {
-                    font-size: 0.8em;
-                }
-
-                .ie-warning h3 {
-                    line-height: 1;
-                }
-            }
-
-            .ie-warning h3 {
-                text-align: center;
-            }
-
-            .ie-warning a:hover {
-                text-decoration: underline;
-            }
-
-        &amp;lt;/style&amp;gt;
-    &amp;lt;/div&amp;gt;
-
-
-    &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
-        &amp;lt;nav class=&amp;quot;small-12 large-3 medium-4 columns medium-only-portrait-4 pagenav left-menu align-top&amp;quot;&amp;gt;
-
-        &amp;lt;/nav&amp;gt;
-        &amp;lt;div class=&amp;quot;small-12 large-9 medium-8 columns medium-only-portrait-8 content main&amp;quot; id=&amp;quot;au_content&amp;quot;&amp;gt;
-            &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
-                &amp;lt;div class=&amp;quot;large-8 medium-8 medium-only-portrait-12 small-12 columns&amp;quot;&amp;gt;
-                    &amp;lt;h1 class=&amp;quot;pagetitle&amp;quot;&amp;gt;Power level calculator&amp;lt;/h1&amp;gt;
-                    &amp;lt;div id=&amp;quot;c25423&amp;quot; class=&amp;quot;csc-default&amp;quot;&amp;gt;
-                        &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
-                            var submitbutton = -1;
-                            var calculating = false;
-
-                            function calculate_db() {
-                                calculating = true;
-                                document.getElementById(&#39;power0&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;db&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;watts&#39;).style.backgroundColor = &#39;white&#39;;
-                                var w0 = document.getElementById(&#39;power0&#39;).value;
-                                if (!w0.match(/\S/)) {
-                                    document.getElementById(&#39;power0&#39;).style.backgroundColor = &#39;red&#39;;
-                                    alert(&amp;quot;You must specify the power at 0 dB&amp;quot;);
-                                    calculating = false;
-                                    return;
-                                }
-                                if (submitbutton == 0) {
-                                    var db = document.getElementById(&#39;db&#39;).value;
-                                    if (!db.match(/\S/)) {
-                                        document.getElementById(&#39;db&#39;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must specify the dB value&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var watts = w0 * Math.exp(-Math.log(2) / 3 * db);
-                                    document.getElementById(&#39;watts&#39;).value = watts.toFixed(2);
-                                    document.getElementById(&#39;watts&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                    document.getElementById(&#39;db&#39;).style.backgroundColor = &#39;white&#39;;
-                                }
-                                if (submitbutton == 1) {
-                                    var watts = document.getElementById(&#39;watts&#39;).value;
-                                    if (!watts.match(/\S/)) {
-                                        document.getElementById(&#39;watts&#39;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must specify the Watts value&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var db = -Math.log(watts / w0) / Math.log(2) * 3;
-                                    document.getElementById(&#39;db&#39;).value = db.toFixed(2);
-                                    document.getElementById(&#39;watts&#39;).style.backgroundColor = &#39;white&#39;;
-                                    document.getElementById(&#39;db&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                }
-                                calculating = false;
-                                return false;
-                            }
-
-
-                            function changeBack(obj) {
-                                if (!calculating) obj.style.backgroundColor = &#39;white&#39;;
-                            }
-
-
-
-
-                            function calculate_pulse() {
-                                calculating = false;
-                                document.getElementById(&#39;knownP&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;knownW&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;knowndB&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;unknownP&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;unknownW&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;unknowndB&#39;).style.backgroundColor = &#39;white&#39;;
-                                var tp = document.getElementById(&#39;knownP&#39;).value;
-                                if (!tp.match(/\S/)) {
-                                    document.getElementById(&#39;knownP&#39;).style.backgroundColor = &#39;red&#39;;
-                                    alert(&amp;quot;You must specify the known pulse length&amp;quot;);
-                                    calculating = false;
-                                    return;
-                                }
-                                if (submitbutton == 0) {
-                                    var newtp = document.getElementById(&#39;unknownP&#39;).value;
-                                    if (!newtp.match(/\S/)) {
-                                        document.getElementById(&amp;quot;unknownP&amp;quot;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must specity target pulse length&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var w = document.getElementById(&#39;knownW&#39;).value;
-                                    if (w.match(/\S/)) {
-                                        var neww = Math.pow(tp / newtp, 2) * w;
-                                        document.getElementById(&#39;unknownW&#39;).value = neww.toFixed(2);
-                                        document.getElementById(&#39;unknownW&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                    }
-                                    var db = document.getElementById(&#39;knowndB&#39;).value;
-                                    if (db.match(/\S/)) {
-                                        var a = Math.exp(Math.log(2) / 6 * db) / tp;
-                                        var newdb = -Math.log(1 / (newtp * a)) / Math.log(2) * 6;
-                                        document.getElementById(&#39;unknowndB&#39;).value = newdb.toFixed(2);
-                                        document.getElementById(&#39;unknowndB&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                    }
-                                }
-                                if (submitbutton == 1) {
-                                    var neww = document.getElementById(&#39;unknownW&#39;).value;
-                                    if (!neww.match(/\S/)) {
-                                        document.getElementById(&amp;quot;unknownW&amp;quot;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must specity target power in Watts&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var w = document.getElementById(&#39;knownW&#39;).value;
-                                    if (!w.match(/\S/)) {
-                                        document.getElementById(&amp;quot;knownW&amp;quot;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must known power in Watts&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var newtp = tp * Math.sqrt(w / neww);
-                                    document.getElementById(&#39;unknownP&#39;).value = newtp.toFixed(2);
-                                    document.getElementById(&#39;unknownP&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                }
-                                if (submitbutton == 2) {
-                                    var newdb = document.getElementById(&#39;unknowndB&#39;).value;
-                                    if (!newdb.match(/\S/)) {
-                                        document.getElementById(&amp;quot;unknowndB&amp;quot;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must specity target power in dB&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var db = document.getElementById(&#39;knowndB&#39;).value;
-                                    if (!db.match(/\S/)) {
-                                        document.getElementById(&amp;quot;knowndB&amp;quot;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must known power in dB&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var a = Math.exp(Math.log(2) / 6 * db) / tp;
-                                    var newtp = Math.exp(Math.log(2) / 6 * newdb) / a;
-                                    document.getElementById(&#39;unknownP&#39;).value = newtp.toFixed(2);
-                                    document.getElementById(&#39;unknownP&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                }
-                                calculating = false;
-                                return false;
-                            }
-
-
-
-
-
-                            function calculate_rf() {
-                                calculating = true;
-                                document.getElementById(&#39;t90&#39;).style.backgroundColor = &#39;white&#39;;
-                                document.getElementById(&#39;rfp&#39;).style.backgroundColor = &#39;white&#39;;
-                                if (submitbutton == 0) {
-                                    var tp = document.getElementById(&#39;t90&#39;).value;
-                                    if (!tp.match(/\S/)) {
-                                        document.getElementById(&#39;t90&#39;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must specify the pulse length&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var rf = 250 / tp;
-                                    document.getElementById(&#39;rfp&#39;).value = rf.toFixed(2);
-                                    document.getElementById(&#39;rfp&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                }
-                                if (submitbutton == 1) {
-                                    var rf = document.getElementById(&#39;rfp&#39;).value;
-                                    if (!rf.match(/\S/)) {
-                                        document.getElementById(&#39;rfp&#39;).style.backgroundColor = &#39;red&#39;;
-                                        alert(&amp;quot;You must specify the RF field strength&amp;quot;);
-                                        calculating = false;
-                                        return;
-                                    }
-                                    var tp = 250 / rf;
-                                    document.getElementById(&#39;t90&#39;).value = tp.toFixed(2);
-                                    document.getElementById(&#39;t90&#39;).style.backgroundColor = &#39;yellow&#39;;
-                                }
-                                calculating = false;
-                                return false;
-                            }
-
-                        &amp;lt;/script&amp;gt;
-                        
-                        &amp;lt;p style=&amp;quot;font-size:10px&amp;quot;&amp;gt;Version 1.0, Thomas Vosegaard&amp;lt;/p&amp;gt;
-                        &amp;lt;form onsubmit=&amp;quot;calculate_db(); return false;&amp;quot;&amp;gt;
-                            &amp;lt;table&amp;gt;
-                                &amp;lt;tbody&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td colspan=&amp;quot;2&amp;quot;&amp;gt;
-                                            &amp;lt;h2&amp;gt;Watt ↔ dB&amp;lt;/h2&amp;gt;
-                                        &amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;Amplifier power at 0 dB&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;power0&amp;quot; size=&amp;quot;8&amp;quot; value=&amp;quot;250&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;dB&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;db&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;Watts&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;watts&amp;quot; size=&amp;quot;8&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td colspan=&amp;quot;2&amp;quot; style=&amp;quot;text-justify: center;&amp;quot;&amp;gt;
-                                            &amp;lt;input type=&amp;quot;submit&amp;quot; onclick=&amp;quot;submitbutton=0;&amp;quot; value=&amp;quot;dB → Watts&amp;quot; id=&amp;quot;db2watts&amp;quot;&amp;gt;&amp;amp;nbsp;
-                                            &amp;lt;input type=&amp;quot;submit&amp;quot; onclick=&amp;quot;submitbutton=1;&amp;quot; value=&amp;quot;Watts → dB&amp;quot; id=&amp;quot;watts2db&amp;quot;&amp;gt;&amp;amp;nbsp;
-                                        &amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                &amp;lt;/tbody&amp;gt;
-                            &amp;lt;/table&amp;gt;
-                        &amp;lt;/form&amp;gt;
-
-
-
-
-
-
-                        &amp;lt;form onsubmit=&amp;quot;calculate_pulse(); return false;&amp;quot;&amp;gt;
-                            &amp;lt;table&amp;gt;
-                                &amp;lt;tbody&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td colspan=&amp;quot;2&amp;quot;&amp;gt;
-                                            &amp;lt;h2&amp;gt;Pulse length ↔ Power&amp;lt;/h2&amp;gt;
-                                        &amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;Pulse length&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;Watts&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;dB&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;Known values&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;knownP&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;knownW&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;knowndB&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;Target values&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;unknownP&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;unknownW&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;unknowndB&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-                                        &amp;lt;td style=&amp;quot;text-justify: center;&amp;quot;&amp;gt;
-                                            &amp;lt;input type=&amp;quot;submit&amp;quot; onclick=&amp;quot;submitbutton=0;&amp;quot; value=&amp;quot;Pulse → Power&amp;quot;&amp;gt;&amp;amp;nbsp;
-                                        &amp;lt;/td&amp;gt;
-                                        &amp;lt;td style=&amp;quot;text-justify: center;&amp;quot;&amp;gt;
-                                            &amp;lt;input type=&amp;quot;submit&amp;quot; onclick=&amp;quot;submitbutton=1;&amp;quot; value=&amp;quot;Watts → Pulse&amp;quot;&amp;gt;&amp;amp;nbsp;
-                                        &amp;lt;/td&amp;gt;
-                                        &amp;lt;td style=&amp;quot;text-justify: center;&amp;quot;&amp;gt;
-                                            &amp;lt;input type=&amp;quot;submit&amp;quot; onclick=&amp;quot;submitbutton=2;&amp;quot; value=&amp;quot;dB → Pulse&amp;quot;&amp;gt;&amp;amp;nbsp;
-                                        &amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                &amp;lt;/tbody&amp;gt;
-                            &amp;lt;/table&amp;gt;
-                        &amp;lt;/form&amp;gt;
-
-
-
-
-                        &amp;lt;form onsubmit=&amp;quot;calculate_rf(); return false;&amp;quot;&amp;gt;
-                            &amp;lt;table&amp;gt;
-                                &amp;lt;tbody&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td colspan=&amp;quot;2&amp;quot;&amp;gt;
-                                            &amp;lt;h2&amp;gt;Pulse length ↔ RF&amp;lt;/h2&amp;gt;
-                                        &amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;90 deg pulse length (us)&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;RF (kHz)&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;t90&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                        &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;rfp&amp;quot; size=&amp;quot;8&amp;quot; onchange=&amp;quot;changeBack(this); return true;&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                    &amp;lt;tr&amp;gt;
-                                        &amp;lt;td style=&amp;quot;text-justify: center;&amp;quot;&amp;gt;
-                                            &amp;lt;input type=&amp;quot;submit&amp;quot; onclick=&amp;quot;submitbutton=0;&amp;quot; value=&amp;quot;Pulse → RF&amp;quot;&amp;gt;&amp;amp;nbsp;
-                                        &amp;lt;/td&amp;gt;
-                                        &amp;lt;td style=&amp;quot;text-justify: center;&amp;quot;&amp;gt;
-                                            &amp;lt;input type=&amp;quot;submit&amp;quot; onclick=&amp;quot;submitbutton=1;&amp;quot; value=&amp;quot;RF → Pulse&amp;quot;&amp;gt;&amp;amp;nbsp;
-                                        &amp;lt;/td&amp;gt;
-                                    &amp;lt;/tr&amp;gt;
-                                &amp;lt;/tbody&amp;gt;
-                            &amp;lt;/table&amp;gt;
-                        &amp;lt;/form&amp;gt;
-                    &amp;lt;/div&amp;gt;
-                &amp;lt;/div&amp;gt;
-                &amp;lt;div class=&amp;quot;large-4 medium-4 medium-only-portrait-12 small-12 columns related&amp;quot;&amp;gt;
-
-                &amp;lt;/div&amp;gt;
-                &amp;lt;div class=&amp;quot;column medium-12 small-12&amp;quot;&amp;gt;
-                    &amp;lt;div class=&amp;quot;au_contentauthor&amp;quot;&amp;gt;
-                        &amp;lt;div class=&amp;quot;au_contentauthor-revised&amp;quot;&amp;gt;Revised&amp;amp;nbsp;10.12.2020&amp;amp;nbsp;-&amp;amp;nbsp;&amp;lt;/div&amp;gt;
-                        &amp;lt;div class=&amp;quot;tx-lfcontactauthor-pi1&amp;quot;&amp;gt;
-                            &amp;lt;a href=&amp;quot;mailto:tv@chem.au.dk?subject=t3Pageid:9671_t3PageUrl:http://inano.au.dk/about/research-centers/nmr/links-and-tools/power-level-calculator/&amp;quot;&amp;gt;Thomas Vosegaard&amp;lt;/a&amp;gt;
-                        &amp;lt;/div&amp;gt;
-
-                    &amp;lt;/div&amp;gt;
-                &amp;lt;/div&amp;gt;
-            &amp;lt;/div&amp;gt;
-        &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-    
-&lt;/code&gt;&lt;/pre&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function myFunction() {
+  document.getElementById(&#34;demo&#34;).innerHTML = &#34;Paragraph changed.&#34;;
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;JavaScript in Head&lt;/h2&gt;
+&lt;p id=&#34;demo&#34;&gt;A Paragraph.&lt;/p&gt;
+&lt;p&gt;&lt;button type=&#34;button&#34; onclick=&#34;myFunction()&#34;&gt;Try it&lt;/button&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt; 
 </description>
     </item>
     
@@ -1097,17 +779,33 @@ Some useful tools
     &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
     &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
     &lt;/ol&gt;
+&lt;h2 id=&#34;protein-structures&#34;&gt;Protein Structures&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.rcsb.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Protein Data Bank (PDB)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDB in Europe (PDBe)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/pisa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBe Proteins, Interfaces, Structures, and Assemblies (PISA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/emdb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Electron Microscopy Data Bank (EMDB)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;http://sosnick.uchicago.edu/gdmcl.html&#34;&gt;http://sosnick.uchicago.edu/gdmcl.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/harmslab/pdbtools&#34;&gt;https://github.com/harmslab/pdbtools&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; PDB 
-&amp;ndash; BLAST
-&amp;ndash; ClustalOmega
-&amp;ndash; Ensembl
-&amp;ndash; OMIM
-&amp;ndash; COSMIC
-UniProt
-Expasy ProtParam 
-Expasy&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.uniprot.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UniProt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;BLAST&lt;/li&gt;
+&lt;li&gt;ClustalOmega&lt;/li&gt;
+&lt;li&gt;Ensembl&lt;/li&gt;
+&lt;li&gt;OMIM&lt;/li&gt;
+&lt;li&gt;COSMIC&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;Expasy ProtParam&lt;/li&gt;
+&lt;li&gt;Expasy&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
