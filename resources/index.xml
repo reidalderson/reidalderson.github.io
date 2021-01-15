@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resources | Reid Alderson</title>
+    <link>/resources/</link>
+      <atom:link href="/resources/index.xml" rel="self" type="application/rss+xml" />
+    <description>Resources</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 19 Apr 2020 15:48:03 -0400</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Resources</title>
+      <link>/resources/</link>
+    </image>
+    
+    <item>
+      <title>Bioinformatics with Python, part 1</title>
+      <link>/resources/1/</link>
+      <pubDate>Sun, 19 Apr 2020 15:48:03 -0400</pubDate>
+      <guid>/resources/1/</guid>
+      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
+Some useful tools
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;ol&gt;
+    &lt;b&gt;&lt;li&gt;Download and format UniProt proteome files&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;Compute the mean and median protein length&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;Plot histograms of protein length distributions&lt;/li&gt;&lt;/b&gt;
+    &lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
