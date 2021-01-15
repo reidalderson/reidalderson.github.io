@@ -54,7 +54,7 @@ function myFunction() {
   &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34; value=&#34;Doe&#34;&gt;&lt;br&gt;&lt;br&gt;
   &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
 &lt;/form&gt; 
-&lt;p&gt;If you click the &#34;Submit&#34; button, the form-data will be sent to a page called &#34;/action_page.php&#34;.&lt;/p&gt;
+&lt;p&gt;If you click the &#34;Submit&#34; button, the form-data will be sent to a page called &#34;/action_page.html&#34;.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </description>

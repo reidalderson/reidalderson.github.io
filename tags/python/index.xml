@@ -764,7 +764,7 @@ function myFunction() {
   &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34; value=&#34;Doe&#34;&gt;&lt;br&gt;&lt;br&gt;
   &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
 &lt;/form&gt; 
-&lt;p&gt;If you click the &#34;Submit&#34; button, the form-data will be sent to a page called &#34;/action_page.php&#34;.&lt;/p&gt;
+&lt;p&gt;If you click the &#34;Submit&#34; button, the form-data will be sent to a page called &#34;/action_page.html&#34;.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </description>
@@ -780,23 +780,27 @@ Some useful tools
     &lt;br&gt;
     &lt;br&gt;
     &lt;br&gt;&lt;br&gt;
-    &lt;ol&gt;
-    &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
-    &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
-    &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
-    &lt;/ol&gt;
-&lt;h2 id=&#34;protein-structures&#34;&gt;Protein Structures&lt;/h2&gt;
+&lt;h1 id=&#34;uprotein-structuresu&#34;&gt;&lt;u&gt;Protein Structures&lt;/u&gt;&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://www.rcsb.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Protein Data Bank (PDB)&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.rcsb.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Protein Data Bank (PDB)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDB in Europe (PDBe)&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDB in Europe (PDBe)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/pisa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBe Proteins, Interfaces, Structures, and Assemblies (PISA)&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/pisa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBe Proteins, Interfaces, Structures, and Assemblies (PISA)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/emdb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Electron Microscopy Data Bank (EMDB)&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/emdb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Electron Microscopy Data Bank (EMDB)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://www.expasy.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ExPASY&lt;/a&gt; bioinformatics resource portal of the Swiss Institute of Bioinformatics, including many structural biology tools
+&lt;p&gt;
+&lt;a href=&#34;https://www.expasy.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ExPASY&lt;/a&gt; bioinformatics resource portal of the Swiss Institute of Bioinformatics, including many structural biology tools&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;a href=&#34;https://swissmodel.expasy.org/interactive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SWISS-MODEL&lt;/a&gt; for homology modeling of protein structures&lt;/li&gt;
