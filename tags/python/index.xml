@@ -724,9 +724,9 @@ plt.show()
     
     <item>
       <title>Bioinformatics with Python, part 1</title>
-      <link>/resources/1/</link>
+      <link>/tools/1/</link>
       <pubDate>Sun, 19 Apr 2020 15:48:03 -0400</pubDate>
-      <guid>/resources/1/</guid>
+      <guid>/tools/1/</guid>
       <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
 Some useful tools
     &lt;br&gt;
@@ -741,20 +741,31 @@ Some useful tools
     </item>
     
     <item>
-      <title>Bioinformatics with Python, part 1</title>
-      <link>/tools/1/</link>
+      <title>Proteins</title>
+      <link>/resources/1/</link>
       <pubDate>Sun, 19 Apr 2020 15:48:03 -0400</pubDate>
-      <guid>/tools/1/</guid>
+      <guid>/resources/1/</guid>
       <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
 Some useful tools
     &lt;br&gt;
     &lt;br&gt;
     &lt;br&gt;&lt;br&gt;
     &lt;ol&gt;
-    &lt;b&gt;&lt;li&gt;Download and format UniProt proteome files&lt;/li&gt;&lt;/b&gt;
-    &lt;b&gt;&lt;li&gt;Compute the mean and median protein length&lt;/li&gt;&lt;/b&gt;
-    &lt;b&gt;&lt;li&gt;Plot histograms of protein length distributions&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;li&gt;...&lt;/li&gt;&lt;/b&gt;
     &lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;http://sosnick.uchicago.edu/gdmcl.html&#34;&gt;http://sosnick.uchicago.edu/gdmcl.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/harmslab/pdbtools&#34;&gt;https://github.com/harmslab/pdbtools&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ndash; PDB 
+&amp;ndash; BLAST
+&amp;ndash; ClustalOmega
+&amp;ndash; Ensembl
+&amp;ndash; OMIM
+&amp;ndash; COSMIC
+UniProt
+Expasy ProtParam 
+Expasy&lt;/p&gt;
 </description>
     </item>
     
