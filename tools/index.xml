@@ -43,6 +43,20 @@ function myFunction() {
 &lt;p&gt;&lt;button type=&#34;button&#34; onclick=&#34;myFunction()&#34;&gt;Try it&lt;/button&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt; 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;HTML Forms&lt;/h2&gt;
+&lt;form action&gt;
+  &lt;label for=&#34;fname&#34;&gt;First name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34; value=&#34;John&#34;&gt;&lt;br&gt;
+  &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;lname&#34; name=&#34;lname&#34; value=&#34;Doe&#34;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
+&lt;/form&gt; 
+&lt;p&gt;If you click the &#34;Submit&#34; button, the form-data will be sent to a page called &#34;/action_page.php&#34;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </description>
     </item>
     
