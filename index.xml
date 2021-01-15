@@ -765,7 +765,7 @@ function myFunction() {
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;HTML Forms&lt;/h2&gt;
-&lt;form action=&#34;/action_page.html&#34;&gt;
+&lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
   &lt;label for=&#34;fname&#34;&gt;First name:&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;fname&#34; name=&#34;fname&#34; value=&#34;John&#34;&gt;&lt;br&gt;
   &lt;label for=&#34;lname&#34;&gt;Last name:&lt;/label&gt;&lt;br&gt;
