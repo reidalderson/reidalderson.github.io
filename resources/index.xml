@@ -42,12 +42,35 @@ Some useful tools
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://www.expasy.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ExPASY&lt;/a&gt; bioinformatics resource portal of the Swiss Institute of Bioinformatics, including many structural biology tools&lt;/p&gt;
+&lt;a href=&#34;https://www.expasy.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ExPASY&lt;/a&gt; &amp;ndash; the Swiss Institute of Bioinformatics&amp;rsquo; resource portal, including many structural biology tools&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://swissmodel.expasy.org/interactive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SWISS-MODEL&lt;/a&gt; for homology modeling of protein structures&lt;/li&gt;
+&lt;a href=&#34;https://swissmodel.expasy.org/interactive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SWISS-MODEL&lt;/a&gt; &amp;ndash; homology modeling of protein structures&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://proteintools.uni-bayreuth.de/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Protein Tools&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://consurf.tau.ac.il/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ConSurf&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://ekhidna2.biocenter.helsinki.fi/dali/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DALI&lt;/a&gt; &amp;ndash; web server to compare a protein structure against a database (
+&lt;a href=&#34;https://onlinelibrary.wiley.com/doi/full/10.1002/pro.3749&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reference&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.mrc-lmb.cam.ac.uk/rajini/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Protein Contacts Atlas&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;sequences&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://volpes.univie.ac.at/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VOLPES&lt;/a&gt; &amp;ndash; Visualization of Physicochemical Properties (
+&lt;a href=&#34;https://academic.oup.com/nar/article/47/W1/W632/5494750&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reference&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;http://sosnick.uchicago.edu/gdmcl.html&#34;&gt;http://sosnick.uchicago.edu/gdmcl.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/harmslab/pdbtools&#34;&gt;https://github.com/harmslab/pdbtools&lt;/a&gt;&lt;/p&gt;
