@@ -31,11 +31,14 @@ Some useful tools
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.ebi.ac.uk/pdbe/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDB in Europe (PDBe)&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/pisa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBe Proteins, Interfaces, Structures, and Assemblies (PISA)&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/pdbe/pisa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBe Proteins, Interfaces, Structures, and Assemblies (PISA)&lt;/a&gt; &amp;ndash; analyze oligomeric interfaces, interfacial residues, and buried surface area&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ebi.ac.uk/msd-srv/ssm/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDBeFold&lt;/a&gt; &amp;ndash; compute structural similarity&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.ebi.ac.uk/pdbe/emdb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Electron Microscopy Data Bank (EMDB)&lt;/a&gt;&lt;/p&gt;
@@ -65,8 +68,34 @@ Some useful tools
 &lt;p&gt;
 &lt;a href=&#34;https://www.mrc-lmb.cam.ac.uk/rajini/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Protein Contacts Atlas&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://munk.cis.unimelb.edu.au/pro-origami/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pro-Origami&lt;/a&gt; &amp;ndash; to create protein topology cartoons (
+&lt;a href=&#34;https://academic.oup.com/bioinformatics/article/27/23/3315/236671&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reference&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://www.cathdb.info/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CATH&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://sumo-pbil.ibcp.fr/cgi-bin/sumo-welcome&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SuMo&lt;/a&gt; &amp;ndash; search for functional sites in protein structures&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://dunbrack.fccc.edu/Guoli/pisces_download.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PISCES&lt;/a&gt; &amp;ndash; culling the PDB by resolution and sequence identity, compiled by the 
+&lt;a href=&#34;http://dunbrack.fccc.edu/Home.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Roland Dunbrack Lab&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://www.pyrosetta.org/home&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PyRosetta&lt;/a&gt; &amp;ndash; interactive structural modeling with Rosetta combined with the Python programming language&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://scop.mrc-lmb.cam.ac.uk/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SCOP&lt;/a&gt; &amp;ndash; structural classification of proteins&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;sequences&lt;/p&gt;
+&lt;h1 id=&#34;uamino-acid-sequencesu&#34;&gt;&lt;u&gt;Amino Acid Sequences&lt;/u&gt;&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;a href=&#34;http://volpes.univie.ac.at/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VOLPES&lt;/a&gt; &amp;ndash; Visualization of Physicochemical Properties (
