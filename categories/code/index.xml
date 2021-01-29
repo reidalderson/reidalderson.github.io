@@ -756,7 +756,7 @@ function myFunction() {
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-&lt;h2&gt;HTML Forms&lt;/h2&gt;
+&lt;h2&gt;Rotational correlation time from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
 &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
   &lt;label for=&#34;B0&#34;&gt;Spectrometer frequency (MHz)&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;B0&#34; name=&#34;B0&#34; value=&#34;600&#34;&gt;&lt;br&gt;
