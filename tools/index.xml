@@ -30,10 +30,9 @@ Some useful tools
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-&lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) calculator&lt;/h2&gt;&lt;ul&gt;
-    &lt;li&gt;&lt;h3&gt;
-        based on &lt;sup&gt;15&lt;/sup&gt;N relaxation
-        &lt;/h3&gt;&lt;/li&gt;
+&lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) calculator&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3&gt;based on &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h3&gt;
 &lt;/ul&gt;
 &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
   &lt;label for=&#34;B0&#34;&gt;&lt;b&gt;Spectrometer frequency (MHz)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
