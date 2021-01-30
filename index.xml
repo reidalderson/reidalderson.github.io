@@ -749,7 +749,7 @@ Some useful tools
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
-&lt;p&gt;lets go&lt;/p&gt;
+&lt;p&gt;lets go222&lt;/p&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118
@@ -770,8 +770,8 @@ function show_tauC() {
   &lt;input type=&#34;text&#34; id=&#34;R2&#34; name=&#34;R2&#34; value=&#34;10&#34;&gt;&lt;br&gt;
 &lt;br&gt;
   &lt;label for=&#34;tauC&#34;&gt;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&#34;text&#34; id=&#34;tauC&#34; name=&#34;tauC&#34; value=&#34;&#34;&gt;&lt;br&gt;&lt;br&gt;
-  &lt;input type=&#34;submit&#34; value=&#34;Submit&#34; onclick=&#34;show_tauC();&gt;
+  &lt;input type=&#34;text&#34; id=&#34;tauC&#34; name=&#34;tauC&#34; value=&#34;&#34; &gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type=&#34;submit&#34; value=&#34;Submit&#34; onclick=&#34;show_tauC();&#34;&gt;
 &lt;/form&gt;
 &lt;!--- &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
 
