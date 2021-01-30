@@ -740,9 +740,7 @@ Some useful tools
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-&lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) calculator&lt;/h2&gt;
-&lt;h4&gt;based on &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h3&gt;
-&lt;/ul&gt;
+&lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
 &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
   &lt;label for=&#34;B0&#34;&gt;&lt;b&gt;Spectrometer frequency (MHz)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;B0&#34; name=&#34;B0&#34; value=&#34;600&#34;&gt;&lt;br&gt;
@@ -754,7 +752,7 @@ Some useful tools
   &lt;input type=&#34;text&#34; id=&#34;R2&#34; name=&#34;R2&#34; value=&#34;10&#34;&gt;&lt;br&gt;&lt;br&gt;
   &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
 &lt;/form&gt; 
-&lt;p&gt;Note that the &lt;sup&gt;15&lt;/sup&gt;N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or &amp;mu;s-ms timescales&#34;.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;p&gt;Note that the &lt;sup&gt;15&lt;/sup&gt;N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or μs-ms timescales&amp;rdquo;.&lt;/p&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </description>
