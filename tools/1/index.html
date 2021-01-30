@@ -684,14 +684,17 @@ Some useful tools
 <html>
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<p>lets go444</p>
+<p>lets go777</p>
 <script language="JavaScript"> 
 function tauC_relax(B0, R1, R2) {
-    var LarmorN = 1000000 * B0 * 0.101329118
+    var LarmorN = 1000000 * B0 * 0.101329118;
     return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
 }
 function show_tauC() {
-  document.getElementById("tauC").innerHTML = tauC_relax(document.getElementById("B0"), document.getElementById("R1"), document.getElementById("R2"));
+    var enter_B0 = document.getElementById("B0").value;
+    var enter_R1 = document.getElementById("R1").value;
+    var enter_R2 = document.getElementById("R2").value;
+  document.getElementById("demo").innerHTML = tauC_relax(enter_B0, enter_R1, enter_R2);
 }
 </script>
 <form>
@@ -708,6 +711,8 @@ function show_tauC() {
   <input type="text" id="tauC" name="tauC" onclick="show_tauC();"><br><br>
   <input type="submit" value="Submit">
 </form>
+<p><button onclick="myFunction()">Click me</button></p>
+<p id="demo"></p>
 <!--- <form action="https://reidalderson.github.io/tools/1/action_page.html">
 
 
