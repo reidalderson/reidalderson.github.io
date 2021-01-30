@@ -684,31 +684,15 @@ Some useful tools
 <html>
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<p>testing heem</p>
-<pre><code class="language-html">&lt;script language=&quot;JavaScript&quot;&gt; 
+<script language="JavaScript"> 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118
     return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
 }
 function show_tauC() {
-  document.getElementById(&quot;demo&quot;).innerHTML = d;
+  document.getElementById("demo").innerHTML = d;
 }
-&lt;/script&gt;
-&lt;form action=&quot;https://reidalderson.github.io/tools/1/action_page.html&quot;&gt;
-  &lt;label for=&quot;B0&quot;&gt;&lt;b&gt;Spectrometer frequency (MHz)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&quot;text&quot; id=&quot;B0&quot; name=&quot;B0&quot; value=&quot;600&quot;&gt;&lt;br&gt;
-&lt;br&gt;
-  &lt;label for=&quot;R1&quot;&gt;&lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt; (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&quot;text&quot; id=&quot;R1&quot; name=&quot;R1&quot; value=&quot;1&quot;&gt;&lt;br&gt;
-&lt;br&gt;
-  &lt;label for=&quot;R2&quot;&gt;&lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&quot;text&quot; id=&quot;R2&quot; name=&quot;R2&quot; value=&quot;10&quot;&gt;&lt;br&gt;
-&lt;br&gt;
-  &lt;label for=&quot;tauC&quot;&gt;&lt;b&gt;(&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) (ns)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&quot;text&quot; id=&quot;tauC&quot; name=&quot;tauC&quot; value=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;
-  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
-&lt;/form&gt;
-</code></pre>
+</script>
 <form action="https://reidalderson.github.io/tools/1/action_page.html">
   <label for="B0"><b>Spectrometer frequency (MHz)</b></label><br>
   <input type="text" id="B0" name="B0" value="600"><br>
@@ -717,9 +701,9 @@ function show_tauC() {
   <input type="text" id="R1" name="R1" value="1"><br>
 <br>
   <label for="R2"><b><sup>15</sup>N <i>R</i><sub>2</sub> (s<sup>-1</sup>)</b></label><br>
-  <input type="text" id="R2" name="R2" value="10"><br><br>
+  <input type="text" id="R2" name="R2" value="10"><br>
 <br>
-  <label for="tauC"><b>(&tau;<sub>c</sub>) (ns)</b></label><br>
+  <label for="tauC"><b>&tau;<sub>c</sub> (ns)</b></label><br>
   <input type="text" id="tauC" name="tauC" value=""><br><br>
   <input type="submit" value="Submit">
 </form>

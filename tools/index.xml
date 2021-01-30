@@ -31,31 +31,15 @@ Some useful tools
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
-&lt;p&gt;testing heem&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script language=&amp;quot;JavaScript&amp;quot;&amp;gt; 
+&lt;script language=&#34;JavaScript&#34;&gt; 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118
     return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
 }
 function show_tauC() {
-  document.getElementById(&amp;quot;demo&amp;quot;).innerHTML = d;
+  document.getElementById(&#34;demo&#34;).innerHTML = d;
 }
-&amp;lt;/script&amp;gt;
-&amp;lt;form action=&amp;quot;https://reidalderson.github.io/tools/1/action_page.html&amp;quot;&amp;gt;
-  &amp;lt;label for=&amp;quot;B0&amp;quot;&amp;gt;&amp;lt;b&amp;gt;Spectrometer frequency (MHz)&amp;lt;/b&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;B0&amp;quot; name=&amp;quot;B0&amp;quot; value=&amp;quot;600&amp;quot;&amp;gt;&amp;lt;br&amp;gt;
-&amp;lt;br&amp;gt;
-  &amp;lt;label for=&amp;quot;R1&amp;quot;&amp;gt;&amp;lt;b&amp;gt;&amp;lt;sup&amp;gt;15&amp;lt;/sup&amp;gt;N &amp;lt;i&amp;gt;R&amp;lt;/i&amp;gt;&amp;lt;sub&amp;gt;1&amp;lt;/sub&amp;gt; (s&amp;lt;sup&amp;gt;-1&amp;lt;/sup&amp;gt;)&amp;lt;/b&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;R1&amp;quot; name=&amp;quot;R1&amp;quot; value=&amp;quot;1&amp;quot;&amp;gt;&amp;lt;br&amp;gt;
-&amp;lt;br&amp;gt;
-  &amp;lt;label for=&amp;quot;R2&amp;quot;&amp;gt;&amp;lt;b&amp;gt;&amp;lt;sup&amp;gt;15&amp;lt;/sup&amp;gt;N &amp;lt;i&amp;gt;R&amp;lt;/i&amp;gt;&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt; (s&amp;lt;sup&amp;gt;-1&amp;lt;/sup&amp;gt;)&amp;lt;/b&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;R2&amp;quot; name=&amp;quot;R2&amp;quot; value=&amp;quot;10&amp;quot;&amp;gt;&amp;lt;br&amp;gt;
-&amp;lt;br&amp;gt;
-  &amp;lt;label for=&amp;quot;tauC&amp;quot;&amp;gt;&amp;lt;b&amp;gt;(&amp;amp;tau;&amp;lt;sub&amp;gt;c&amp;lt;/sub&amp;gt;) (ns)&amp;lt;/b&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt;
-  &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;tauC&amp;quot; name=&amp;quot;tauC&amp;quot; value=&amp;quot;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
-  &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Submit&amp;quot;&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/script&gt;
 &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
   &lt;label for=&#34;B0&#34;&gt;&lt;b&gt;Spectrometer frequency (MHz)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;B0&#34; name=&#34;B0&#34; value=&#34;600&#34;&gt;&lt;br&gt;
@@ -64,9 +48,9 @@ function show_tauC() {
   &lt;input type=&#34;text&#34; id=&#34;R1&#34; name=&#34;R1&#34; value=&#34;1&#34;&gt;&lt;br&gt;
 &lt;br&gt;
   &lt;label for=&#34;R2&#34;&gt;&lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&#34;text&#34; id=&#34;R2&#34; name=&#34;R2&#34; value=&#34;10&#34;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;R2&#34; name=&#34;R2&#34; value=&#34;10&#34;&gt;&lt;br&gt;
 &lt;br&gt;
-  &lt;label for=&#34;tauC&#34;&gt;&lt;b&gt;(&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) (ns)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
+  &lt;label for=&#34;tauC&#34;&gt;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;tauC&#34; name=&#34;tauC&#34; value=&#34;&#34;&gt;&lt;br&gt;&lt;br&gt;
   &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
 &lt;/form&gt;
