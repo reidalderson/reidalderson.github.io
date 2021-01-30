@@ -684,6 +684,17 @@ Some useful tools
 <html>
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
+<!DOCTYPE html>
+<html>
+<script language="JavaScript"> 
+function tauC_relax(B0, R1, R2) {
+    var LarmorN = 1000000 * B0 * 0.101329118
+    return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
+}
+function show_tauC() {
+  document.getElementById("demo").innerHTML = d;
+}
+</script>
 <form action="https://reidalderson.github.io/tools/1/action_page.html">
   <label for="B0"><b>Spectrometer frequency (MHz)</b></label><br>
   <input type="text" id="B0" name="B0" value="600"><br>
@@ -693,8 +704,11 @@ Some useful tools
 <br>
   <label for="R2"><b><sup>15</sup>N <i>R</i><sub>2</sub> (s<sup>-1</sup>)</b></label><br>
   <input type="text" id="R2" name="R2" value="10"><br><br>
+<br>
+  <label for="tauC"><b>(&tau;<sub>c</sub>) (ns)</b></label><br>
+  <input type="text" id="tauC" name="tauC" value=""><br><br>
   <input type="submit" value="Submit">
-</form> 
+</form>
 <p><br><p>Note that the <sup>15</sup>N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or μs-ms timescales&rdquo;.</p></p>
 </body>
 </html>
