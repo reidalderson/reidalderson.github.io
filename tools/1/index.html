@@ -671,20 +671,12 @@
 
     <div class="article-style">
       <div class="text-justify small-font">
-Some useful tools
-    <br>
-    <br>
-    <br><br>
-    <ol>
-    <b><li>Download and format UniProt proteome files</li></b>
-    <b><li>Compute the mean and median protein length</li></b>
-    <b><li>Plot histogram of protein length distributions</li></b>
-    </ol>
+Scripts
 <!DOCTYPE html>
 <html>
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<p>lets go779</p>
+<p>lets go780</p>
 <script language="JavaScript"> 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
@@ -699,6 +691,16 @@ function show_tauC() {
   document.getElementById("demo").innerHTML = output_tauC;
 }
 </script>
+<script language="JavaScript"> 
+function new_tauC() {
+    var enter_B0 = document.getElementById("B0").value;
+    var enter_R1 = document.getElementById("R1").value;
+    var enter_R2 = document.getElementById("R2").value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(2);
+  document.getElementById("tauC").innerHTML = output_tauC;
+}
+</script>
 <form>
   <label for="B0"><b>Spectrometer frequency (MHz)</b></label><br>
   <input type="text" id="B0" name="B0" value="600"><br>
@@ -710,7 +712,7 @@ function show_tauC() {
   <input type="text" id="R2" name="R2" value="10"><br>
 <br>
   <label for="tauC"><b>&tau;<sub>c</sub> (ns)</b></label><br>
-  <input type="text" id="tauC" name="tauC" onclick="show_tauC();"><br><br>
+  <input type="text" id="tauC" name="tauC" onsubmit="return new_tauC();"><br><br>
   <input type="submit" value="Submit">
 </form>
 <p><button onclick="show_tauC()">Click me</button></p>

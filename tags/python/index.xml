@@ -728,20 +728,12 @@ plt.show()
       <pubDate>Sun, 19 Apr 2020 15:48:03 -0400</pubDate>
       <guid>/tools/1/</guid>
       <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
-Some useful tools
-    &lt;br&gt;
-    &lt;br&gt;
-    &lt;br&gt;&lt;br&gt;
-    &lt;ol&gt;
-    &lt;b&gt;&lt;li&gt;Download and format UniProt proteome files&lt;/li&gt;&lt;/b&gt;
-    &lt;b&gt;&lt;li&gt;Compute the mean and median protein length&lt;/li&gt;&lt;/b&gt;
-    &lt;b&gt;&lt;li&gt;Plot histogram of protein length distributions&lt;/li&gt;&lt;/b&gt;
-    &lt;/ol&gt;
+Scripts
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
-&lt;p&gt;lets go779&lt;/p&gt;
+&lt;p&gt;lets go780&lt;/p&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
@@ -756,6 +748,16 @@ function show_tauC() {
   document.getElementById(&#34;demo&#34;).innerHTML = output_tauC;
 }
 &lt;/script&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+function new_tauC() {
+    var enter_B0 = document.getElementById(&#34;B0&#34;).value;
+    var enter_R1 = document.getElementById(&#34;R1&#34;).value;
+    var enter_R2 = document.getElementById(&#34;R2&#34;).value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(2);
+  document.getElementById(&#34;tauC&#34;).innerHTML = output_tauC;
+}
+&lt;/script&gt;
 &lt;form&gt;
   &lt;label for=&#34;B0&#34;&gt;&lt;b&gt;Spectrometer frequency (MHz)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;B0&#34; name=&#34;B0&#34; value=&#34;600&#34;&gt;&lt;br&gt;
@@ -767,7 +769,7 @@ function show_tauC() {
   &lt;input type=&#34;text&#34; id=&#34;R2&#34; name=&#34;R2&#34; value=&#34;10&#34;&gt;&lt;br&gt;
 &lt;br&gt;
   &lt;label for=&#34;tauC&#34;&gt;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&#34;text&#34; id=&#34;tauC&#34; name=&#34;tauC&#34; onclick=&#34;show_tauC();&#34;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type=&#34;text&#34; id=&#34;tauC&#34; name=&#34;tauC&#34; onsubmit=&#34;return new_tauC();&#34;&gt;&lt;br&gt;&lt;br&gt;
   &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
 &lt;/form&gt;
 &lt;p&gt;&lt;button onclick=&#34;show_tauC()&#34;&gt;Click me&lt;/button&gt;&lt;/p&gt;
