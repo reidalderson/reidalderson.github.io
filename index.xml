@@ -776,12 +776,18 @@ function new_tauC() {
   &lt;label for=&#34;R2&#34;&gt;&lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;R2&#34; name=&#34;R2&#34; value=&#34;10&#34;&gt;&lt;br&gt;
 &lt;br&gt;
-  &lt;label for=&#34;tauC&#34;&gt;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-  &lt;input type=&#34;text&#34; id=&#34;tauC&#34; name=&#34;tauC&#34; onsubmit=&#34;return new_tauC();&#34;&gt;&lt;br&gt;&lt;br&gt;
-  &lt;input type=&#34;submit&#34; value=&#34;Submit&#34;&gt;
 &lt;/form&gt;
-&lt;p&gt;&lt;button onclick=&#34;show_tauC()&#34;&gt;Click me&lt;/button&gt;&lt;/p&gt;
-&lt;p id=&#34;demo&#34;&gt;&lt;/p&gt;
+&lt;script&gt;function toggle() {
+  var x = document.getElementById(&#34;myDIV&#34;);
+  if (x.innerHTML === &#34;&#34;) {
+    x.innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = ns&#34;;
+  } else {
+    x.innerHTML = &#34;&#34;;
+  }
+}
+&lt;/script&gt;
+&lt;div id=&#34;myDIV&#34;&gt;&lt;/b&gt;&lt;/div&gt;
+&lt;p&gt;&lt;button onclick=&#34;show_tauC()&#34;&gt;Calculate&lt;/button&gt;&lt;/p&gt;
 &lt;!--- &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
 
 

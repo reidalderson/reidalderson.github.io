@@ -711,12 +711,18 @@ function new_tauC() {
   <label for="R2"><b><sup>15</sup>N <i>R</i><sub>2</sub> (s<sup>-1</sup>)</b></label><br>
   <input type="text" id="R2" name="R2" value="10"><br>
 <br>
-  <label for="tauC"><b>&tau;<sub>c</sub> (ns)</b></label><br>
-  <input type="text" id="tauC" name="tauC" onsubmit="return new_tauC();"><br><br>
-  <input type="submit" value="Submit">
 </form>
-<p><button onclick="show_tauC()">Click me</button></p>
-<p id="demo"></p>
+<script>function toggle() {
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "") {
+    x.innerHTML = "<b>&tau;<sub>c</sub> = ns";
+  } else {
+    x.innerHTML = "";
+  }
+}
+</script>
+<div id="myDIV"></b></div>
+<p><button onclick="show_tauC()">Calculate</button></p>
 <!--- <form action="https://reidalderson.github.io/tools/1/action_page.html">
 
 
