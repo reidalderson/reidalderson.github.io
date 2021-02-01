@@ -788,6 +788,8 @@ function new_tauC() {
 &lt;/script&gt;
 &lt;div id=&#34;myDIV&#34;&gt;&lt;/b&gt;&lt;/div&gt;
 &lt;p&gt;&lt;button onclick=&#34;show_tauC()&#34;&gt;Calculate&lt;/button&gt;&lt;/p&gt;
+&lt;div id=&#34;demo&#34;&gt;&lt;/b&gt;&lt;/div&gt;
+&lt;p&gt;&lt;button onclick=&#34;toggle()&#34;&gt;Calculate2&lt;/button&gt;&lt;/p&gt;
 &lt;!--- &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
 
 
