@@ -676,7 +676,7 @@ Scripts
 <html>
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<p>lets go780</p>
+<p>800</p>
 <script language="JavaScript"> 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
@@ -715,7 +715,12 @@ function new_tauC() {
 <script>function toggle() {
   var x = document.getElementById("myDIV");
   if (x.innerHTML === "") {
-    x.innerHTML = "<b>&tau;<sub>c</sub> = ns";
+    var enter_B0 = document.getElementById("B0").value;
+    var enter_R1 = document.getElementById("R1").value;
+    var enter_R2 = document.getElementById("R2").value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(2);
+    x.innerHTML = "<b>&tau;<sub>c</sub> = "output_tauC "ns";
   } else {
     x.innerHTML = "";
   }

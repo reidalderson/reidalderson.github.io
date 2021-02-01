@@ -733,7 +733,7 @@ Scripts
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
-&lt;p&gt;lets go780&lt;/p&gt;
+&lt;p&gt;800&lt;/p&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
@@ -772,7 +772,12 @@ function new_tauC() {
 &lt;script&gt;function toggle() {
   var x = document.getElementById(&#34;myDIV&#34;);
   if (x.innerHTML === &#34;&#34;) {
-    x.innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = ns&#34;;
+    var enter_B0 = document.getElementById(&#34;B0&#34;).value;
+    var enter_R1 = document.getElementById(&#34;R1&#34;).value;
+    var enter_R2 = document.getElementById(&#34;R2&#34;).value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(2);
+    x.innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = &#34;output_tauC &#34;ns&#34;;
   } else {
     x.innerHTML = &#34;&#34;;
   }
