@@ -741,7 +741,7 @@ Scripts
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
-&lt;p&gt;800&lt;/p&gt;
+&lt;p&gt;808&lt;/p&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
@@ -766,6 +766,21 @@ function new_tauC() {
   document.getElementById(&#34;tauC&#34;).innerHTML = output_tauC;
 }
 &lt;/script&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+function toggle() {
+  var x = document.getElementById(&#34;myDIV&#34;);
+  if (x.innerHTML === &#34;&#34;) {
+    var enter_B0 = document.getElementById(&#34;B0&#34;).value;
+    var enter_R1 = document.getElementById(&#34;R1&#34;).value;
+    var enter_R2 = document.getElementById(&#34;R2&#34;).value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(2);
+    x.innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = &#34; + output_tauC + &#34; ns&#34;;
+  } else {
+    x.innerHTML = &#34;3&#34;;
+  }
+}
+&lt;/script&gt;
 &lt;form&gt;
   &lt;label for=&#34;B0&#34;&gt;&lt;b&gt;Spectrometer frequency (MHz)&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
   &lt;input type=&#34;text&#34; id=&#34;B0&#34; name=&#34;B0&#34; value=&#34;600&#34;&gt;&lt;br&gt;
@@ -777,20 +792,6 @@ function new_tauC() {
   &lt;input type=&#34;text&#34; id=&#34;R2&#34; name=&#34;R2&#34; value=&#34;10&#34;&gt;&lt;br&gt;
 &lt;br&gt;
 &lt;/form&gt;
-&lt;script&gt;function toggle() {
-  var x = document.getElementById(&#34;myDIV&#34;);
-  if (x.innerHTML === &#34;&#34;) {
-    var enter_B0 = document.getElementById(&#34;B0&#34;).value;
-    var enter_R1 = document.getElementById(&#34;R1&#34;).value;
-    var enter_R2 = document.getElementById(&#34;R2&#34;).value;
-    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(2);
-    x.innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = &#34;output_tauC &#34;ns&#34;;
-  } else {
-    x.innerHTML = &#34;&#34;;
-  }
-}
-&lt;/script&gt;
 &lt;div id=&#34;myDIV&#34;&gt;&lt;/b&gt;&lt;/div&gt;
 &lt;p&gt;&lt;button onclick=&#34;show_tauC()&#34;&gt;Calculate&lt;/button&gt;&lt;/p&gt;
 &lt;div id=&#34;demo&#34;&gt;&lt;/b&gt;&lt;/div&gt;

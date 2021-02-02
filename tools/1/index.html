@@ -676,7 +676,7 @@ Scripts
 <html>
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<p>800</p>
+<p>808</p>
 <script language="JavaScript"> 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
@@ -701,6 +701,21 @@ function new_tauC() {
   document.getElementById("tauC").innerHTML = output_tauC;
 }
 </script>
+<script language="JavaScript"> 
+function toggle() {
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "") {
+    var enter_B0 = document.getElementById("B0").value;
+    var enter_R1 = document.getElementById("R1").value;
+    var enter_R2 = document.getElementById("R2").value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(2);
+    x.innerHTML = "<b>&tau;<sub>c</sub> = " + output_tauC + " ns";
+  } else {
+    x.innerHTML = "3";
+  }
+}
+</script>
 <form>
   <label for="B0"><b>Spectrometer frequency (MHz)</b></label><br>
   <input type="text" id="B0" name="B0" value="600"><br>
@@ -712,20 +727,6 @@ function new_tauC() {
   <input type="text" id="R2" name="R2" value="10"><br>
 <br>
 </form>
-<script>function toggle() {
-  var x = document.getElementById("myDIV");
-  if (x.innerHTML === "") {
-    var enter_B0 = document.getElementById("B0").value;
-    var enter_R1 = document.getElementById("R1").value;
-    var enter_R2 = document.getElementById("R2").value;
-    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(2);
-    x.innerHTML = "<b>&tau;<sub>c</sub> = "output_tauC "ns";
-  } else {
-    x.innerHTML = "";
-  }
-}
-</script>
 <div id="myDIV"></b></div>
 <p><button onclick="show_tauC()">Calculate</button></p>
 <div id="demo"></b></div>
