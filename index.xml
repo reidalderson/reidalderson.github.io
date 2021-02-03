@@ -741,7 +741,7 @@ Scripts
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
-&lt;p&gt;808&lt;/p&gt;
+&lt;p&gt;809&lt;/p&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
