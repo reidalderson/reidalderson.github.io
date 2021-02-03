@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test</title>
+
+<script language="JavaScript"> 
+function tauC_relax(B0, R1, R2) {
+    var LarmorN = 1000000 * B0 * 0.101329118;
+    return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
+}
+
+function show_tauC() {
+    var enter_B0 = document.getElementById("B0").value;
+    var enter_R1 = document.getElementById("R1").value;
+    var enter_R2 = document.getElementById("R2").value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(2);
+  /// document.getElementById("tauC").innerHTML = "<b>&tau;<sub>c</sub> = " + output_tauC + " ns";
+   document.getElementById("tauC").value =  output_tauC;
+  return false
+}
+</script>
+</head>
+
+<body>
+<form>
+<p>B0<input type="text" id="B0"/></p>
+<p>R1<input type="text" id="R1"/></p>
+<p>R2<input type="text" id="R2" /></p>
+<input type="button" onClick="show_tauC()" value="CALCULATE"/>
+<p>tauC<input type="text" id="tauC"/></p>
+</form>
+<div id="result"></div>
+</body>
+</html>

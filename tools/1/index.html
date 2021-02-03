@@ -682,50 +682,34 @@ function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
     return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
 }
-function show_tauC() {
-    var enter_B0 = document.getElementById("B0").value;
-    var enter_R1 = document.getElementById("R1").value;
-    var enter_R2 = document.getElementById("R2").value;
-    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(2);
-  document.getElementById("demo").innerHTML = output_tauC;
-}
 </script>
 <script language="JavaScript"> 
-function new_tauC() {
+    function show_tauC() {
     var enter_B0 = document.getElementById("B0").value;
     var enter_R1 = document.getElementById("R1").value;
     var enter_R2 = document.getElementById("R2").value;
     var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(2);
-  document.getElementById("tauC").innerHTML = output_tauC;
-}
-</script>
-<script language="JavaScript"> 
-function toggle() {
-  var x = document.getElementById("myDIV");
-  if (x.innerHTML === "") {
-    var enter_B0 = document.getElementById("B0").value;
-    var enter_R1 = document.getElementById("R1").value;
-    var enter_R2 = document.getElementById("R2").value;
-    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(2);
-    x.innerHTML = "<b>&tau;<sub>c</sub> = " + output_tauC + " ns";
-  } else {
-    x.innerHTML = "3";
-  }
+    var output_tauC = calc_tauC.toFixed(1);
+  /// document.getElementById("tauC").innerHTML = "<b>&tau;<sub>c</sub> = " + output_tauC + " ns";
+   document.getElementById("tauC").value =  output_tauC;
+  return false
 }
 </script>
 <form>
-  <label for="B0"><b>Spectrometer frequency (MHz)</b></label><br>
-  <input type="text" id="B0" name="B0" value="600"><br>
-<br>
-  <label for="R1"><b><sup>15</sup>N <i>R</i><sub>1</sub> (s<sup>-1</sup>)</b></label><br>
-  <input type="text" id="R1" name="R1" value="1"><br>
-<br>
-  <label for="R2"><b><sup>15</sup>N <i>R</i><sub>2</sub> (s<sup>-1</sup>)</b></label><br>
-  <input type="text" id="R2" name="R2" value="10"><br>
-<br>
+<p><b><i>B</i><sub>0</sub> (MHz)</b> <br> <input type="text" id="B0" value="600"/></p>
+    <br>
+<p><b><sup>15</sup>N <i>R</i><sub>1</sub> (s<sup>-1</sup>)</b> <br> <input type="text" id="R1" value="1.0"/></p>
+    <br>
+<p><b><sup>15</sup>N <i>R</i><sub>2</sub> (s<sup>-1</sup>)</b> <br> <input type="text" id="R2" value="10.0" /></p>
+    <br>
+<input type="button" onClick="show_tauC()" value="CALCULATE" style="font-weight:bold;"/>
+    <br>
+    <br>
+<p><b>&tau;<sub>c</sub> (ns)</b> <br> <input type="text" id="tauC"/></p>
+</form>
+<div id="result"></div>
+</body>
+</html>
 </form>
 <div id="myDIV"></b></div>
 <p><button onclick="show_tauC()">Calculate</button></p>
@@ -737,6 +721,12 @@ function toggle() {
 
 <br><p>Note that the <sup>15</sup>N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or &mu;s-ms timescales".</p>
 
+
+
+
+
+
+
 </body>
 </html>
 
@@ -744,7 +734,16 @@ function toggle() {
 
 
 
-
+<form>
+  <label for="B0"><b>Spectrometer frequency (MHz)</b></label><br>
+  <input type="text" id="B0" name="B0" value="600"><br>
+<br>
+  <label for="R1"><b><sup>15</sup>N <i>R</i><sub>1</sub> (s<sup>-1</sup>)</b></label><br>
+  <input type="text" id="R1" name="R1" value="1"><br>
+<br>
+  <label for="R2"><b><sup>15</sup>N <i>R</i><sub>2</sub> (s<sup>-1</sup>)</b></label><br>
+  <input type="text" id="R2" name="R2" value="10"><br>
+<br>
     </div>
 
     
