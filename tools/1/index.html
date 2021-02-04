@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="How to download proteomes from UniProt and analyze distributions of protein lengths. This allows for quick comparisons between different organisms.">
+  <meta name="description" content="Calculate the rotational correlation time of a biomolecule from experimentally measured &lt;sup&gt;15&lt;/sup&gt;N relaxation rates.">
 
   
   <link rel="alternate" hreflang="en-us" href="/tools/1/">
@@ -239,14 +239,14 @@
   
   <meta property="og:site_name" content="Reid Alderson">
   <meta property="og:url" content="/tools/1/">
-  <meta property="og:title" content="Bioinformatics with Python, part 1 | Reid Alderson">
-  <meta property="og:description" content="How to download proteomes from UniProt and analyze distributions of protein lengths. This allows for quick comparisons between different organisms."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:title" content="NMR Calculators | Reid Alderson">
+  <meta property="og:description" content="Calculate the rotational correlation time of a biomolecule from experimentally measured &lt;sup&gt;15&lt;/sup&gt;N relaxation rates."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-04-19T15:48:03-04:00">
+      <meta property="article:published_time" content="2021-02-04T13:45:03-04:00">
     
-    <meta property="article:modified_time" content="2020-04-19T15:48:03-04:00">
+    <meta property="article:modified_time" content="2021-02-04T13:45:03-04:00">
   
 
   
@@ -265,7 +265,7 @@
 
 
 
-  <title>Bioinformatics with Python, part 1 | Reid Alderson</title>
+  <title>NMR Calculators | Reid Alderson</title>
 
 </head>
 
@@ -605,10 +605,10 @@
   
   
 <div class="article-container pt-3">
-  <h1>Bioinformatics with Python, part 1</h1>
+  <h1>NMR Calculators</h1>
 
   
-  <p class="page-subtitle">An introduction to proteome-wide calculations</p>
+  <p class="page-subtitle">Rotational correlation times from 15N relaxation</p>
   
 
   
@@ -626,7 +626,7 @@
     
       
     
-    2020-04-19
+    2021-02-04
   </span>
   
 
@@ -642,7 +642,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/code/">code</a>, <a href="/categories/python/">python</a>, <a href="/categories/bioinformatics/">bioinformatics</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="/categories/code/">code</a>, <a href="/categories/python/">python</a>, <a href="/categories/nmr/">NMR</a></span>
   
 
 </div>
@@ -671,12 +671,17 @@
 
     <div class="article-style">
       <div class="text-justify small-font">
-Scripts
 <!DOCTYPE html>
 <html>
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<p>809</p>
+<br>
+<p>Given the <b>static magnetic field strength</b> (<i>B<sub>0</sub></i>) in MHz and the <b><sup>15</sup>N longitudinal and transverse relaxation rates</b> (<i>R<sub>1</sub></i>, <i>R<sub>2</sub></i>) in units of s<sup>-1</sup>, one can determine the rotational correlation time (τ<sub>c</sub>) of a biomolecule. For folded proteins, the τ<sub>c</sub> is valuable because it is related to the molecular mass and can be used to assess the <b>oligomeric state</b>.</p>
+<br>
+<p>Note that the <sup>15</sup>N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or &mu;s-ms timescales".</p>
+<br>
+<p>Please enter the required values into the calculator below.</p>
+<br>
 <script language="JavaScript"> 
 function tauC_relax(B0, R1, R2) {
     var LarmorN = 1000000 * B0 * 0.101329118;
@@ -708,12 +713,13 @@ input[type='text'] { font-size: 24px; }
     <br>
 <p style="font-size: 24px;"><b>Enter the <sup>15</sup>N <i>R</i><sub>2</sub> rate (s<sup>-1</sup>) </b><br><input type="text" id="R2" value="10.0" /></p>
     <br>
-<input type="button" onClick="show_tauC()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 77px"/>
+<input type="button" onClick="show_tauC()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
     <br>
     <br>
 <p style="font-size: 24px;"><b>Calculated &tau;<sub>c</sub> (ns)</b><br><input type="text" id="tauC"/></p>
 </form>
-<div id="result"></div>
+<br>
+<br>
 </div>
 </body>
 </html>
@@ -722,7 +728,7 @@ input[type='text'] { font-size: 24px; }
 
 
 
-<br><p>Note that the <sup>15</sup>N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or &mu;s-ms timescales".</p>
+<br>
 
 
 
@@ -742,11 +748,11 @@ input[type='text'] { font-size: 24px; }
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/bioinformatics/">bioinformatics</a>
+  <a class="badge badge-light" href="/tags/nmr/">NMR</a>
   
-  <a class="badge badge-light" href="/tags/python/">python</a>
+  <a class="badge badge-light" href="/tags/calculator/">calculator</a>
   
-  <a class="badge badge-light" href="/tags/proteome/">proteome</a>
+  <a class="badge badge-light" href="/tags/javascript/">JavaScript</a>
   
 </div>
 
@@ -763,7 +769,7 @@ input[type='text'] { font-size: 24px; }
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/tools/1/&amp;text=Bioinformatics%20with%20Python,%20part%201" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/tools/1/&amp;text=NMR%20Calculators" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -776,7 +782,7 @@ input[type='text'] { font-size: 24px; }
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/tools/1/&amp;t=Bioinformatics%20with%20Python,%20part%201" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/tools/1/&amp;t=NMR%20Calculators" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -789,7 +795,7 @@ input[type='text'] { font-size: 24px; }
       
       
       <li>
-        <a href="mailto:?subject=Bioinformatics%20with%20Python,%20part%201&amp;body=/tools/1/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=NMR%20Calculators&amp;body=/tools/1/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -802,7 +808,7 @@ input[type='text'] { font-size: 24px; }
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/tools/1/&amp;title=Bioinformatics%20with%20Python,%20part%201" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/tools/1/&amp;title=NMR%20Calculators" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -815,7 +821,7 @@ input[type='text'] { font-size: 24px; }
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Bioinformatics%20with%20Python,%20part%201%20/tools/1/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=NMR%20Calculators%20/tools/1/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -828,7 +834,7 @@ input[type='text'] { font-size: 24px; }
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/tools/1/&amp;title=Bioinformatics%20with%20Python,%20part%201" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/tools/1/&amp;title=NMR%20Calculators" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -995,9 +1001,11 @@ input[type='text'] { font-size: 24px; }
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/post/1/">Bioinformatics with Python, part 1</a></li>
+      <li><a href="/publication/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
       
-      <li><a href="/resources/1/">Proteins</a></li>
+      <li><a href="/publication/5_synuclein_nature/">Parkinson&#39;s disease: Disorder in the court</a></li>
+      
+      <li><a href="/publication/16_invisible_states_cosb/">Unveiling invisible protein states with NMR spectroscopy</a></li>
       
     </ul>
   </div>

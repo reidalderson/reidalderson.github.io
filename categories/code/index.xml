@@ -5,12 +5,87 @@
     <link>/categories/code/</link>
       <atom:link href="/categories/code/index.xml" rel="self" type="application/rss+xml" />
     <description>code</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 29 Apr 2020 22:37:33 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 04 Feb 2021 13:45:03 -0400</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>code</title>
       <link>/categories/code/</link>
     </image>
+    
+    <item>
+      <title>NMR Calculators</title>
+      <link>/tools/1/</link>
+      <pubDate>Thu, 04 Feb 2021 13:45:03 -0400</pubDate>
+      <guid>/tools/1/</guid>
+      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
+&lt;br&gt;
+&lt;p&gt;Given the &lt;b&gt;static magnetic field strength&lt;/b&gt; (&lt;i&gt;B&lt;sub&gt;0&lt;/sub&gt;&lt;/i&gt;) in MHz and the &lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N longitudinal and transverse relaxation rates&lt;/b&gt; (&lt;i&gt;R&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt;, &lt;i&gt;R&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt;) in units of s&lt;sup&gt;-1&lt;/sup&gt;, one can determine the rotational correlation time (τ&lt;sub&gt;c&lt;/sub&gt;) of a biomolecule. For folded proteins, the τ&lt;sub&gt;c&lt;/sub&gt; is valuable because it is related to the molecular mass and can be used to assess the &lt;b&gt;oligomeric state&lt;/b&gt;.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Note that the &lt;sup&gt;15&lt;/sup&gt;N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or &amp;mu;s-ms timescales&#34;.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Please enter the required values into the calculator below.&lt;/p&gt;
+&lt;br&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+function tauC_relax(B0, R1, R2) {
+    var LarmorN = 1000000 * B0 * 0.101329118;
+    return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
+}
+&lt;/script&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+    function show_tauC() {
+    var enter_B0 = document.getElementById(&#34;B0&#34;).value;
+    var enter_R1 = document.getElementById(&#34;R1&#34;).value;
+    var enter_R2 = document.getElementById(&#34;R2&#34;).value;
+    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
+    var output_tauC = calc_tauC.toFixed(1);
+  /// document.getElementById(&#34;tauC&#34;).innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = &#34; + output_tauC + &#34; ns&#34;;
+   document.getElementById(&#34;tauC&#34;).value =  output_tauC;
+  return false
+}
+&lt;/script&gt;
+&lt;div align=&#34;center&#34;&gt;
+&lt;head&gt;
+&lt;style&gt;
+input[type=&#39;text&#39;] { font-size: 24px; }
+&lt;/style&gt;    
+&lt;/head&gt;
+&lt;form&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;i&gt;B&lt;/i&gt;&lt;sub&gt;0&lt;/sub&gt; field (MHz) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;B0&#34; value=&#34;600&#34;/&gt;&lt;/p&gt;
+    &lt;br&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt; rate (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;R1&#34; value=&#34;1.0&#34;/&gt;&lt;/p&gt;
+    &lt;br&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; rate (s&lt;sup&gt;-1&lt;/sup&gt;) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;R2&#34; value=&#34;10.0&#34; /&gt;&lt;/p&gt;
+    &lt;br&gt;
+&lt;input type=&#34;button&#34; onClick=&#34;show_tauC()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Calculated &amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;tauC&#34;/&gt;&lt;/p&gt;
+&lt;/form&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;/form&gt;
+&lt;!--- &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
+
+
+
+&lt;br&gt;
+
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</description>
+    </item>
     
     <item>
       <title>Bioinformatics with Python, part 2</title>
@@ -720,75 +795,6 @@ plt.show()
 &lt;br&gt;
 &lt;p&gt;Next time, I&amp;rsquo;ll discuss how we can use Python to calculate biophysical properties from protein sequences, and how we can perform such calculations on the proteome scale.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Bioinformatics with Python, part 1</title>
-      <link>/tools/1/</link>
-      <pubDate>Sun, 19 Apr 2020 15:48:03 -0400</pubDate>
-      <guid>/tools/1/</guid>
-      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
-Scripts
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-&lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
-&lt;p&gt;809&lt;/p&gt;
-&lt;script language=&#34;JavaScript&#34;&gt; 
-function tauC_relax(B0, R1, R2) {
-    var LarmorN = 1000000 * B0 * 0.101329118;
-    return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
-}
-&lt;/script&gt;
-&lt;script language=&#34;JavaScript&#34;&gt; 
-    function show_tauC() {
-    var enter_B0 = document.getElementById(&#34;B0&#34;).value;
-    var enter_R1 = document.getElementById(&#34;R1&#34;).value;
-    var enter_R2 = document.getElementById(&#34;R2&#34;).value;
-    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(1);
-  /// document.getElementById(&#34;tauC&#34;).innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = &#34; + output_tauC + &#34; ns&#34;;
-   document.getElementById(&#34;tauC&#34;).value =  output_tauC;
-  return false
-}
-&lt;/script&gt;
-&lt;div align=&#34;center&#34;&gt;
-&lt;head&gt;
-&lt;style&gt;
-input[type=&#39;text&#39;] { font-size: 24px; }
-&lt;/style&gt;    
-&lt;/head&gt;
-&lt;form&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;i&gt;B&lt;/i&gt;&lt;sub&gt;0&lt;/sub&gt; field (MHz) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;B0&#34; value=&#34;600&#34;/&gt;&lt;/p&gt;
-    &lt;br&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt; rate (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;R1&#34; value=&#34;1.0&#34;/&gt;&lt;/p&gt;
-    &lt;br&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; rate (s&lt;sup&gt;-1&lt;/sup&gt;) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;R2&#34; value=&#34;10.0&#34; /&gt;&lt;/p&gt;
-    &lt;br&gt;
-&lt;input type=&#34;button&#34; onClick=&#34;show_tauC()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 77px&#34;/&gt;
-    &lt;br&gt;
-    &lt;br&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Calculated &amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;tauC&#34;/&gt;&lt;/p&gt;
-&lt;/form&gt;
-&lt;div id=&#34;result&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;/form&gt;
-&lt;!--- &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
-
-
-
-&lt;br&gt;&lt;p&gt;Note that the &lt;sup&gt;15&lt;/sup&gt;N relaxation rates should be the averaged value over a group of residues that do not show evidence of extensive motions on the ps-ns or &amp;mu;s-ms timescales&#34;.&lt;/p&gt;
-
-
-
-
-
-
-
-&lt;/body&gt;
-&lt;/html&gt;</description>
     </item>
     
     <item>

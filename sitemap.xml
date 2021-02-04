@@ -3,6 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/calculator/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/code/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nmr/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nmr/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tools/1/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tools/</loc>
+    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/t.-reid-alderson/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
@@ -88,16 +143,6 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/20_hsp27_biorxiv/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
@@ -128,27 +173,12 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-04-29T22:37:33-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/code/</loc>
-    <lastmod>2020-04-29T22:37:33-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/proteome/</loc>
     <lastmod>2020-04-29T22:37:33-04:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/python/</loc>
-    <lastmod>2020-04-29T22:37:33-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/python/</loc>
     <lastmod>2020-04-29T22:37:33-04:00</lastmod>
   </url>
   
@@ -163,22 +193,12 @@
   </url>
   
   <url>
-    <loc>/tools/1/</loc>
-    <lastmod>2020-04-19T15:48:03-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/resources/1/</loc>
     <lastmod>2020-04-19T15:48:03-04:00</lastmod>
   </url>
   
   <url>
     <loc>/resources/</loc>
-    <lastmod>2020-04-19T15:48:03-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tools/</loc>
     <lastmod>2020-04-19T15:48:03-04:00</lastmod>
   </url>
   
@@ -229,11 +249,6 @@
   
   <url>
     <loc>/tags/national-institutes-of-health/</loc>
-    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/nmr/</loc>
     <lastmod>2020-04-01T00:00:00+00:00</lastmod>
   </url>
   
