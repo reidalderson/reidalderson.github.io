@@ -773,7 +773,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
     &lt;br&gt;
 &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; rate (s&lt;sup&gt;-1&lt;/sup&gt;) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;R2&#34; value=&#34;10.0&#34; /&gt;&lt;/p&gt;
     &lt;br&gt;
-&lt;input type=&#34;button&#34; onClick=&#34;show_tauC()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px;&#34;/&gt;
+&lt;input type=&#34;button&#34; onClick=&#34;show_tauC()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 77px&#34;/&gt;
     &lt;br&gt;
     &lt;br&gt;
 &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Calculated &amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;tauC&#34;/&gt;&lt;/p&gt;
