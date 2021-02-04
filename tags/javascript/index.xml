@@ -23,9 +23,9 @@
 &lt;body&gt;
 &lt;h2&gt;Rotational correlation time (&amp;tau;&lt;sub&gt;c&lt;/sub&gt;) from &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
 &lt;br&gt;
-&lt;p&gt;One can calculate the rotational correlation time (τ&lt;sub&gt;c&lt;/sub&gt;) of a biomolecule by NMR given the &lt;b&gt;static magnetic field strength&lt;/b&gt; (&lt;i&gt;B&lt;sub&gt;0&lt;/sub&gt;&lt;/i&gt;) and the &lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N longitudinal and transverse relaxation rates&lt;/b&gt; (&lt;i&gt;R&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt;, &lt;i&gt;R&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt;). For folded proteins, the τ&lt;sub&gt;c&lt;/sub&gt; is valuable because it is related to the molecular mass and can, thus, be used to quickly &lt;b&gt;determine the oligomeric state&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;One can calculate the rotational correlation time (τ&lt;sub&gt;c&lt;/sub&gt;) of a biomolecule by NMR given the &lt;b&gt;static magnetic field strength&lt;/b&gt; (&lt;i&gt;B&lt;sub&gt;0&lt;/sub&gt;&lt;/i&gt;) and the &lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N longitudinal and transverse relaxation rates&lt;/b&gt; (&lt;i&gt;R&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt;, &lt;i&gt;R&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt;). For folded proteins, the τ&lt;sub&gt;c&lt;/sub&gt; is valuable because it is related to the size of the particle &amp;ndash; and, therefore, the molecular mass. Thus, the τ&lt;sub&gt;c&lt;/sub&gt; can be used to quickly &lt;b&gt;determine the oligomeric state&lt;/b&gt;.&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;However, there are a couple of caveats. First, the &lt;sup&gt;15&lt;/sup&gt;N relaxation rates should be the averaged value over a group of residues that &lt;b&gt;do not show evidence of extensive motions on the ps-ns or &amp;mu;s-ms timescales&lt;/b&gt;. Such residues can be identified from a relatively low value of the heteronuclear NOE (e.g., below 0.65 at 600 MHz) or a higher-than-average &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; rate, respectively. Second, the rotational diffusion of the biomolecue impacts the &amp;tau;&lt;sub&gt;c&lt;/sub&gt;. &lt;b&gt;This calculator below assumes an isotropic rotational diffusion tensor&lt;/b&gt;; deviations from this assumption will impact the accuracy of the calculated &amp;tau;&lt;sub&gt;c&lt;/sub&gt;. &lt;/p&gt;
+&lt;p&gt;However, there are a couple of caveats. First, the &lt;sup&gt;15&lt;/sup&gt;N relaxation rates should be averaged value over a group of residues that &lt;b&gt;do not show evidence of extensive motions on the ps-ns or &amp;mu;s-ms timescales&lt;/b&gt;. Such residues can be identified from a relatively low value of the heteronuclear NOE (e.g., below 0.65 at 600 MHz) or a higher-than-average &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; rate, respectively. Second, the rotational diffusion of the biomolecue impacts the &amp;tau;&lt;sub&gt;c&lt;/sub&gt;. &lt;b&gt;The calculator below assumes an isotropic rotational diffusion tensor&lt;/b&gt;; deviations from this assumption will impact the accuracy of the calculated &amp;tau;&lt;sub&gt;c&lt;/sub&gt;. It is not uncommon for proteins to diffuse with axially symmetric or anisotropic rotational diffusion tensors. &lt;/p&gt;
 &lt;br&gt;
 &lt;p&gt;Please enter the required values into the calculator below.&lt;/p&gt;
 &lt;br&gt;
@@ -47,12 +47,13 @@ function tauC_relax(B0, R1, R2) {
   return false
 }
 &lt;/script&gt;
-&lt;div align=&#34;center&#34;&gt;
+&lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
 &lt;head&gt;
 &lt;style&gt;
 input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;/style&gt;    
 &lt;/head&gt;
+&lt;br&gt;
 &lt;form&gt;
 &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;i&gt;B&lt;/i&gt;&lt;sub&gt;0&lt;/sub&gt; field (MHz) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;B0&#34; value=&#34;600&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;

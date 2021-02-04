@@ -676,9 +676,9 @@
 <body>
 <h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
 <br>
-<p>One can calculate the rotational correlation time (τ<sub>c</sub>) of a biomolecule by NMR given the <b>static magnetic field strength</b> (<i>B<sub>0</sub></i>) and the <b><sup>15</sup>N longitudinal and transverse relaxation rates</b> (<i>R<sub>1</sub></i>, <i>R<sub>2</sub></i>). For folded proteins, the τ<sub>c</sub> is valuable because it is related to the molecular mass and can, thus, be used to quickly <b>determine the oligomeric state</b>.</p>
+<p>One can calculate the rotational correlation time (τ<sub>c</sub>) of a biomolecule by NMR given the <b>static magnetic field strength</b> (<i>B<sub>0</sub></i>) and the <b><sup>15</sup>N longitudinal and transverse relaxation rates</b> (<i>R<sub>1</sub></i>, <i>R<sub>2</sub></i>). For folded proteins, the τ<sub>c</sub> is valuable because it is related to the size of the particle &ndash; and, therefore, the molecular mass. Thus, the τ<sub>c</sub> can be used to quickly <b>determine the oligomeric state</b>.</p>
 <br>
-<p>However, there are a couple of caveats. First, the <sup>15</sup>N relaxation rates should be the averaged value over a group of residues that <b>do not show evidence of extensive motions on the ps-ns or &mu;s-ms timescales</b>. Such residues can be identified from a relatively low value of the heteronuclear NOE (e.g., below 0.65 at 600 MHz) or a higher-than-average <i>R</i><sub>2</sub> rate, respectively. Second, the rotational diffusion of the biomolecue impacts the &tau;<sub>c</sub>. <b>This calculator below assumes an isotropic rotational diffusion tensor</b>; deviations from this assumption will impact the accuracy of the calculated &tau;<sub>c</sub>. </p>
+<p>However, there are a couple of caveats. First, the <sup>15</sup>N relaxation rates should be averaged value over a group of residues that <b>do not show evidence of extensive motions on the ps-ns or &mu;s-ms timescales</b>. Such residues can be identified from a relatively low value of the heteronuclear NOE (e.g., below 0.65 at 600 MHz) or a higher-than-average <i>R</i><sub>2</sub> rate, respectively. Second, the rotational diffusion of the biomolecue impacts the &tau;<sub>c</sub>. <b>The calculator below assumes an isotropic rotational diffusion tensor</b>; deviations from this assumption will impact the accuracy of the calculated &tau;<sub>c</sub>. It is not uncommon for proteins to diffuse with axially symmetric or anisotropic rotational diffusion tensors. </p>
 <br>
 <p>Please enter the required values into the calculator below.</p>
 <br>
@@ -700,12 +700,13 @@ function tauC_relax(B0, R1, R2) {
   return false
 }
 </script>
-<div align="center">
+<div align="center" style="border: 1px solid #000000;">
 <head>
 <style>
 input[type='text'] { font-size: 24px; }
 </style>    
 </head>
+<br>
 <form>
 <p style="font-size: 24px;"><b>Enter the <i>B</i><sub>0</sub> field (MHz) </b><br><input type="text" style="font-size: 24px;" id="B0" value="600"/></p>
     <br>
