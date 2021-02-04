@@ -43,17 +43,22 @@ function tauC_relax(B0, R1, R2) {
 }
 &lt;/script&gt;
 &lt;div align=&#34;center&#34;&gt;
+&lt;head&gt;
+&lt;style&gt;
+input[type=&#39;text&#39;] { font-size: 24px; }
+&lt;/style&gt;    
+&lt;/head&gt;
 &lt;form&gt;
-&lt;p&gt;&lt;b&gt;&lt;i&gt;B&lt;/i&gt;&lt;sub&gt;0&lt;/sub&gt; (MHz)&lt;/b&gt; &lt;br&gt; &lt;input type=&#34;text&#34; id=&#34;B0&#34; value=&#34;600&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;i&gt;B&lt;/i&gt;&lt;sub&gt;0&lt;/sub&gt; field (MHz) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;B0&#34; value=&#34;600&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
-&lt;p&gt;&lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt; (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt; &lt;br&gt; &lt;input type=&#34;text&#34; id=&#34;R1&#34; value=&#34;1.0&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the &lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt; rate (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;R1&#34; value=&#34;1.0&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
-&lt;p&gt;&lt;b&gt;&lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; (s&lt;sup&gt;-1&lt;/sup&gt;)&lt;/b&gt; &lt;br&gt; &lt;input type=&#34;text&#34; id=&#34;R2&#34; value=&#34;10.0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Enter the &lt;sup&gt;15&lt;/sup&gt;N &lt;i&gt;R&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt; rate (s&lt;sup&gt;-1&lt;/sup&gt;) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;R2&#34; value=&#34;10.0&#34; /&gt;&lt;/p&gt;
     &lt;br&gt;
 &lt;input type=&#34;button&#34; onClick=&#34;show_tauC()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold;&#34;/&gt;
     &lt;br&gt;
     &lt;br&gt;
-&lt;p&gt;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt; &lt;br&gt; &lt;input type=&#34;text&#34; id=&#34;tauC&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Calculated &amp;tau;&lt;sub&gt;c&lt;/sub&gt; (ns)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;tauC&#34;/&gt;&lt;/p&gt;
 &lt;/form&gt;
 &lt;div id=&#34;result&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;

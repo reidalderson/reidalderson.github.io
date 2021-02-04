@@ -696,17 +696,22 @@ function tauC_relax(B0, R1, R2) {
 }
 </script>
 <div align="center">
+<head>
+<style>
+input[type='text'] { font-size: 24px; }
+</style>    
+</head>
 <form>
-<p><b><i>B</i><sub>0</sub> (MHz)</b> <br> <input type="text" id="B0" value="600"/></p>
+<p style="font-size: 24px;"><b>Enter the <i>B</i><sub>0</sub> field (MHz) </b><br><input type="text" style="font-size: 24px;" id="B0" value="600"/></p>
     <br>
-<p><b><sup>15</sup>N <i>R</i><sub>1</sub> (s<sup>-1</sup>)</b> <br> <input type="text" id="R1" value="1.0"/></p>
+<p style="font-size: 24px;"><b>Enter the <sup>15</sup>N <i>R</i><sub>1</sub> rate (s<sup>-1</sup>)</b><br><input type="text" id="R1" value="1.0"/></p>
     <br>
-<p><b><sup>15</sup>N <i>R</i><sub>2</sub> (s<sup>-1</sup>)</b> <br> <input type="text" id="R2" value="10.0" /></p>
+<p><b>Enter the <sup>15</sup>N <i>R</i><sub>2</sub> rate (s<sup>-1</sup>) </b><br><input type="text" id="R2" value="10.0" /></p>
     <br>
 <input type="button" onClick="show_tauC()" value="CALCULATE" style="font-weight:bold;"/>
     <br>
     <br>
-<p><b>&tau;<sub>c</sub> (ns)</b> <br> <input type="text" id="tauC"/></p>
+<p><b>Calculated &tau;<sub>c</sub> (ns)</b><br><input type="text" id="tauC"/></p>
 </form>
 <div id="result"></div>
 </div>
