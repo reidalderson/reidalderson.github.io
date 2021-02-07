@@ -459,7 +459,7 @@
 
         
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Tools2</span><span class="caret"></span>
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Tools4</span><span class="caret"></span>
           </a>
           <div class="dropdown-menu">
             
@@ -521,35 +521,6 @@
 
         <li class="nav-item">
           <a class="nav-link " href="/landing/"><span>widgetdddd</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#test"><span>test</span></a>
         </li>
 
         
@@ -711,75 +682,6 @@
 
     <div class="article-style">
       <div class="text-justify small-font">
-[test](https://reidalderson.github.io/tools/nmr/new/index.md) asdffffff
-<!DOCTYPE html>
-<html>
-<body>
-<h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<br>
-<p>One can calculate the rotational correlation time (τ<sub>c</sub>) of a biomolecule by NMR given the <b>static magnetic field strength</b> (<i>B<sub>0</sub></i>) and the <b><sup>15</sup>N longitudinal and transverse relaxation rates</b> (<i>R<sub>1</sub></i>, <i>R<sub>2</sub></i>). For folded proteins, the τ<sub>c</sub> is valuable because it is related to the size of the particle &ndash; and, therefore, the molecular mass. Thus, the τ<sub>c</sub> can be used to quickly <b>determine the oligomeric state</b>.</p>
-<br>
-<p>However, there are a couple of caveats. First, the <sup>15</sup>N relaxation rates should be averaged value over a group of residues that <b>do not show evidence of extensive motions on the ps-ns or &mu;s-ms timescales</b>. Such residues can be identified from a relatively low value of the heteronuclear NOE (e.g., below 0.65 at 600 MHz) or a higher-than-average <i>R</i><sub>2</sub> rate, respectively. Second, the rotational diffusion of the biomolecue impacts the &tau;<sub>c</sub>. <b>The calculator below assumes an isotropic rotational diffusion tensor</b>; deviations from this assumption will impact the accuracy of the calculated &tau;<sub>c</sub>. It is not uncommon for proteins to diffuse with axially symmetric or anisotropic rotational diffusion tensors. </p>
-<br>
-<p>Please enter the required values into the calculator below.</p>
-<br>
-<script language="JavaScript"> 
-function tauC_relax(B0, R1, R2) {
-    var LarmorN = 1000000 * B0 * 0.101329118;
-    return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
-}
-</script>
-<script language="JavaScript"> 
-    function show_tauC() {
-    var enter_B0 = document.getElementById("B0").value;
-    var enter_R1 = document.getElementById("R1").value;
-    var enter_R2 = document.getElementById("R2").value;
-    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(1);
-  /// document.getElementById("tauC").innerHTML = "<b>&tau;<sub>c</sub> = " + output_tauC + " ns";
-   document.getElementById("tauC").value =  output_tauC;
-  return false
-}
-</script>
-<div align="center" style="border: 1px solid #000000;">
-<head>
-<style>
-input[type='text'] { font-size: 24px; }
-</style>    
-</head>
-<br>
-<form>
-<p style="font-size: 24px;"><b>Enter the <i>B</i><sub>0</sub> field (MHz) </b><br><input type="text" style="font-size: 24px;" id="B0" value="600"/></p>
-    <br>
-<p style="font-size: 24px;"><b>Enter the <sup>15</sup>N <i>R</i><sub>1</sub> rate (s<sup>-1</sup>)</b><br><input type="text" id="R1" value="1.0"/></p>
-    <br>
-<p style="font-size: 24px;"><b>Enter the <sup>15</sup>N <i>R</i><sub>2</sub> rate (s<sup>-1</sup>) </b><br><input type="text" id="R2" value="10.0" /></p>
-    <br>
-<input type="button" onClick="show_tauC()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
-    <br>
-    <br>
-<p style="font-size: 24px;"><b>Calculated &tau;<sub>c</sub> (ns)</b><br><input type="text" id="tauC"/></p>
-</form>
-<br>
-<br>
-</div>
-</body>
-</html>
-</form>
-<!--- <form action="https://reidalderson.github.io/tools/1/action_page.html">
-
-
-
-<br>
-
-
-
-
-
-
-
-</body>
-</html>
     </div>
 
     
@@ -1043,8 +945,6 @@ input[type='text'] { font-size: 24px; }
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/test/">test</a></li>
-      
       <li><a href="/tools/1/">NMR Calculators</a></li>
       
       <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
@@ -1052,6 +952,8 @@ input[type='text'] { font-size: 24px; }
       <li><a href="/publication/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
       
       <li><a href="/publication/5_synuclein_nature/">Parkinson&#39;s disease: Disorder in the court</a></li>
+      
+      <li><a href="/publication/16_invisible_states_cosb/">Unveiling invisible protein states with NMR spectroscopy</a></li>
       
     </ul>
   </div>
