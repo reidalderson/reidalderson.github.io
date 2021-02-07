@@ -244,6 +244,16 @@ input[type=&#39;text&#39;] { font-size: 24px; }
     </item>
     
     <item>
+      <title>test</title>
+      <link>/test/</link>
+      <pubDate>Thu, 04 Feb 2021 13:45:03 -0400</pubDate>
+      <guid>/test/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://reidalderson.github.io/tools/nmr/new/index.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;test&lt;/a&gt; asdffffff&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bioinformatics with Python, part 2</title>
       <link>/post/2/</link>
       <pubDate>Wed, 29 Apr 2020 22:37:33 -0400</pubDate>
