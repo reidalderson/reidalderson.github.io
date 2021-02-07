@@ -187,6 +187,11 @@
   </url>
   
   <url>
+    <loc>/landing/2/</loc>
+    <lastmod>2020-04-29T22:37:33-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2/</loc>
     <lastmod>2020-04-29T22:37:33-04:00</lastmod>
   </url>
@@ -204,6 +209,11 @@
   <url>
     <loc>/post/</loc>
     <lastmod>2020-04-29T22:37:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/landing/1/</loc>
+    <lastmod>2020-04-19T15:48:03-04:00</lastmod>
   </url>
   
   <url>
@@ -539,6 +549,11 @@
   <url>
     <loc>/publication/13_hsp27_natcomm/</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/landing/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
