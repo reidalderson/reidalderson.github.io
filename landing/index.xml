@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>📚 Physics and Chemistry Notes | Reid Alderson</title>
+    <title>Landing Page | Reid Alderson</title>
     <link>/landing/</link>
       <atom:link href="/landing/index.xml" rel="self" type="application/rss+xml" />
-    <description>📚 Physics and Chemistry Notes</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 29 Apr 2020 22:37:33 -0400</lastBuildDate>
+    <description>Landing Page</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>📚 Physics and Chemistry Notes</title>
+      <title>Landing Page</title>
       <link>/landing/</link>
     </image>
     
@@ -737,14 +737,6 @@ plt.show()
 &lt;br&gt;
 &lt;p&gt;Next time, I&amp;rsquo;ll discuss how we can use Python to calculate biophysical properties from protein sequences, and how we can perform such calculations on the proteome scale.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Landing Page</title>
-      <link>/landing/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/landing/</guid>
-      <description></description>
     </item>
     
   </channel>
