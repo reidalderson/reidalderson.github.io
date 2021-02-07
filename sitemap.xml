@@ -16,6 +16,10 @@
   </url>
   
   <url>
+    <loc>/landing/skills/</loc>
+  </url>
+  
+  <url>
     <loc>/tools/biochemistry/</loc>
     <lastmod>2021-02-04T13:45:03-04:00</lastmod>
   </url>
@@ -558,6 +562,11 @@
   <url>
     <loc>/publication/13_hsp27_natcomm/</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/landing/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -22,6 +22,14 @@
     </item>
     
     <item>
+      <title>Skills</title>
+      <link>/landing/skills/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/landing/skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Bioinformatics with Python, part 2</title>
       <link>/landing/2/</link>
       <pubDate>Wed, 29 Apr 2020 22:37:33 -0400</pubDate>
@@ -729,6 +737,14 @@ plt.show()
 &lt;br&gt;
 &lt;p&gt;Next time, I&amp;rsquo;ll discuss how we can use Python to calculate biophysical properties from protein sequences, and how we can perform such calculations on the proteome scale.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Landing Page</title>
+      <link>/landing/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/landing/</guid>
+      <description></description>
     </item>
     
   </channel>
