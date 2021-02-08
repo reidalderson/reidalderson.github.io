@@ -204,6 +204,15 @@ function show_power() {
 }
 &lt;/script&gt;
 &lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
+&lt;p&gt;
+    &lt;b&gt;Pulse Power Format&lt;/b&gt;
+    &lt;/p&gt;
+&lt;input type=&#34;radio&#34; id=&#34;bruker&#34; name=&#34;type&#34; value=&#34;bruker&#34;&gt;
+&lt;label for=&#34;bruker&#34;&gt;Bruker&lt;/label&gt;&lt;br&gt;
+&lt;input type=&#34;radio&#34; id=&#34;varian&#34; name=&#34;type&#34; value=&#34;varian&#34;&gt;
+&lt;label for=&#34;varian&#34;&gt;Varian&lt;/label&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
 &lt;head&gt;
 &lt;style&gt;
 input[type=&#39;text&#39;] { font-size: 24px; }
