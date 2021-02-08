@@ -47,11 +47,6 @@
   </url>
   
   <url>
-    <loc>/tools/nmr/</loc>
-    <lastmod>2021-02-04T13:45:03-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/python/</loc>
     <lastmod>2021-02-04T13:45:03-04:00</lastmod>
   </url>
@@ -772,12 +767,31 @@
   </url>
   
   <url>
+    <loc>/test/2_hscb_jacs/</loc>
+    <lastmod>2014-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/test/</loc>
+    <lastmod>2014-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/1_synuclein_idps/</loc>
     <lastmod>2013-08-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/test/1_synuclein_idps/</loc>
+    <lastmod>2013-08-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>/tools/nmr/</loc>
   </url>
   
   <url>

@@ -176,14 +176,6 @@ input[type=&#39;text&#39;] { font-size: 24px; }
     </item>
     
     <item>
-      <title>NMR Calculators</title>
-      <link>/tools/nmr/</link>
-      <pubDate>Thu, 04 Feb 2021 13:45:03 -0400</pubDate>
-      <guid>/tools/nmr/</guid>
-      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;</description>
-    </item>
-    
-    <item>
       <title>The neuropathy-causing P182L mutation dysregulates interactions of HSP27</title>
       <link>/publication/20_hsp27_biorxiv/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
@@ -2296,11 +2288,66 @@ Some useful tools
     </item>
     
     <item>
+      <title>Nucleotide-dependent interactions within a specialized Hsp70/Hsp40 complex involved in Fe-S cluster biogenesis</title>
+      <link>/test/2_hscb_jacs/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      <guid>/test/2_hscb_jacs/</guid>
+      <description>
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure class=&#34;polaroid&#34; &gt;
+
+
+  &lt;a href=&#34;#ZgotmplZ&#34;&gt;
+
+
+  &lt;img data-src=&#34;/test/2_hscb_jacs/HscB_ToC_hu2dd6183543b0cec3013e4877b8a1aa08_126787_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;885&#34; height=&#34;562&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
       <title>Biophysical characterization of $α$-synuclein and its controversial structure</title>
       <link>/publication/1_synuclein_idps/</link>
       <pubDate>Fri, 23 Aug 2013 00:00:00 +0000</pubDate>
       <guid>/publication/1_synuclein_idps/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Biophysical characterization of $α$-synuclein and its controversial structure</title>
+      <link>/test/1_synuclein_idps/</link>
+      <pubDate>Fri, 23 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>/test/1_synuclein_idps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NMR Calculators</title>
+      <link>/tools/nmr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/tools/nmr/</guid>
+      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;</description>
     </item>
     
   </channel>

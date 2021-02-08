@@ -167,14 +167,6 @@ input[type=&#39;text&#39;] { font-size: 24px; }
     </item>
     
     <item>
-      <title>NMR Calculators</title>
-      <link>/tools/nmr/</link>
-      <pubDate>Thu, 04 Feb 2021 13:45:03 -0400</pubDate>
-      <guid>/tools/nmr/</guid>
-      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;</description>
-    </item>
-    
-    <item>
       <title>Unveiling invisible protein states with NMR spectroscopy</title>
       <link>/publication/16_invisible_states_cosb/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
@@ -226,6 +218,14 @@ input[type=&#39;text&#39;] { font-size: 24px; }
       <link>/publication/1_synuclein_idps/</link>
       <pubDate>Fri, 23 Aug 2013 00:00:00 +0000</pubDate>
       <guid>/publication/1_synuclein_idps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Biophysical characterization of $α$-synuclein and its controversial structure</title>
+      <link>/test/1_synuclein_idps/</link>
+      <pubDate>Fri, 23 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>/test/1_synuclein_idps/</guid>
       <description></description>
     </item>
     
