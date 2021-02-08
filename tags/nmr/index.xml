@@ -168,6 +168,84 @@ input[type=&#39;text&#39;] { font-size: 24px; }
     
     <item>
       <title>NMR Calculators</title>
+      <link>/tools/pulse_power/</link>
+      <pubDate>Thu, 04 Feb 2021 13:45:03 -0400</pubDate>
+      <guid>/tools/pulse_power/</guid>
+      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;Pulse length and power calculator &lt;sup&gt;15&lt;/sup&gt;N relaxation&lt;/h2&gt;
+&lt;br&gt;
+&lt;p&gt;Given the known pulse length (tau&lt;sub&gt;p, 1&lt;/sub&gt;) at a particular power level (P&lt;sub&gt;1&lt;/sub&gt;), one can calculate the pulse length (tau&lt;sub&gt;p, 2&lt;/sub&gt;) at a new power level (P&lt;sub&gt;2&lt;/sub&gt;)&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Please enter the required values into the calculator below.&lt;/p&gt;
+&lt;br&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+function power_level_varian(pw1, pl1, pw2) {
+    return pl1 + 20*Math.log(pw1/pw2) 
+}  
+&lt;/script&gt;
+&lt;script language=&#34;JavaScript&#34;&gt;
+function power_level_bruker(pw1, pl1, pw2) {
+    return pl1 - 20*Math.log(pw1/pw2) 
+}  
+&lt;/script&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+    function show_tauC() {
+    var enter_pw1 = document.getElementById(&#34;pw1&#34;).value;
+    var enter_pl1 = document.getElementById(&#34;pl1&#34;).value;
+    var enter_pw2 = document.getElementById(&#34;pw2&#34;).value;
+    var varian_dB = power_level_varian(enter_pw1, enter_pl1, enter_pw2);
+    var output_dB = varian_dB.toFixed(0);
+  /// document.getElementById(&#34;tauC&#34;).innerHTML = &#34;&lt;b&gt;&amp;tau;&lt;sub&gt;c&lt;/sub&gt; = &#34; + output_tauC + &#34; ns&#34;;
+   document.getElementById(&#34;pl2&#34;).value =  output_tauC;
+  return false
+}
+&lt;/script&gt;
+&lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
+&lt;head&gt;
+&lt;style&gt;
+input[type=&#39;text&#39;] { font-size: 24px; }
+&lt;/style&gt;    
+&lt;/head&gt;
+&lt;br&gt;
+&lt;form&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the pulse length (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;pw1&#34; value=&#34;10&#34;/&gt;&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pl1&#34; value=&#34;63&#34;/&gt;&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the new pulse length (us)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pw2&#34; value=&#34;20&#34; /&gt;&lt;/p&gt;
+    &lt;br&gt;
+&lt;input type=&#34;button&#34; onClick=&#34;show_tauC()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pl2&#34;/&gt;&lt;/p&gt;
+&lt;/form&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;/form&gt;
+&lt;!--- &lt;form action=&#34;https://reidalderson.github.io/tools/1/action_page.html&#34;&gt;
+
+
+
+&lt;br&gt;
+
+
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</description>
+    </item>
+    
+    <item>
+      <title>NMR Calculators</title>
       <link>/tools/tauc/tauc/</link>
       <pubDate>Thu, 04 Feb 2021 13:45:03 -0400</pubDate>
       <guid>/tools/tauc/tauc/</guid>
