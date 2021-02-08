@@ -176,7 +176,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;html&gt;
 &lt;body&gt;
 &lt;h2&gt;Pulse length and power calculator&lt;/h2&gt;
-&lt;p&gt;test3&lt;/p&gt;
+&lt;p&gt;test4&lt;/p&gt;
 &lt;br&gt;
 &lt;p&gt;Given the known pulse length (tau&lt;sub&gt;p, 1&lt;/sub&gt;) at a particular power level (P&lt;sub&gt;1&lt;/sub&gt;), one can calculate the pulse length (tau&lt;sub&gt;p, 2&lt;/sub&gt;) at a new power level (P&lt;sub&gt;2&lt;/sub&gt;)&lt;/p&gt;
 &lt;br&gt;
@@ -184,7 +184,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;br&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
 function power_level_varian(pw1, pl1, pw2) {
-    return 20*Math.log10(pw1/pw2) 
+    return  20*Math.log10(pw1/pw2)
 }  
 &lt;/script&gt;
 &lt;script language=&#34;JavaScript&#34;&gt;
@@ -193,13 +193,13 @@ function power_level_bruker10(pw1, pl1, pw2) {
 }  
 &lt;/script&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
-    function show_power() {
+function show_power() {
     var enter_pw1 = document.getElementById(&#34;pw1&#34;).value;
     var enter_pl1 = document.getElementById(&#34;pl1&#34;).value;
     var enter_pw2 = document.getElementById(&#34;pw2&#34;).value;
     var varian_dB = power_level_varian(enter_pw1, enter_pl1, enter_pw2);
     var output_dB = varian_dB.toFixed(1);
-   document.getElementById(&#34;pl2&#34;).value =  output_tauC;
+    document.getElementById(&#34;pl2&#34;).value =  output_dB;
   return false
 }
 &lt;/script&gt;
@@ -215,7 +215,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
     &lt;br&gt;
     &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pl1&#34; value=&#34;63&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
-    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the desired pulse length (us)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pw2&#34; value=&#34;20&#34; /&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter the new pulse length (us)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pw2&#34; value=&#34;20&#34; /&gt;&lt;/p&gt;
     &lt;br&gt;
 &lt;input type=&#34;button&#34; onClick=&#34;show_power()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
     &lt;br&gt;
