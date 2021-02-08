@@ -714,7 +714,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Pulse length and power calculator <sup>15</sup>N relaxation</h2>
+<h2>Pulse length and power calculator</h2>
+<p>test</p>
 <br>
 <p>Given the known pulse length (tau<sub>p, 1</sub>) at a particular power level (P<sub>1</sub>), one can calculate the pulse length (tau<sub>p, 2</sub>) at a new power level (P<sub>2</sub>)</p>
 <br>
@@ -722,16 +723,16 @@
 <br>
 <script language="JavaScript"> 
 function power_level_varian(pw1, pl1, pw2) {
-    return pl1 + 20*Math.log(pw1/pw2) 
+    return pl1 + 20*Math.log10(pw1/pw2) 
 }  
 </script>
 <script language="JavaScript">
-function power_level_bruker(pw1, pl1, pw2) {
+function power_level_bruker10(pw1, pl1, pw2) {
     return pl1 - 20*Math.log(pw1/pw2) 
 }  
 </script>
 <script language="JavaScript"> 
-    function show_tauC() {
+    function show_power() {
     var enter_pw1 = document.getElementById("pw1").value;
     var enter_pl1 = document.getElementById("pl1").value;
     var enter_pw2 = document.getElementById("pw2").value;
@@ -1044,9 +1045,9 @@ input[type='text'] { font-size: 24px; }
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
-      
       <li><a href="/tools/1/">NMR Calculators</a></li>
+      
+      <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
       
       <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
       
