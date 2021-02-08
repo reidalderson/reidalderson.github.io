@@ -715,7 +715,7 @@
 <html>
 <body>
 <h2>Pulse length and power calculator</h2>
-<p>test</p>
+<p>test2</p>
 <br>
 <p>Given the known pulse length (tau<sub>p, 1</sub>) at a particular power level (P<sub>1</sub>), one can calculate the pulse length (tau<sub>p, 2</sub>) at a new power level (P<sub>2</sub>)</p>
 <br>
@@ -723,7 +723,7 @@
 <br>
 <script language="JavaScript"> 
 function power_level_varian(pw1, pl1, pw2) {
-    return pl1 + 20*Math.log10(pw1/pw2) 
+    return 20*Math.log10(pw1/pw2) 
 }  
 </script>
 <script language="JavaScript">
@@ -757,7 +757,7 @@ input[type='text'] { font-size: 24px; }
     <br>
     <p style="font-size: 24px;"><b>Enter the new pulse length (us)</b><br><input type="text" id="pw2" value="20" /></p>
     <br>
-<input type="button" onClick="show_tauC()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
+<input type="button" onClick="show_power()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
     <br>
     <br>
 <p style="font-size: 24px;"><b>New power level (dB) </b><br><input type="text" id="pl2"/></p>
@@ -1051,9 +1051,9 @@ input[type='text'] { font-size: 24px; }
       
       <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
       
-      <li><a href="/test/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
-      
       <li><a href="/publication/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
+      
+      <li><a href="/test/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
       
     </ul>
   </div>
