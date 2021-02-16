@@ -722,33 +722,35 @@
 <p>Please enter the required values into the calculator below.</p>
 <br>
 <script language="JavaScript"> 
-function power_level_varian(pw1, pl1, pw2) {
-    return  1*pl1 + 20*Math.log10(pw1/pw2)
-}  
-</script>
-<script language="JavaScript">
-function power_level_bruker10(pw1, pl1, pw2) {
-    return 1*pl1 - 20*Math.log(pw1/pw2) 
-}  
+function power_level(pw1, pl1, pw2, scale) {
+    return  20*Math.log10(pw1/pw2) + scale*pl1
+} 
 </script>
 <script language="JavaScript"> 
-function show_power() {
-    var enter_pw1 = document.getElementById("pw1").value;
-    var enter_pl1 = document.getElementById("pl1").value;
-    var enter_pw2 = document.getElementById("pw2").value;
-    var varian_dB = power_level_varian(enter_pw1, enter_pl1, enter_pw2);
-    var output_dB = varian_dB.toFixed(1);
-    document.getElementById("pl2").value =  output_dB;
+ function show_power() {
+    if(document.getElementById('bruker_radio').checked) {
+      var multiplier = -1; // Bruker
+      var float = 2 // Decimals for output dB
+    } else if(document.getElementById('varian_radio').checked) {
+      var multiplier = 1;  // Varian
+      var float = 0 // Decimals for output dB
+    }
+    var enter_pw1 = document.getElementById("pw1").value; // pw1 (us)
+    var enter_pl1 = document.getElementById("pl1").value; // pl1 (dB)
+    var enter_pw2 = document.getElementById("pw2").value; // pw2 (us)
+    var dB = power_level(enter_pw1, enter_pl1, enter_pw2, multiplier); // pl2 (dB)
+    var output_dB = dB.toFixed(float); 
+    document.getElementById("pl2").value =  output_dB; // calculated value
   return false
 }
 </script>
 <div align="center" style="border: 1px solid #000000;">
 <p>
-    <b>Pulse Power Format</b>
+    <b><input type="button" value="POWER FORMAT" style="font-weight:bold; font-size: 12px; background-color: #00204e; color: white; padding: 8px 48px"/></b>
     </p>
-<input type="radio" id="bruker" name="type" value="bruker">
+<input type="radio" id="bruker_radio" name="type" value="bruker">
 <label for="bruker">Bruker</label><br>
-<input type="radio" id="varian" name="type" value="varian">
+<input type="radio" id="varian_radio" name="type" value="varian">
 <label for="varian">Varian</label><br>
 </div>
 <div align="center" style="border: 1px solid #000000;">
@@ -1055,13 +1057,13 @@ input[type='text'] { font-size: 24px; }
       
       <li><a href="/tools/1/">NMR Calculators</a></li>
       
-      <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
-      
       <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
       
-      <li><a href="/test/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
+      <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
       
       <li><a href="/publication/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
+      
+      <li><a href="/test/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
       
     </ul>
   </div>

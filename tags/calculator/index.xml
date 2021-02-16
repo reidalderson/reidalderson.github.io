@@ -183,33 +183,35 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;p&gt;Please enter the required values into the calculator below.&lt;/p&gt;
 &lt;br&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
-function power_level_varian(pw1, pl1, pw2) {
-    return  1*pl1 + 20*Math.log10(pw1/pw2)
-}  
-&lt;/script&gt;
-&lt;script language=&#34;JavaScript&#34;&gt;
-function power_level_bruker10(pw1, pl1, pw2) {
-    return 1*pl1 - 20*Math.log(pw1/pw2) 
-}  
+function power_level(pw1, pl1, pw2, scale) {
+    return  20*Math.log10(pw1/pw2) + scale*pl1
+} 
 &lt;/script&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
-function show_power() {
-    var enter_pw1 = document.getElementById(&#34;pw1&#34;).value;
-    var enter_pl1 = document.getElementById(&#34;pl1&#34;).value;
-    var enter_pw2 = document.getElementById(&#34;pw2&#34;).value;
-    var varian_dB = power_level_varian(enter_pw1, enter_pl1, enter_pw2);
-    var output_dB = varian_dB.toFixed(1);
-    document.getElementById(&#34;pl2&#34;).value =  output_dB;
+ function show_power() {
+    if(document.getElementById(&#39;bruker_radio&#39;).checked) {
+      var multiplier = -1; // Bruker
+      var float = 2 // Decimals for output dB
+    } else if(document.getElementById(&#39;varian_radio&#39;).checked) {
+      var multiplier = 1;  // Varian
+      var float = 0 // Decimals for output dB
+    }
+    var enter_pw1 = document.getElementById(&#34;pw1&#34;).value; // pw1 (us)
+    var enter_pl1 = document.getElementById(&#34;pl1&#34;).value; // pl1 (dB)
+    var enter_pw2 = document.getElementById(&#34;pw2&#34;).value; // pw2 (us)
+    var dB = power_level(enter_pw1, enter_pl1, enter_pw2, multiplier); // pl2 (dB)
+    var output_dB = dB.toFixed(float); 
+    document.getElementById(&#34;pl2&#34;).value =  output_dB; // calculated value
   return false
 }
 &lt;/script&gt;
 &lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
 &lt;p&gt;
-    &lt;b&gt;Pulse Power Format&lt;/b&gt;
+    &lt;b&gt;&lt;input type=&#34;button&#34; value=&#34;POWER FORMAT&#34; style=&#34;font-weight:bold; font-size: 12px; background-color: #00204e; color: white; padding: 8px 48px&#34;/&gt;&lt;/b&gt;
     &lt;/p&gt;
-&lt;input type=&#34;radio&#34; id=&#34;bruker&#34; name=&#34;type&#34; value=&#34;bruker&#34;&gt;
+&lt;input type=&#34;radio&#34; id=&#34;bruker_radio&#34; name=&#34;type&#34; value=&#34;bruker&#34;&gt;
 &lt;label for=&#34;bruker&#34;&gt;Bruker&lt;/label&gt;&lt;br&gt;
-&lt;input type=&#34;radio&#34; id=&#34;varian&#34; name=&#34;type&#34; value=&#34;varian&#34;&gt;
+&lt;input type=&#34;radio&#34; id=&#34;varian_radio&#34; name=&#34;type&#34; value=&#34;varian&#34;&gt;
 &lt;label for=&#34;varian&#34;&gt;Varian&lt;/label&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
