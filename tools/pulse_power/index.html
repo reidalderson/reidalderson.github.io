@@ -725,6 +725,9 @@
 function power_level(pw1, pl1, pw2, scale) {
     return  20*Math.log10(pw1/pw2) + scale*pl1
 } 
+function pulse_width(pw1, pl1, pl2, scale) {
+    return pw1/(10**((pl2-pl1)/20))  
+    }
 </script>
 <script language="JavaScript"> 
  function show_power() {
@@ -734,7 +737,9 @@ function power_level(pw1, pl1, pw2, scale) {
     } else if(document.getElementById('varian_radio').checked) {
       var multiplier = 1;  // Varian
       var float = 0 // Decimals for output dB
-    }
+    } else {
+      document.getElementById("pl2").value =  "PLEASE CHOOSE POWER FORMAT";    
+      }
     var enter_pw1 = document.getElementById("pw1").value; // pw1 (us)
     var enter_pl1 = document.getElementById("pl1").value; // pl1 (dB)
     var enter_pw2 = document.getElementById("pw2").value; // pw2 (us)
@@ -743,15 +748,34 @@ function power_level(pw1, pl1, pw2, scale) {
     document.getElementById("pl2").value =  output_dB; // calculated value
   return false
 }
+<!--- -->
+    function show_pulse() {
+    if(document.getElementById('bruker_radio').checked) {
+      var multiplier = -1; // Bruker
+      var float = 2 // Decimals for output dB
+    } else if(document.getElementById('varian_radio').checked) {
+      var multiplier = 1;  // Varian
+      var float = 0 // Decimals for output dB
+    } else {
+      document.getElementById("pl2").value =  "PLEASE CHOOSE POWER FORMAT";    
+      } 
+    var enter_pw1 = document.getElementById("pw1").value; // pw1 (us)
+    var enter_pl1 = document.getElementById("pl1").value; // pl1 (dB)
+    var enter_pl2 = document.getElementById("pl2").value; // pl2 (dB)
+    var pw2 = pulse_width(enter_pw1, enter_pl1, enter_pl2, multiplier); // pw2 (us)
+    var output_pw2 = pw2.toFixed(float); 
+    document.getElementById("pw2").value =  output_pw2; // calculated value
+  return false
+}
 </script>
 <div align="center" style="border: 1px solid #000000;">
 <p>
-    <b><input type="button" value="POWER FORMAT" style="font-weight:bold; font-size: 12px; background-color: #00204e; color: white; padding: 8px 48px"/></b>
+    <b><input type="button" value="Select Format" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/></b>
     </p>
 <input type="radio" id="bruker_radio" name="type" value="bruker">
-<label for="bruker">Bruker</label><br>
+<label for="bruker" style="font-size: 24px;"><b>Bruker</b></label><br>
 <input type="radio" id="varian_radio" name="type" value="varian">
-<label for="varian">Varian</label><br>
+    <label for="varian" style="font-size: 24px;"><b>Varian</b></label><br>
 </div>
 <div align="center" style="border: 1px solid #000000;">
 <head>
@@ -760,18 +784,34 @@ input[type='text'] { font-size: 24px; }
 </style>    
 </head>
 <br>
-<form>
-<p style="font-size: 24px;"><b>Enter the pulse length (us) </b><br><input type="text" style="font-size: 24px;" id="pw1" value="10"/></p>
+<!--- Power Level Calculator -->
+<form style="float:left">
+<legend style="font-size: 28px; background-color: #00204e; color: white;"><b>Calculate power level</b></legend>
+<p style="font-size: 24px;"><b>Enter pulse length (us) </b><br><input type="text" style="font-size: 24px;" id="pw1" value="10"/></p>
     <br>
-    <p style="font-size: 24px;"><b>Enter the power level (dB)</b><br><input type="text" id="pl1" value="63"/></p>
+    <p style="font-size: 24px;"><b>Enter power level (dB)</b><br><input type="text" id="pl1" value="63"/></p>
     <br>
-    <p style="font-size: 24px;"><b>Enter the new pulse length (us)</b><br><input type="text" id="pw2" value="20" /></p>
+    <p style="font-size: 24px;"><b>Enter new pulse length (us)</b><br><input type="text" id="pw2" value="20" /></p>
     <br>
 <input type="button" onClick="show_power()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
     <br>
     <br>
 <p style="font-size: 24px;"><b>New power level (dB) </b><br><input type="text" id="pl2"/></p>
 </form>
+<!--- Pulse width calculator -->
+<form>
+<legend style="font-size: 28px; background-color: #00204e; color: white;"><b>Calculate pulse length</b></legend>
+<p style="font-size: 24px;"><b>Enter pulse length (us) </b><br><input type="text" style="font-size: 24px;" id="pw1" value="10"/></p>
+    <br>
+    <p style="font-size: 24px;"><b>Enter power level (dB)</b><br><input type="text" id="pl1" value="63"/></p>
+    <br>
+    <p style="font-size: 24px;"><b>Enter new power level (dB)</b><br><input type="text" id="pw2" value="57" /></p>
+    <br>
+<input type="button" onClick="show_pulse()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
+    <br>
+    <br>
+<p style="font-size: 24px;"><b>New pulse width (us) </b><br><input type="text" id="pw2"/></p>
+</form>   
 <br>
 <br>
 </div>
@@ -1055,9 +1095,9 @@ input[type='text'] { font-size: 24px; }
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/tools/1/">NMR Calculators</a></li>
-      
       <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
+      
+      <li><a href="/tools/1/">NMR Calculators</a></li>
       
       <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
       
