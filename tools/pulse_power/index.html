@@ -726,7 +726,7 @@ function power_level(pw1, pl1, pw2, scale) {
     return  20*Math.log10(pw1/pw2) + scale*pl1
 } 
 function pulse_width(pw1, pl1, pl2, scale) {
-    return pw1/(10**((pl2-pl1)/20))  
+    return (1*pw1)/(10**((pl2-pl1)/20))  
     }
 </script>
 <script language="JavaScript"> 
@@ -749,7 +749,7 @@ function pulse_width(pw1, pl1, pl2, scale) {
   return false
 }
 <!--- -->
-    function show_pulse() {
+  function show_pulse() {
     if(document.getElementById('bruker_radio').checked) {
       var multiplier = -1; // Bruker
       var float = 2 // Decimals for output pulse
@@ -762,8 +762,8 @@ function pulse_width(pw1, pl1, pl2, scale) {
     var enter_pw1 = document.getElementById("pw1").value; // pw1 (us)
     var enter_pl1 = document.getElementById("pl1").value; // pl1 (dB)
     var enter_pl2 = document.getElementById("pl2").value; // pl2 (dB)
-    var pw2 = pulse_width(enter_pw1, enter_pl1, enter_pl2, multiplier); // pw2 (us)
-    var output_pw2 = pw2.toFixed(float); 
+    var calc_pw2 = pulse_width(enter_pw1, enter_pl1, enter_pl2, multiplier); // pw2 (us)
+    var output_pw2 = calc_pw2.toFixed(float); 
     document.getElementById("new_pw2").value =  output_pw2; // calculated value
   return false
 }
@@ -1095,9 +1095,9 @@ input[type='text'] { font-size: 24px; }
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/tools/1/">NMR Calculators</a></li>
-      
       <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
+      
+      <li><a href="/tools/1/">NMR Calculators</a></li>
       
       <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
       
