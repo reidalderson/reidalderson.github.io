@@ -270,7 +270,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;/form&gt;
 &lt;!--- Pulse width calculator --&gt;
 &lt;form&gt;
-&lt;legend style=&#34;font-size: 28px; background-color: #00204e; color: white;&#34;&gt;&lt;b&gt;Calculate pulse length&lt;/b&gt;&lt;/legend&gt;
+&lt;legend style=&#34;font-size: 28px; background-color: #00204e; color: white; margin:0 auto;&#34;&gt;&lt;b&gt;Calculate pulse length&lt;/b&gt;&lt;/legend&gt;
 &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter pulse length (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;pw1&#34; value=&#34;10&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
     &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pl1&#34; value=&#34;63&#34;/&gt;&lt;/p&gt;
