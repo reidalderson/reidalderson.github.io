@@ -186,9 +186,26 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 function power_level(pw1, pl1, pw2, scale) {
     return  20*Math.log10(pw1/pw2) + scale*pl1
 } 
-function pulse_width(pw1, pl1, pl2, scale) {
+function pulse_width(pw1, pl1, pl2) {
     return (1*pw1)/(10**((pl2-pl1)/20))  
+}
+function check() {
+ if(document.getElementById(&#39;bruker_radio&#39;).checked) {
+     document.getElementById(&#34;power_pw1&#34;).value=10;
+     document.getElementById(&#34;power_pl1&#34;).value=-12;
+     document.getElementById(&#34;power_pw2&#34;).value=20;
+     document.getElementById(&#34;pulse_pw1&#34;).value=10;
+     document.getElementById(&#34;pulse_pl1&#34;).value=-12;
+     document.getElementById(&#34;pulse_pl2&#34;).value=-6;
+    } else if(document.getElementById(&#39;varian_radio&#39;).checked) {
+     document.getElementById(&#34;power_pw1&#34;).value=10;
+     document.getElementById(&#34;power_pl1&#34;).value=63;
+     document.getElementById(&#34;power_pw2&#34;).value=20;
+     document.getElementById(&#34;pulse_pw1&#34;).value=10;
+     document.getElementById(&#34;pulse_pl1&#34;).value=63;
+     document.getElementById(&#34;pulse_pl2&#34;).value=57;
     }
+}
 &lt;/script&gt;
 &lt;script language=&#34;JavaScript&#34;&gt; 
  function show_power() {
@@ -199,17 +216,16 @@ function pulse_width(pw1, pl1, pl2, scale) {
       var multiplier = 1;  // Varian
       var float = 0 // Decimals for output dB
     } else {
-      document.getElementById(&#34;pl2&#34;).value =  &#34;PLEASE CHOOSE POWER FORMAT&#34;;    
+      document.getElementById(&#34;power_pl2&#34;).value =  &#34;PLEASE CHOOSE POWER FORMAT&#34;;    
       }
-    var enter_pw1 = document.getElementById(&#34;pw1&#34;).value; // pw1 (us)
-    var enter_pl1 = document.getElementById(&#34;pl1&#34;).value; // pl1 (dB)
-    var enter_pw2 = document.getElementById(&#34;pw2&#34;).value; // pw2 (us)
+    var enter_pw1 = document.getElementById(&#34;power_pw1&#34;).value; // pw1 (us)
+    var enter_pl1 = document.getElementById(&#34;power_pl1&#34;).value; // pl1 (dB)
+    var enter_pw2 = document.getElementById(&#34;power_pw2&#34;).value; // pw2 (us)
     var dB = power_level(enter_pw1, enter_pl1, enter_pw2, multiplier); // pl2 (dB)
     var output_dB = dB.toFixed(float); 
-    document.getElementById(&#34;pl2&#34;).value =  output_dB; // calculated value
+    document.getElementById(&#34;ower_pl2&#34;).value =  output_dB; // calculated value
   return false
 }
-&lt;!--- --&gt;
   function show_pulse() {
     if(document.getElementById(&#39;bruker_radio&#39;).checked) {
       var multiplier = -1; // Bruker
@@ -220,10 +236,10 @@ function pulse_width(pw1, pl1, pl2, scale) {
     } else {
       document.getElementById(&#34;new_pw2&#34;).value =  &#34;PLEASE CHOOSE POWER FORMAT&#34;;    
       } 
-    var enter_pw1 = document.getElementById(&#34;pw1&#34;).value; // pw1 (us)
-    var enter_pl1 = document.getElementById(&#34;pl1&#34;).value; // pl1 (dB)
-    var enter_pl2 = document.getElementById(&#34;pl2&#34;).value; // pl2 (dB)
-    var calc_pw2 = pulse_width(enter_pw1, enter_pl1, enter_pl2, multiplier); // pw2 (us)
+    var pulse_pw1 = document.getElementById(&#34;pulse_pw1&#34;).value; // pw1 (us)
+    var pulse_pl1 = document.getElementById(&#34;pulse_pl1&#34;).value; // pl1 (dB)
+    var pulse_pl2 = document.getElementById(&#34;pulse_pl2&#34;).value; // pl2 (dB)
+    var calc_pw2 = pulse_width(pulse_pw1, pulse_pl1, pulse_pl2, multiplier); // pw2 (us)
     var output_pw2 = calc_pw2.toFixed(float); 
     document.getElementById(&#34;new_pw2&#34;).value =  output_pw2; // calculated value
   return false
@@ -233,9 +249,9 @@ function pulse_width(pw1, pl1, pl2, scale) {
 &lt;p&gt;
     &lt;b&gt;&lt;input type=&#34;button&#34; value=&#34;Select Format&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;&lt;/b&gt;
     &lt;/p&gt;
-&lt;input type=&#34;radio&#34; id=&#34;bruker_radio&#34; name=&#34;type&#34; value=&#34;bruker&#34;&gt;
+&lt;input type=&#34;radio&#34; id=&#34;bruker_radio&#34; name=&#34;type&#34; value=&#34;bruker&#34; onclick=&#34;check()&#34;&gt;
 &lt;label for=&#34;bruker&#34; style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Bruker&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
-&lt;input type=&#34;radio&#34; id=&#34;varian_radio&#34; name=&#34;type&#34; value=&#34;varian&#34;&gt;
+&lt;input type=&#34;radio&#34; id=&#34;varian_radio&#34; name=&#34;type&#34; value=&#34;varian&#34; onclick=&#34;check()&#34;&gt;
     &lt;label for=&#34;varian&#34; style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Varian&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
@@ -248,25 +264,25 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;!--- Power Level Calculator --&gt;
 &lt;form style=&#34;float:left&#34;&gt;
 &lt;legend style=&#34;font-size: 28px; background-color: #00204e; color: white;&#34;&gt;&lt;b&gt;Calculate power level&lt;/b&gt;&lt;/legend&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter pulse length (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;pw1&#34; value=&#34;10&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter pulse length (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;power_pw1&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
-    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pl1&#34; value=&#34;63&#34;/&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pl1&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
-    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter new pulse length (us)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pw2&#34; value=&#34;20&#34; /&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter new pulse length (us)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pw2&#34; /&gt;&lt;/p&gt;
     &lt;br&gt;
 &lt;input type=&#34;button&#34; onClick=&#34;show_power()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
     &lt;br&gt;
     &lt;br&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pl2&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pl2&#34;/&gt;&lt;/p&gt;
 &lt;/form&gt;
 &lt;!--- Pulse width calculator --&gt;
 &lt;form&gt;
 &lt;legend style=&#34;font-size: 28px; background-color: #00204e; color: white; margin:0 auto;&#34;&gt;&lt;b&gt;Calculate pulse length&lt;/b&gt;&lt;/legend&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter pulse length (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;pw1&#34; value=&#34;10&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter pulse length (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;pulse_pw1&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
-    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pl1&#34; value=&#34;63&#34;/&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pulse_pl1&#34;/&gt;&lt;/p&gt;
     &lt;br&gt;
-    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter new power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pw2&#34; value=&#34;57&#34; /&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Enter new power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pulse_pl2&#34; /&gt;&lt;/p&gt;
     &lt;br&gt;
 &lt;input type=&#34;button&#34; onClick=&#34;show_pulse()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
     &lt;br&gt;
