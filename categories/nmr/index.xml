@@ -213,19 +213,19 @@ function pulse_width(pw1, pl1, pl2, scale) {
     function show_pulse() {
     if(document.getElementById(&#39;bruker_radio&#39;).checked) {
       var multiplier = -1; // Bruker
-      var float = 2 // Decimals for output dB
+      var float = 2 // Decimals for output pulse
     } else if(document.getElementById(&#39;varian_radio&#39;).checked) {
       var multiplier = 1;  // Varian
-      var float = 0 // Decimals for output dB
+      var float = 2 // Decimals for output pulse
     } else {
-      document.getElementById(&#34;pl2&#34;).value =  &#34;PLEASE CHOOSE POWER FORMAT&#34;;    
+      document.getElementById(&#34;new_pw2&#34;).value =  &#34;PLEASE CHOOSE POWER FORMAT&#34;;    
       } 
     var enter_pw1 = document.getElementById(&#34;pw1&#34;).value; // pw1 (us)
     var enter_pl1 = document.getElementById(&#34;pl1&#34;).value; // pl1 (dB)
     var enter_pl2 = document.getElementById(&#34;pl2&#34;).value; // pl2 (dB)
     var pw2 = pulse_width(enter_pw1, enter_pl1, enter_pl2, multiplier); // pw2 (us)
     var output_pw2 = pw2.toFixed(float); 
-    document.getElementById(&#34;pw2&#34;).value =  output_pw2; // calculated value
+    document.getElementById(&#34;new_pw2&#34;).value =  output_pw2; // calculated value
   return false
 }
 &lt;/script&gt;
@@ -271,7 +271,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;input type=&#34;button&#34; onClick=&#34;show_pulse()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
     &lt;br&gt;
     &lt;br&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New pulse width (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pw2&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New pulse width (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;new_pw2&#34;/&gt;&lt;/p&gt;
 &lt;/form&gt;   
 &lt;br&gt;
 &lt;br&gt;

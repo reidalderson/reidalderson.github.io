@@ -752,19 +752,19 @@ function pulse_width(pw1, pl1, pl2, scale) {
     function show_pulse() {
     if(document.getElementById('bruker_radio').checked) {
       var multiplier = -1; // Bruker
-      var float = 2 // Decimals for output dB
+      var float = 2 // Decimals for output pulse
     } else if(document.getElementById('varian_radio').checked) {
       var multiplier = 1;  // Varian
-      var float = 0 // Decimals for output dB
+      var float = 2 // Decimals for output pulse
     } else {
-      document.getElementById("pl2").value =  "PLEASE CHOOSE POWER FORMAT";    
+      document.getElementById("new_pw2").value =  "PLEASE CHOOSE POWER FORMAT";    
       } 
     var enter_pw1 = document.getElementById("pw1").value; // pw1 (us)
     var enter_pl1 = document.getElementById("pl1").value; // pl1 (dB)
     var enter_pl2 = document.getElementById("pl2").value; // pl2 (dB)
     var pw2 = pulse_width(enter_pw1, enter_pl1, enter_pl2, multiplier); // pw2 (us)
     var output_pw2 = pw2.toFixed(float); 
-    document.getElementById("pw2").value =  output_pw2; // calculated value
+    document.getElementById("new_pw2").value =  output_pw2; // calculated value
   return false
 }
 </script>
@@ -810,7 +810,7 @@ input[type='text'] { font-size: 24px; }
 <input type="button" onClick="show_pulse()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
     <br>
     <br>
-<p style="font-size: 24px;"><b>New pulse width (us) </b><br><input type="text" id="pw2"/></p>
+<p style="font-size: 24px;"><b>New pulse width (us) </b><br><input type="text" id="new_pw2"/></p>
 </form>   
 <br>
 <br>
@@ -1095,15 +1095,15 @@ input[type='text'] { font-size: 24px; }
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
-      
       <li><a href="/tools/1/">NMR Calculators</a></li>
       
       <li><a href="/tools/biochemistry/">Biochemistry Calculators</a></li>
       
-      <li><a href="/publication/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
+      <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
       
       <li><a href="/test/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
+      
+      <li><a href="/publication/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
       
     </ul>
   </div>
