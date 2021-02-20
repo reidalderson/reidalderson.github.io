@@ -256,7 +256,7 @@ function check() {
 &lt;/script&gt;
 &lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
 &lt;p&gt;
-    &lt;b&gt;&lt;input type=&#34;button&#34; value=&#34;Select Format&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;&lt;/b&gt;
+    &lt;b&gt;&lt;input type=&#34;button&#34; value=&#34;Select the Spectrometer Type / Power Format&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;&lt;/b&gt;
     &lt;/p&gt;
 &lt;input type=&#34;radio&#34; id=&#34;bruker_radio&#34; name=&#34;type&#34; value=&#34;bruker&#34; onclick=&#34;check()&#34;&gt;
 &lt;label for=&#34;bruker&#34; style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Bruker&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
