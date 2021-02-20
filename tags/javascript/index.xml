@@ -274,6 +274,8 @@ input[type=&#39;text&#39;] { font-size: 24px; }
     &lt;br&gt;
     &lt;br&gt;
 &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pl2&#34;/&gt;&lt;/p&gt;
+    &lt;br&gt;
+    &lt;br&gt;
 &lt;/form&gt;
 &lt;!--- Pulse width calculator --&gt;
 &lt;form style=&#34;padding:20px&#34;&gt;
