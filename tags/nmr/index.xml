@@ -222,7 +222,7 @@ function check() {
     var enter_pw2 = document.getElementById(&#34;power_pw2&#34;).value; // pw2 (us)
     var dB = power_level(enter_pw1, enter_pl1, enter_pw2, multiplier); // pl2 (dB)
     var output_dB = dB.toFixed(float); 
-    document.getElementById(&#34;ower_pl2&#34;).value =  output_dB; // calculated value
+    document.getElementById(&#34;power_pl2&#34;).value =  output_dB; // calculated value
   return false
 }
   function show_pulse() {
