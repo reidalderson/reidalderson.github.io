@@ -273,7 +273,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;input type=&#34;button&#34; onClick=&#34;show_power()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
     &lt;br&gt;
     &lt;br&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB) &lt;/b&gt;&lt;input type=&#34;text&#34; id=&#34;power_pl2&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pl2&#34;/&gt;&lt;/p&gt;
 &lt;/form&gt;
 &lt;!--- Pulse width calculator --&gt;
 &lt;form style=&#34;padding:20px&#34;&gt;
@@ -287,7 +287,7 @@ input[type=&#39;text&#39;] { font-size: 24px; }
 &lt;input type=&#34;button&#34; onClick=&#34;show_pulse()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px&#34;/&gt;
     &lt;br&gt;
     &lt;br&gt;
-&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New pulse width (us) &lt;/b&gt;&lt;input type=&#34;text&#34; id=&#34;new_pw2&#34;/&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New pulse width (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;new_pw2&#34;/&gt;&lt;/p&gt;
 &lt;/form&gt;   
 &lt;br&gt;
 &lt;br&gt;
