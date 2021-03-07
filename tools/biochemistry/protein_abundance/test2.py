@@ -1,0 +1,5 @@
+standard_Rh = 2.12 # Rh of the standard (Angstroms)
+standard_D = 8e-6 # Diffusion coefficient of the standard (cm^2 s-1)
+sample_D = 1e-6	# Diffusion coefficient of the sample (cm^2 s-1)
+sample_Rh = standard_Rh * (standard_D/sample_D) # Rh of the sample, (Angstroms)
+print('>>>',sample_Rh,'Angstroms')

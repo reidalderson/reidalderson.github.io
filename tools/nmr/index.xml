@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NMR Calculators | Reid Alderson</title>
+    <link>/tools/nmr/</link>
+      <atom:link href="/tools/nmr/index.xml" rel="self" type="application/rss+xml" />
+    <description>NMR Calculators</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 04 Feb 2021 13:45:03 -0400</lastBuildDate>
+    <image>
+      <url>/tools/nmr/featured.jpg</url>
+      <title>NMR Calculators</title>
+      <link>/tools/nmr/</link>
+    </image>
+    
+    <item>
+      <title>Pulse power &amp; pulse width</title>
+      <link>/tools/nmr/pulse_power/</link>
+      <pubDate>Thu, 04 Feb 2021 13:45:03 -0400</pubDate>
+      <guid>/tools/nmr/pulse_power/</guid>
+      <description>&lt;div class=&#34;text-justify small-font&#34;&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;Pulse length and power calculator&lt;/h2&gt;
+&lt;p&gt;Given the known pulse width (τ&lt;sub&gt;p,1&lt;/sub&gt;) at a particular power level (PL&lt;sub&gt;1&lt;/sub&gt;), one can calculate the corresponding pulse width (τ&lt;sub&gt;p,2&lt;/sub&gt;) at any desired power level (PL&lt;sub&gt;2&lt;/sub&gt;). Likewise, one can calculate the required power level to achieve a desired pulse width, given a known pulse width at a particular power level. The two calculators below perform these conversions.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;b&gt;First, please select the type of spectrometer that you are using. This dictates the sign of the power level:&lt;/b&gt; Bruker  (Varian) increases power levels with decreasing (increasing) dB values.&lt;/p&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+function power_level(pw1, pl1, pw2, scale) {
+    return  20*Math.log10(pw1/pw2) + scale*pl1
+} 
+function pulse_width(pw1, pl1, pl2) {
+    return (1*pw1)/(10**((pl2-pl1)/20))  
+}
+function check() {
+ if(document.getElementById(&#39;bruker_radio&#39;).checked) {
+     document.getElementById(&#34;power_pw1&#34;).value=10;
+     document.getElementById(&#34;power_pl1&#34;).value=-12;
+     document.getElementById(&#34;power_pw2&#34;).value=20;
+     document.getElementById(&#34;pulse_pw1&#34;).value=10;
+     document.getElementById(&#34;pulse_pl1&#34;).value=-12;
+     document.getElementById(&#34;pulse_pl2&#34;).value=-6;
+    } else if(document.getElementById(&#39;varian_radio&#39;).checked) {
+     document.getElementById(&#34;power_pw1&#34;).value=10;
+     document.getElementById(&#34;power_pl1&#34;).value=63;
+     document.getElementById(&#34;power_pw2&#34;).value=20;
+     document.getElementById(&#34;pulse_pw1&#34;).value=10;
+     document.getElementById(&#34;pulse_pl1&#34;).value=63;
+     document.getElementById(&#34;pulse_pl2&#34;).value=57;
+    }
+}
+&lt;/script&gt;
+&lt;script language=&#34;JavaScript&#34;&gt; 
+ function show_power() {
+    if(document.getElementById(&#39;bruker_radio&#39;).checked) {
+      var multiplier = -1; // Bruker
+      var float = 2 // Decimals for output dB
+    } else if(document.getElementById(&#39;varian_radio&#39;).checked) {
+      var multiplier = 1;  // Varian
+      var float = 0 // Decimals for output dB
+    } else {
+      document.getElementById(&#34;power_pl2&#34;).value =  &#34;PLEASE CHOOSE POWER FORMAT&#34;;    
+      }
+    var enter_pw1 = document.getElementById(&#34;power_pw1&#34;).value; // pw1 (us)
+    var enter_pl1 = document.getElementById(&#34;power_pl1&#34;).value; // pl1 (dB)
+    var enter_pw2 = document.getElementById(&#34;power_pw2&#34;).value; // pw2 (us)
+    var dB = power_level(enter_pw1, enter_pl1, enter_pw2, multiplier); // pl2 (dB)
+    var output_dB = dB.toFixed(float); 
+    document.getElementById(&#34;power_pl2&#34;).value =  output_dB; // calculated value
+  return false
+}
+  function show_pulse() {
+    if(document.getElementById(&#39;bruker_radio&#39;).checked) {
+      var multiplier = -1; // Bruker
+      var float = 2 // Decimals for output pulse
+    } else if(document.getElementById(&#39;varian_radio&#39;).checked) {
+      var multiplier = 1;  // Varian
+      var float = 2 // Decimals for output pulse
+    } else {
+      document.getElementById(&#34;new_pw2&#34;).value =  &#34;PLEASE CHOOSE POWER FORMAT&#34;;    
+      } 
+    var pulse_pw1 = document.getElementById(&#34;pulse_pw1&#34;).value; // pw1 (us)
+    var pulse_pl1 = document.getElementById(&#34;pulse_pl1&#34;).value; // pl1 (dB)
+    var pulse_pl2 = document.getElementById(&#34;pulse_pl2&#34;).value; // pl2 (dB)
+    var calc_pw2 = pulse_width(pulse_pw1, pulse_pl1, pulse_pl2, multiplier); // pw2 (us)
+    var output_pw2 = calc_pw2.toFixed(float); 
+    document.getElementById(&#34;new_pw2&#34;).value =  output_pw2; // calculated value
+  return false
+}
+&lt;/script&gt;
+&lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
+&lt;p&gt;
+    &lt;b&gt;&lt;input type=&#34;button&#34; value=&#34;Select the Spectrometer Type / Power Format&#34; style=&#34;font-weight:bold; font-size: 28px; background-color: #00204e; color: white; padding: 24px 152px&#34;/&gt;&lt;/b&gt;
+    &lt;/p&gt;
+&lt;input type=&#34;radio&#34; id=&#34;bruker_radio&#34; name=&#34;type&#34; value=&#34;bruker&#34; onclick=&#34;check()&#34;&gt;
+&lt;label for=&#34;bruker&#34; style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Bruker&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
+&lt;input type=&#34;radio&#34; id=&#34;varian_radio&#34; name=&#34;type&#34; value=&#34;varian&#34; onclick=&#34;check()&#34;&gt;
+    &lt;label for=&#34;varian&#34; style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Varian&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;div align=&#34;center&#34; style=&#34;border: 1px solid #000000;&#34;&gt;
+&lt;head&gt;
+&lt;style&gt;
+input[type=&#39;text&#39;] { font-size: 24px; }
+&lt;/style&gt;    
+&lt;/head&gt;
+&lt;!--- Power Level Calculator --&gt;
+&lt;form style=&#34;float:left; padding:20px&#34;&gt;
+&lt;legend style=&#34;font-size: 28px; background-color: #00204e; color: white; padding: 24px 76px; margin:0 auto;&#34;&gt;&lt;b&gt;Calculate power level&lt;/b&gt;&lt;/legend&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Pulse width (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;power_pw1&#34;/&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pl1&#34;/&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New pulse width (us)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pw2&#34; /&gt;&lt;/p&gt;
+&lt;input type=&#34;button&#34; onClick=&#34;show_power()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 14px 76px&#34;/&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;power_pl2&#34;/&gt;&lt;/p&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+&lt;/form&gt;
+&lt;!--- Pulse width calculator --&gt;
+&lt;form style=&#34;padding:20px&#34;&gt;
+&lt;legend style=&#34;font-size: 28px; background-color: #00204e; color: white; margin:0 auto; padding: 24px 76px&#34;&gt;&lt;b&gt;Calculate pulse width&lt;/b&gt;&lt;/legend&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Pulse width (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; style=&#34;font-size: 24px;&#34; id=&#34;pulse_pw1&#34;/&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;Power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pulse_pl1&#34;/&gt;&lt;/p&gt;
+    &lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New power level (dB)&lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;pulse_pl2&#34; /&gt;&lt;/p&gt;
+&lt;input type=&#34;button&#34; onClick=&#34;show_pulse()&#34; value=&#34;CALCULATE&#34; style=&#34;font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 14px 76px&#34;/&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+&lt;p style=&#34;font-size: 24px;&#34;&gt;&lt;b&gt;New pulse width (us) &lt;/b&gt;&lt;br&gt;&lt;input type=&#34;text&#34; id=&#34;new_pw2&#34;/&gt;&lt;/p&gt;
+&lt;/form&gt;   
+&lt;br&gt;
+&lt;br&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

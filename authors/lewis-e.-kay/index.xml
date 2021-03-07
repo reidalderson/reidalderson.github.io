@@ -5,12 +5,20 @@
     <link>/authors/lewis-e.-kay/</link>
       <atom:link href="/authors/lewis-e.-kay/index.xml" rel="self" type="application/rss+xml" />
     <description>Lewis E. Kay</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Lewis E. Kay</title>
       <link>/authors/lewis-e.-kay/</link>
     </image>
+    
+    <item>
+      <title>NMR spectroscopy captures the essential role of dynamics in regulating biomolecular function</title>
+      <link>/publication/21_nmr_review_cell/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/21_nmr_review_cell/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Unveiling invisible protein states with NMR spectroscopy</title>

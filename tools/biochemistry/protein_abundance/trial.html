@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+<h3>Number of proteins: <b id="n_proteins"></b></h3>
+<script type="text/javascript" src="abundance.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.12.0/underscore-min.js"></script>
+<script>
+var reid = JSON.parse(JSON.stringify(abund))
+var length = reid.length;
+var results = [];
+var searchField = "uniprot";
+var searchVal = "P23528";
+
+function search(source, name) {
+    var results = [];  /// create array to store copies
+    var results2 = []; /// array to store desriptions
+    var results3 = []
+    var index;         /// variable for indexing 
+    var count;         /// variable for copies 
+    var describe;      /// variable for description
+    
+    for (index = 0; index < source.length; ++index) {
+        count = source[index].copies;
+        describe = source[index].description;
+        id = source[index].uniprot;
+        results.push(count);
+        results2.push(describe);
+        results3.push(id);
+    }
+    output = _.zip(results3, results, results2);
+    return [output[0][0], output[0][1], output[0][2]];
+}
+
+function test() {
+    var search = document.getElementById('protein').value;
+    console.log(search)
+    for (var i = 0; i < length; i++) {
+        if (reid[i].uniprot === search) {
+            console.log(reid[i].uniprot);
+            var ncopies = reid[i].copies;
+            console.log(ncopies)
+        }
+    }
+    document.getElementById("here").value = ncopies;
+    return false;
+}
+
+///document.getElementById('nOfUsers').innerHTML = reid.length;
+///var newData = abund.uniprot;
+///document.getElementById("demo").innerHTML = newData + ", ";
+document.getElementById("demo").innerHTML = reid[1].uniprot + ", " + reid[1].copies;
+document.getElementById("n_proteins").innerHTML = length;
+///console.log("wind speed: " + reid.uniprot.copies);
+
+var A = search(reid, searchVal)
+console.log(A)
+
+</script>
+
+
+<h3>Enter the UniProt ID of your protein: <b id="userExists"></b></h3>
+<form id="namesearch">
+<input type="text" id="protein" value="P04406">
+<input type="submit" onClick="test()" value="Submit">
+</form>
+
+<p style="font-size: 24px;"><b>Number of copies </b><br><input type="text" id="here"/></p>
+
+
+</body>
+</html>
+
+

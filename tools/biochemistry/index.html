@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Calculate the rotational correlation time of a biomolecule from experimentally measured &lt;sup&gt;15&lt;/sup&gt;N relaxation rates.">
+  <meta name="description" content="Calculate various biochemical and biophysical properties of biomolecules. Some examples include Dissociation Constants, Primers for Site-Directed Mutagenesis, and more.">
 
   
   <link rel="alternate" hreflang="en-us" href="/tools/biochemistry/">
@@ -214,6 +214,8 @@
   
 
   
+  <link rel="alternate" href="/tools/biochemistry/index.xml" type="application/rss+xml" title="Reid Alderson">
+  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
@@ -229,10 +231,9 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="twitter:site" content="@ReidAlderson">
   <meta property="twitter:creator" content="@ReidAlderson">
@@ -240,20 +241,15 @@
   <meta property="og:site_name" content="Reid Alderson">
   <meta property="og:url" content="/tools/biochemistry/">
   <meta property="og:title" content="Biochemistry Calculators | Reid Alderson">
-  <meta property="og:description" content="Calculate the rotational correlation time of a biomolecule from experimentally measured &lt;sup&gt;15&lt;/sup&gt;N relaxation rates."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
-  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Calculate various biochemical and biophysical properties of biomolecules. Some examples include Dissociation Constants, Primers for Site-Directed Mutagenesis, and more."><meta property="og:image" content="/tools/biochemistry/featured.jpg">
+  <meta property="twitter:image" content="/tools/biochemistry/featured.jpg"><meta property="og:locale" content="en-us">
   
-    
-      <meta property="article:published_time" content="2021-02-04T13:45:03-04:00">
-    
-    <meta property="article:modified_time" content="2021-02-04T13:45:03-04:00">
+    <meta property="og:updated_time" content="2021-02-04T13:45:03-04:00">
   
 
   
 
 
-
-  
 
 
   
@@ -459,15 +455,17 @@
 
         
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Tools5</span><span class="caret"></span>
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Tools</span><span class="caret"></span>
           </a>
           <div class="dropdown-menu">
             
               <a class="dropdown-item" href="/tools"><span>All</span></a>
             
+              <a class="dropdown-item" href="/tools/biochemistry"><span>--- Biochemistry</span></a>
+            
               <a class="dropdown-item" href="/tools/nmr"><span>--- NMR</span></a>
             
-              <a class="dropdown-item" href="/tools/biochemistry"><span>--- Biochemistry</span></a>
+              <a class="dropdown-item" href="/tools/python"><span>--- Python</span></a>
             
           </div>
         </li>
@@ -549,35 +547,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#test/"><span>test34</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -624,8 +593,6 @@
 </nav>
 
 
-  <article class="article">
-
   
 
 
@@ -639,20 +606,26 @@
 
 
 
-  
+
+
+
+
+
+
+
 
   
   
+    
   
+
+
 <div class="article-container pt-3">
   <h1>Biochemistry Calculators</h1>
 
   
-  <p class="page-subtitle">Rotational correlation times from 15N relaxation</p>
-  
 
   
-    
 
 
 <div class="article-metadata">
@@ -687,379 +660,113 @@
 
 </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 574px;">
+  <div style="position: relative">
+    <img src="/tools/biochemistry/featured_hu1e2d62408074434202e57d319698fb43_350591_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Your caption here.</span>
+  </div>
 </div>
 
 
 
-  <div class="article-container">
-
-    <div class="article-style">
-      <div class="text-justify small-font">
+<div class="universal-wrapper">
+  
+  <div class="article-style"><div class="text-justify small-font">
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Rotational correlation time (&tau;<sub>c</sub>) from <sup>15</sup>N relaxation</h2>
-<br>
-<p>One can calculate the rotational correlation time (τ<sub>c</sub>) of a biomolecule by NMR given the <b>static magnetic field strength</b> (<i>B<sub>0</sub></i>) and the <b><sup>15</sup>N longitudinal and transverse relaxation rates</b> (<i>R<sub>1</sub></i>, <i>R<sub>2</sub></i>). For folded proteins, the τ<sub>c</sub> is valuable because it is related to the size of the particle &ndash; and, therefore, the molecular mass. Thus, the τ<sub>c</sub> can be used to quickly <b>determine the oligomeric state</b>.</p>
-<br>
-<p>However, there are a couple of caveats. First, the <sup>15</sup>N relaxation rates should be averaged value over a group of residues that <b>do not show evidence of extensive motions on the ps-ns or &mu;s-ms timescales</b>. Such residues can be identified from a relatively low value of the heteronuclear NOE (e.g., below 0.65 at 600 MHz) or a higher-than-average <i>R</i><sub>2</sub> rate, respectively. Second, the rotational diffusion of the biomolecue impacts the &tau;<sub>c</sub>. <b>The calculator below assumes an isotropic rotational diffusion tensor</b>; deviations from this assumption will impact the accuracy of the calculated &tau;<sub>c</sub>. It is not uncommon for proteins to diffuse with axially symmetric or anisotropic rotational diffusion tensors. </p>
-<br>
-<p>Please enter the required values into the calculator below.</p>
-<br>
-<script language="JavaScript"> 
-function tauC_relax(B0, R1, R2) {
-    var LarmorN = 1000000 * B0 * 0.101329118;
-    return 1000000000 * ( (1/(4 * Math.PI * LarmorN)) * (6 * (R2/R1) - 7)**0.5)
-}
-</script>
-<script language="JavaScript"> 
-    function show_tauC() {
-    var enter_B0 = document.getElementById("B0").value;
-    var enter_R1 = document.getElementById("R1").value;
-    var enter_R2 = document.getElementById("R2").value;
-    var calc_tauC = tauC_relax(enter_B0, enter_R1, enter_R2);
-    var output_tauC = calc_tauC.toFixed(1);
-  /// document.getElementById("tauC").innerHTML = "<b>&tau;<sub>c</sub> = " + output_tauC + " ns";
-   document.getElementById("tauC").value =  output_tauC;
-  return false
-}
-</script>
-<div align="center" style="border: 1px solid #000000;">
-<head>
-<style>
-input[type='text'] { font-size: 24px; }
-</style>    
-</head>
-<br>
-<form>
-<p style="font-size: 24px;"><b>Enter the <i>B</i><sub>0</sub> field (MHz) </b><br><input type="text" style="font-size: 24px;" id="B0" value="600"/></p>
-    <br>
-<p style="font-size: 24px;"><b>Enter the <sup>15</sup>N <i>R</i><sub>1</sub> rate (s<sup>-1</sup>)</b><br><input type="text" id="R1" value="1.0"/></p>
-    <br>
-<p style="font-size: 24px;"><b>Enter the <sup>15</sup>N <i>R</i><sub>2</sub> rate (s<sup>-1</sup>) </b><br><input type="text" id="R2" value="10.0" /></p>
-    <br>
-<input type="button" onClick="show_tauC()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 24px 76px"/>
-    <br>
-    <br>
-<p style="font-size: 24px;"><b>Calculated &tau;<sub>c</sub> (ns)</b><br><input type="text" id="tauC"/></p>
-</form>
+<h2><u>Biochemistry calculators</u></h2>
 <br>
 <br>
+<p>
+<a href="%28/tools/biochemistry/kd/%29">test</a></p>
 </div>
-</body>
-</html>
-</form>
-<!--- <form action="https://reidalderson.github.io/tools/1/action_page.html">
+  
 
-
-
-<br>
-
-
-
-
-
-
-
-</body>
-</html>
+  
+  
+    
+    
+    
+    <div>
+      <h2><a href="/tools/biochemistry/boltzmann/" >Boltzmann populations</a></h2>
+      <div class="article-style">
+        
+          Calculate the populations of various states based on Gibbs free energy and the Boltzmann distribution
+        
+      </div>
     </div>
-
+  
     
-
-
-
-
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/nmr/">NMR</a>
-  
-  <a class="badge badge-light" href="/tags/calculator/">calculator</a>
-  
-  <a class="badge badge-light" href="/tags/javascript/">JavaScript</a>
-  
-</div>
-
-
-
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
     
-      
-      
-      
+    
+    <div>
+      <h2><a href="/tools/biochemistry/kd/" >Dissociation constants</a></h2>
+      <div class="article-style">
         
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=/tools/biochemistry/&amp;text=Biochemistry%20Calculators" target="_blank" rel="noopener" class="share-btn-twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-    
-      
-      
-      
+          Compute the fractional populations of bound and free protein given the known concentrations of protein, ligand, and the Kd
         
-      
-      
-      
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u=/tools/biochemistry/&amp;t=Biochemistry%20Calculators" target="_blank" rel="noopener" class="share-btn-facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="mailto:?subject=Biochemistry%20Calculators&amp;body=/tools/biochemistry/" target="_blank" rel="noopener" class="share-btn-email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/tools/biochemistry/&amp;title=Biochemistry%20Calculators" target="_blank" rel="noopener" class="share-btn-linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://web.whatsapp.com/send?text=Biochemistry%20Calculators%20/tools/biochemistry/" target="_blank" rel="noopener" class="share-btn-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=/tools/biochemistry/&amp;title=Biochemistry%20Calculators" target="_blank" rel="noopener" class="share-btn-weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu6437e222a74392f7e34987cf9d75c5c5_18761_270x270_fill_q90_lanczos_center.jpg" alt="Reid Alderson">
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="">Reid Alderson</a></h5>
-      <h6 class="card-subtitle">Postdoctoral Scientist</h6>
-      <p class="card-text"><div class=text-justify>My research focuses on understanding the molecular and structural details of protein quality control. I apply biochemical and biophysical tools, including NMR spectroscopy, to investigate the regulation and mechanisms of molecular chaperones and proteases involved in cellular homeostasis.</div></p>
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="/#contact" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.com/citations?user=9CTU0z0AAAAJ&amp;hl=en" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://orcid.org/0000-0001-5163-2276" target="_blank" rel="noopener">
-        <i class="fab fa-orcid"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/reidalderson" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://www.researchgate.net/profile/T_Alderson" target="_blank" rel="noopener">
-        <i class="fab fa-researchgate"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://twitter.com/ReidAlderson" target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-  
-</ul>
-
+      </div>
     </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+    <div>
+      <h2><a href="/tools/biochemistry/hydrodynamic_radius/" >Hydrodynamic radius</a></h2>
+      <div class="article-style">
+        
+          Calculate the hydrodynamic radius for a folded or unfolded protein based on the number of amino acids in the sequence
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/tools/biochemistry/protein_abundance/" >Protein concentration in vivo</a></h2>
+      <div class="article-style">
+        
+          Compute the fractional populations of bound and free protein given the known concentrations of protein, ligand, and the Kd
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/tools/biochemistry/rt_to_gibbs/" >Thermal energy</a></h2>
+      <div class="article-style">
+        
+          Calculate the thermal energy (RT) based on the Gibbs free energy and vice versa
+        
+      </div>
+    </div>
+  
 
   
-  
-  <div class="article-widget content-widget-hr">
-    <h3>Related</h3>
-    <ul>
-      
-      <li><a href="/tools/1/">NMR Calculators</a></li>
-      
-      <li><a href="/tools/tauc/tauc/">NMR Calculators</a></li>
-      
-      <li><a href="/tools/pulse_power/">NMR Calculators</a></li>
-      
-      <li><a href="/publication/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
-      
-      <li><a href="/test/1_synuclein_idps/">Biophysical characterization of $α$-synuclein and its controversial structure</a></li>
-      
-    </ul>
-  </div>
-  
 
-
-
-  </div>
-</article>
+</div>
 
       
 

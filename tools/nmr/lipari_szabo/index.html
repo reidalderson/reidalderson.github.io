@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Reid Alderson">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Compute nitrogen-15 relaxation rates based on the Lipari-Szabo model-free analysis">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/tools/nmr/lipari_szabo/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#00204E">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+  <link rel="alternate" href="/tools/nmr/lipari_szabo/index.xml" type="application/rss+xml" title="Reid Alderson">
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/tools/nmr/lipari_szabo/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@ReidAlderson">
+  <meta property="twitter:creator" content="@ReidAlderson">
+  
+  <meta property="og:site_name" content="Reid Alderson">
+  <meta property="og:url" content="/tools/nmr/lipari_szabo/">
+  <meta property="og:title" content="Lipari-Szabo Model-Free Analysis | Reid Alderson">
+  <meta property="og:description" content="Compute nitrogen-15 relaxation rates based on the Lipari-Szabo model-free analysis"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    <meta property="og:updated_time" content="2021-02-04T13:45:03-04:00">
+  
+
+  
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Lipari-Szabo Model-Free Analysis | Reid Alderson</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Reid Alderson</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Reid Alderson</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#research"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Tools</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/tools"><span>All</span></a>
+            
+              <a class="dropdown-item" href="/tools/biochemistry"><span>--- Biochemistry</span></a>
+            
+              <a class="dropdown-item" href="/tools/nmr"><span>--- NMR</span></a>
+            
+              <a class="dropdown-item" href="/tools/python"><span>--- Python</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#resources"><span>Resources</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/landing/"><span>widgetdddd</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+<div class="universal-wrapper pt-3">
+  <h1>Lipari-Szabo Model-Free Analysis</h1>
+
+  
+  <p class="page-subtitle">Compute nitrogen-15 relaxation rates based on the Lipari-Szabo model-free analysis</p>
+  
+
+  
+</div>
+
+
+
+<div class="universal-wrapper">
+  
+  <div class="article-style"><div class="text-justify small-font">
+<!DOCTYPE html>
+<html>
+<body>
+<h2><sup>15</sup>N spin relaxation calculator</h2>
+<br>
+<p>Nuclear spin relaxation manifests due to fluctuating local magnetic fields. The extraction of accurate motional parameters from relaxation data requires physical models that relate the dynamics of the involved bond vectors with the measured relaxation rates. The Lipari-Szabo model-free approach</p>
+<br>
+<p>Please enter the required values into the calculator below.</p>
+<br>
+<script language="JavaScript"> 
+/// Global constants
+var B0 = 500/42.6                         // Hardcode B0 here; update in function
+var ratio_N = -0.101329118;               // 1998 Markley et al. Pure & Appl Chem
+var ratio_C =  0.25144953;                // ibid.
+var gH = 267522187.44;  // rad s-1 T-1 
+var gN = gH * ratio_N;  // rad s-1 T-1 
+var wHr = gH * B0;
+var wNr = gN * B0;
+var h = 6.6261e-34;
+var hbar = 1.0546e-34;
+///var rIJ = 1.02e-10;                //         # Angstroms, distance N-H (m)
+var mu0f = 1.25663706e-6/(4*Math.PI); //       # kg s-2 A-2  
+///
+/// Function: J(omega)
+function Jw(tau, omega) {
+  return 0.4 * (tau/(1 + (tau*omega)**2)) 
+}
+/// Function: Lipari-Szabo
+function spectral_density(S2, tc, te, B_0) {
+    var B0 = B_0/42.6; // update B0 here to enable user input (B_0)
+    var wHr = gH * B0;
+    var wNr = gN * B0;
+    if(! te == 0) {
+       var ti = 1/(1/tc + 1/te);
+    } else {
+       var ti = 1/(1/tc);
+    }
+    var J0 = S2*Jw(tc, 0) + (1-S2)*Jw(ti,0);
+    var JwH = S2*Jw(tc, wHr) + (1-S2)*Jw(ti, wHr);
+    var JwN = S2*Jw(tc, wNr) + (1-S2)*Jw(ti, wNr);
+    var JwHpN = S2*Jw(tc, wHr+wNr) + (1-S2)*Jw(ti, wHr+wNr);
+    var JwHmN = S2*Jw(tc, wHr-wNr) + (1-S2)*Jw(ti, wHr-wNr);
+    return [J0, JwH, JwN, JwHpN, JwHmN];
+}
+/// Function: calculate R1, R2, NOE
+function relax(S2, tc, te, B_0, CSA, rIJ) {
+    ///var csa = -160e-6; //                          # ppm
+    var c = (1/3)*(wNr*CSA)**2;//
+    var d = 0.25*mu0f**2*((hbar*gN*gH)**2)/(rIJ**6); // # dipolar constant "d"
+    omegas = spectral_density(S2, tc, te, B_0);
+    [J0, JwH, JwN, JwHpN, JwHmN] = [omegas[0], omegas[1], omegas[2], omegas[3], omegas[4]];
+    var R1 = d*(JwHmN + 3*JwN + 6*JwHpN) + c*JwN;
+    var R2 = (0.5*d)*(4*J0 + JwHmN + 3*JwN + 6*JwH + 6*JwHpN) + (c/6)*(4*J0 + 3*JwN);
+    var NOE = 1 - (Math.abs(gH/gN) * d * (6*JwHpN - JwHmN))/R1;
+    return [R1, R2, NOE];
+}
+/// Function: Show the results
+function show_relax() {
+    var enter_B0 = document.getElementById("B0").value; // B0 (MHz)
+    var enter_tau_c = 1e-9 * document.getElementById("tau_c").value; // tau_c (ns)
+    var enter_tau_e = 1e-12 * document.getElementById("tau_e").value; // tau_e (ps)
+    var enter_S2 = document.getElementById("S2").value; // S2
+    var enter_csa = 1e-6 * document.getElementById("CSA").value; // CSA
+    var enter_rIJ = 1e-10 * document.getElementById("rIJ").value; // rIJ
+    calc = relax(enter_S2, enter_tau_c, enter_tau_e, enter_B0, enter_csa, enter_rIJ); // pw2 (us)
+    [out_R1, out_R2, out_NOE] = [calc[0], calc[1], calc[2]];
+    var final_R1 = out_R1.toFixed(2);
+    var final_R2 = out_R2.toFixed(2);
+    var final_NOE = out_NOE.toFixed(3);
+    document.getElementById("R1").value =  final_R1; // calculated value
+    document.getElementById("R2").value = final_R2;
+    document.getElementById("NOE").value = final_NOE;
+  return false
+}
+</script>
+<div align="center" style="border: 1px solid #000000;">
+<head>
+<style>
+input[type='text'] { font-size: 24px; }
+</style>    
+</head>
+<!--- Calculator -->
+<form style="padding:20px">
+<legend style="font-size: 28px; background-color: #00204e; color: white; padding: 24px 76px; margin:0 auto;"><b>Calculate <i>R</i><sub>1</sub>, <i>R</i><sub>2</sub>, and NOE values</b></legend><br>
+    <p style="font-size: 24px;"><b><i>B</i><sub>0</sub> (MHz)</b><br><input type="text" style="font-size: 24px;" id="B0" value="600"/></p>
+    <p style="font-size: 24px;"><b><i>S</i><sup>2</sup></b><br><input type="text" style="font-size: 24px;" id="S2" value="0.85"/></p>
+    <p style="font-size: 24px;"><b>&tau;<sub>c</sub> (ns)</b><br><input type="text" id="tau_c" value="10"/></p>
+    <p style="font-size: 24px;"><b>&tau;<sub>e</sub> (ps)</b><br><input type="text" id="tau_e" value="0" /></p>
+    <p style="font-size: 24px;"><b><sup>15</sup>N CSA (ppm)</b><br><input type="text" id="CSA" value="-160" /></p>
+    <p style="font-size: 24px;"><b>Bond length (&#8491;)</b><br><input type="text" id="rIJ" value="1.02" /></p>
+<input type="button" onClick="show_relax()" value="CALCULATE" style="font-weight:bold; font-size: 24px; background-color: #00204e; color: white; padding: 14px 76px"/>
+    <br>
+    <br>
+<p style="font-size: 24px;"><b><i>R</i><sub>1</sub> (s<sup>-1</sup>)</b><br><input type="text" id="R1"/></p>
+<p style="font-size: 24px;"><b><i>R</i><sub>2</sub> (s<sup>-1</sup>)</b><br><input type="text" id="R2"/></p>
+<p style="font-size: 24px;"><b>NOE</b><br><input type="text" id="NOE"/></p>
+    <br>
+    <br>
+</form>
+</div>
+</div>
+  
+
+  
+  
+
+  
+
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw9g-9WGXO6u8yaXRQJPD9S4fQBDzhA5A"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
